@@ -1,13 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
 import App from './App';
+import About from "./routes/about";
+import Contact from "./routes/contact";
+import Project from "./routes/project";
+import { AnimatePresence } from "framer-motion";
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <AnimatePresence>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="project" element={<Project />} />
+      </Routes>
+    </AnimatePresence>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

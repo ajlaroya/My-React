@@ -3,7 +3,12 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'trap': ['Trap-Bold','Trap-ExtraBold','Trap-Light','Trap-Medium','Trap-Regular','Trap-SemiBold'],
+        'trap-black': ['Trap-Black']
+      }
+    },
   },
   plugins: [],
 }
