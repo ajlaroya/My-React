@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import AnimatedPage from "../AnimatedPage";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 
 export default function Contact() {
   return (
@@ -15,10 +18,11 @@ export default function Contact() {
         </div>
         <div class="absolute text-justify font-trap text-white bottom-0 left-0 p-10">
         <AnimatedPage>
-          <p class="text-4xl font-trap-black">Say Hi!</p>
-          <p class="text-3xl">arthur.j.laroya@gmail.com</p>
-          <p class="italic font-light">or check me out on LinkedIn<br/>
-          </p>
+          <p class="text-3xl font-trap-black">Don't get green skin,</p>
+          <p class="text-3xl font-trap-black">keep contact! 👽</p>
+          <p class="text-2xl"><FontAwesomeIcon icon={faEnvelope} size="s" /> arthur.j.laroya@gmail.com</p>
+          <p class="text-2xl"><FontAwesomeIcon icon={faLinkedin} size="s" /> LinkedIn</p>
+          <p class="text-2xl"><FontAwesomeIcon icon={faGithub} size="s" /> GitHub</p>
           </AnimatedPage>
         </div>
       </div>
