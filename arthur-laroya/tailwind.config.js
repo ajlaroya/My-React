@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'trap': ['Trap-Bold','Trap-ExtraBold','Trap-Light','Trap-Medium','Trap-Regular','Trap-SemiBold'],
-        'trap-black': ['Trap-Black']
+        'circular': ['CircularStd-Book'],
+        'circular-black': ['CircularStd-Black']
       }
     },
   },

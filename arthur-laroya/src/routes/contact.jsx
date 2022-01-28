@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import AnimatedPage from "../AnimatedPage";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faRss } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
@@ -14,15 +15,21 @@ export default function Contact() {
           <div class="aspect-square w-12 h-12 bg-slate-100 rounded-full animate-bounce"></div>
         </div>
         <div class="absolute text-justify font-trap text-white top-0 left-0 p-10 hover:underline underline-offset-1">
+        <motion.div
+          whileHover={{ scale: 1.3 }}
+          whileTap={{ scale: 0.9 }}
+        >
           <Link to="/"><p class="text-3xl font-bold">AJL</p></Link>
+        </motion.div>
         </div>
         <div class="absolute text-justify font-trap text-white bottom-0 left-0 p-10">
         <AnimatedPage>
           <p class="text-3xl font-trap-black">Don't get green skin,</p>
           <p class="text-3xl font-trap-black">keep contact! 👽</p>
-          <p class="text-2xl"><FontAwesomeIcon icon={faEnvelope} size="s" /> arthur.j.laroya@gmail.com</p>
-          <p class="text-2xl"><FontAwesomeIcon icon={faLinkedin} size="s" /> LinkedIn</p>
-          <p class="text-2xl"><FontAwesomeIcon icon={faGithub} size="s" /> GitHub</p>
+          <p class="text-1xl"><FontAwesomeIcon icon={faEnvelope} size="s" /> arthur.j.laroya@gmail.com</p>
+          <p class="text-1xl"><FontAwesomeIcon icon={faRss} size="s" /> Sari-Sari (blog)</p>
+          <p class="text-1xl"><FontAwesomeIcon icon={faLinkedin} size="s" /> LinkedIn</p>
+          <p class="text-1xl"><FontAwesomeIcon icon={faGithub} size="s" /> GitHub</p>
           </AnimatedPage>
         </div>
       </div>

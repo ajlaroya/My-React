@@ -4,15 +4,15 @@
 
 @layer base {
   @font-face {
-    font-family: "Trap-Regular";
-    src: local("Trap-Regular"),
-      url("./fonts/Trap-Regular.ttf") format("truetype");
+    font-family: "CircularStd-Book";
+    src: local("CircularStd-Book"),
+      url("./fonts/CircularStd-Book.otf") format("opentype");
     font-weight: normal;
   }
   @font-face {
-    font-family: "Trap-Black";
-    src: local("Trap-Black"),
-      url("./fonts/Trap-Black.ttf") format("truetype");
+    font-family: "CircularStd-Black";
+    src: local("CircularStd-Black"),
+      url("./fonts/CircularStd-Black.otf") format("opentype");
     font-weight: normal;
   }
 }
