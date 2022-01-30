@@ -40,6 +40,7 @@ export default function About() {
             <p class="font-light">Seeking a career in web development 👀 Front/back-end wizz 🧙 <br /> Fanatic of clean design 🎨 Aspiring web dev 🕸️<br/> Enthusiastic learner 🎓 Amateur guitarist 🎸 Patter of dogs 🐶</p>
               <br/>
             <p>Skills & Knowledge:</p>
+
             <div class="text-3xl tracking-widest">
               <i class="devicon-amazonwebservices-original"></i>
               <i class="devicon-atom-original"></i>
@@ -94,7 +95,7 @@ export default function About() {
           <div class="aspect-square w-24 h-24 bg-gray-900 rounded-full hover:animate-pulse"></div>
           <div class="aspect-square w-48 h-48 bg-gray-900 rounded-full hover:animate-pulse"></div>
         </div>
-        <div class="absolute left-0 top-0 p-10 underline underline-offset-1 hover:underline underline-offset-1">
+        <div class="absolute left-0 top-0 p-10 underline hover:underline underline-offset-1">
           <Link to="/about">A</Link>
         </div>
         <div class="absolute bottom-0 left-0 p-10 hover:underline underline-offset-1">
