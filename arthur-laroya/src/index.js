@@ -9,6 +9,7 @@ import Project from "./routes/project";
 import { AnimatePresence } from "framer-motion";
 import reportWebVitals from './reportWebVitals';
 
+
 ReactDOM.render(
   <BrowserRouter>
     <AnimatePresence>
