@@ -67,41 +67,40 @@ function App() {
       </div>
 
       <div className="relative col-span-2 h-screen flex bg-slate-50 text-gray-900 font-circular text-3xl">
-      <AnimatePresence>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -50 }}
-          transition={{ ease: "easeInOut", duration: 2 }}
-          className="flex justify-center m-auto space-x-2"
-        >
+        <AnimatePresence>
           <motion.div
-            whileDrag={{ scale: 1.2 }}
-            dragSnapToOrigin
-            dragTransition={{ bounceStiffness: 100, bounceDamping: 1 }}
-            dragPropagation
-            drag
-            className="aspect-square w-12 h-12 bg-gray-900 rounded-full shadow-2xl hover:animate-pulse"
-          ></motion.div>
-          <motion.div
-            whileDrag={{ scale: 1.2 }}
-            dragSnapToOrigin
-            dragTransition={{ bounceStiffness: 150, bounceDamping: 1.5 }}
-            dragPropagation
-            drag
-            className="aspect-square w-24 h-24 bg-gray-900 rounded-full shadow-2xl hover:animate-pulse"
-          ></motion.div>
-          <motion.div
-            whileDrag={{ scale: 1.2 }}
-            dragSnapToOrigin
-            dragTransition={{ bounceStiffness: 200, bounceDamping: 2 }}
-            dragPropagation
-            drag
-            className="aspect-square w-48 h-48 bg-gray-900 rounded-full shadow-2xl hover:animate-pulse"
-          ></motion.div>
-        </motion.div>
-        
-      </AnimatePresence>
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ ease: "easeInOut", duration: 2 }}
+            className="flex justify-center m-auto space-x-2"
+          >
+            <motion.div
+              whileDrag={{ scale: 1.2 }}
+              dragSnapToOrigin
+              dragTransition={{ bounceStiffness: 100, bounceDamping: 1 }}
+              dragPropagation
+              drag
+              className="aspect-square w-12 h-12 bg-gray-900 rounded-full shadow-2xl hover:animate-pulse"
+            ></motion.div>
+            <motion.div
+              whileDrag={{ scale: 1.2 }}
+              dragSnapToOrigin
+              dragTransition={{ bounceStiffness: 150, bounceDamping: 1.5 }}
+              dragPropagation
+              drag
+              className="aspect-square w-24 h-24 bg-gray-900 rounded-full shadow-2xl hover:animate-pulse"
+            ></motion.div>
+            <motion.div
+              whileDrag={{ scale: 1.2 }}
+              dragSnapToOrigin
+              dragTransition={{ bounceStiffness: 200, bounceDamping: 2 }}
+              dragPropagation
+              drag
+              className="aspect-square w-48 h-48 bg-gray-900 rounded-full shadow-2xl hover:animate-pulse"
+            ></motion.div>
+          </motion.div>
+        </AnimatePresence>
         <div className="absolute inline-block left-0 top-0 p-10 hover:underline underline-offset-1">
           <Link to="/about">
             <motion.p

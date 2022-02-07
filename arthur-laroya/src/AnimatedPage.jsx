@@ -17,7 +17,7 @@ const AnimatedPage = ({ children }) => {
     >
       {children}
     </motion.div>
-  )
-}
+  );
+};
 
 export default AnimatedPage;

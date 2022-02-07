@@ -9,7 +9,6 @@ import {
 import { motion } from "framer-motion";
 
 export default function Project() {
-
   // This function will scroll the window to the top
   const scrollToTop = () => {
     window.scrollTo({
@@ -20,11 +19,9 @@ export default function Project() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5">
-
       {/* Content div */}
       <div className="relative col-span-3 h-screen flex bg-gray-900">
         <div className="absolute text-justify font-circular text-white top-0 right-0 p-10 hover:underline underline-offset-1">
-          
           {/* Circles */}
           <motion.div whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.9 }}>
             <div className="flex items-center justify-center m-auto space-x-2">
@@ -45,7 +42,6 @@ export default function Project() {
               ></motion.div>
             </div>
           </motion.div>
-
         </div>
 
         <div className="absolute text-justify font-circular text-white top-0 left-0 p-10 hover:underline underline-offset-1">
@@ -61,36 +57,65 @@ export default function Project() {
           <AnimatedPage>
             <p className="text-4xl font-circular-black">My projects</p>
             <br />
-            <motion.p whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="text-2xl space-x-2">
+            <motion.p
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="text-2xl space-x-2"
+            >
               <FontAwesomeIcon icon={faFeather} size="s" />
-              <a className="hover:underline underline-offset-2" href="https://plume.ap-southeast-2.elasticbeanstalk.com/">
+              <a
+                className="hover:underline underline-offset-2"
+                href="https://plume.ap-southeast-2.elasticbeanstalk.com/"
+              >
                 Plume
               </a>
             </motion.p>
             <ul>
-              <li className="italic">social media clone / online multi-community space</li>
+              <li className="italic">
+                social media clone / online multi-community space
+              </li>
               <li>Frontend: HTML5/CSS, Bulma CSS, Anime.js</li>
               <li>Backend: Django, Python, JavaScript, AWS</li>
               <br />
             </ul>
-            <motion.p whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="text-2xl space-x-2">
+            <motion.p
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="text-2xl space-x-2"
+            >
               <FontAwesomeIcon icon={faStar} size="s" />
-              <a className="hover:underline underline-offset-2" href="https://mysarisari.herokuapp.com/">
+              <a
+                className="hover:underline underline-offset-2"
+                href="https://mysarisari.herokuapp.com/"
+              >
                 Sari-Sari
               </a>
             </motion.p>
             <ul>
-              <li className="italic">personal blog on development & creativity </li>
+              <li className="italic">
+                personal blog on development & creativity{" "}
+              </li>
               <li>Frontend: HTML5/CSS, Bootstrap 5, Bulma CSS</li>
               <li>Backend: Django, Python, JavaScript, Heroku</li>
               <br />
             </ul>
-            <motion.p whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="text-2xl space-x-2">
+            <motion.p
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="text-2xl space-x-2"
+            >
               <FontAwesomeIcon icon={faPortrait} size="s" />
-              <a className="hover:underline underline-offset-2" href="https://arthurlaroya.com">AJL</a>
+              <a
+                className="hover:underline underline-offset-2"
+                href="https://arthurlaroya.com"
+              >
+                AJL
+              </a>
             </motion.p>
             <ul>
-            <li className="italic">personal portfolio, you're on it right now!</li>
+              <li className="italic">
+                personal portfolio, you're on it right now!
+              </li>
               <li>
                 Frontend: JSX/HTML5/CSS, Tailwind CSS 3.0, React, Framer Motion
               </li>
@@ -103,7 +128,7 @@ export default function Project() {
 
       {/* Menu div */}
       <div className="relative col-span-2 h-screen flex bg-slate-50 text-gray-900 font-circular text-3xl">
-      <motion.div
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
@@ -173,7 +198,6 @@ export default function Project() {
           </Link>
         </div>
       </div>
-      
     </div>
   );
 }

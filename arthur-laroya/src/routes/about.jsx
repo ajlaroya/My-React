@@ -3,7 +3,6 @@ import AnimatedPage from "../AnimatedPage";
 import { motion } from "framer-motion";
 
 export default function About() {
-
   // This function will scroll the window to the top
   const scrollToTop = () => {
     window.scrollTo({
@@ -45,16 +44,17 @@ export default function About() {
         </div>
         <div className="absolute font-circular text-white bottom-0 left-0 p-10">
           <AnimatedPage>
-            <p className="text-4xl font-circular-black">Yo! I am Arthur Laroya,</p>
+            <p className="text-4xl font-circular-black">
+              Yo! I am Arthur Laroya,
+            </p>
             <p className="text-2xl">I'm a Melbourne IT graduate from RMIT</p>
             <p className="font-light">
               Aspiring web dev 🙌 Front/back-end wizz 🧙
               <br /> Unconventional / clean designer 🎨 Aspiring web dev 🕸️
               <br /> Independent learner 🎓 Amateur guitarist 🎸 Dog patter 🐶
               <br /> Boston Celtics fan ☘️ Master of Googling 👀
-              
             </p>
-            
+
             <br />
             {/* Mobile */}
             <div className="text-4xl tracking-widest font-circular text-center text-white lg:hidden">
@@ -105,7 +105,7 @@ export default function About() {
         </div>
 
         {/* Desktop */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
@@ -159,13 +159,13 @@ export default function About() {
 
       <div className="relative col-span-2 h-screen flex bg-slate-50 text-gray-900 font-circular text-3xl">
         <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-            transition={{ ease: "easeInOut", duration: 2 }}
-            className="flex justify-center m-auto space-x-2"
-          >
-            <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          transition={{ ease: "easeInOut", duration: 2 }}
+          className="flex justify-center m-auto space-x-2"
+        >
+          <motion.div
             whileDrag={{ scale: 1.2 }}
             dragSnapToOrigin
             dragTransition={{ bounceStiffness: 100, bounceDamping: 1 }}
