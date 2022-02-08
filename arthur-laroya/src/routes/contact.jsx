@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import AnimatedPage from "../AnimatedPage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faStarOfLife } from "@fortawesome/free-solid-svg-icons";
+import { faCoffee, faEnvelope, faStarOfLife } from "@fortawesome/free-solid-svg-icons";
 import {
   faLinkedin,
   faGithub,
@@ -118,6 +118,17 @@ export default function Contact() {
                   href="https://twitter.com/arthurlaroya"
                 >
                   Twitter
+                </a>
+              </p>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <p className="text-xl lg:text-2xl">
+                <FontAwesomeIcon icon={faCoffee} size="s" />{" "}
+                <a
+                  className="hover:underline"
+                  href="https://ko-fi.com/ajlaroya"
+                >
+                  Ko-fi
                 </a>
               </p>
             </motion.div>

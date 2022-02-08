@@ -45,61 +45,55 @@ export default function About() {
         <div className="absolute font-circular text-white bottom-0 left-0 p-10">
           <AnimatedPage>
             <p className="text-4xl font-circular-black">
-              Yo! I am Arthur Laroya,
+              Yo! I am Arthur Laroya✌️
             </p>
-            <p className="text-2xl">I'm a Melbourne IT graduate from RMIT</p>
+            <p className="text-2xl">RMIT IT Graduate from Melbourne, AU</p>
             <p className="font-light">
-              Aspiring web dev 🙌 Front/back-end wizz 🧙
-              <br /> Unconventional / clean designer 🎨 Aspiring web dev 🕸️
-              <br /> Independent learner 🎓 Amateur guitarist 🎸 Dog patter 🐶
-              <br /> Boston Celtics fan ☘️ Master of Googling 👀
+              Aspiring web dev 🙌 Front/back-end wizard 🧙 Enthusiastic learner 🎓
+              <br />  Campfire guitarist 🎸 Patter of dogs 🐶 Boston Celtics fan ☘️
+              <br />  Jack of all trades 🃏 Master of none 👀 Creativity and beyond 🌠
             </p>
 
             <br />
             {/* Mobile */}
-            <div className="text-4xl tracking-widest font-circular text-center text-white lg:hidden">
-              <p className=" text-2xl tracking-normal">skills</p>
+            <div className="text-3xl tracking-widest font-circular text-center text-white lg:hidden">
+              <p className="text-lg">SKILLS:</p>
               <i className="devicon-amazonwebservices-original"></i>
               <i className="devicon-atom-original"></i>
               <i className="devicon-bash-plain"></i>
-              <i className="devicon-behance-plain"></i>
               <i className="devicon-bootstrap-plain"></i>
-              <br />
               <i className="devicon-bulma-plain"></i>
+              <br />
               <i className="devicon-css3-plain"></i>
               <i className="devicon-django-plain"></i>
-              <i className="devicon-figma-plain"></i>
               <i className="devicon-git-plain"></i>
-              <br />
               <i className="devicon-github-plain"></i>
               <i className="devicon-google-plain"></i>
+              <br />
               <i className="devicon-googlecloud-plain"></i>
               <i className="devicon-heroku-plain"></i>
               <i className="devicon-html5-plain"></i>
-              <br />
               <i className="devicon-javascript-plain"></i>
               <i className="devicon-java-plain"></i>
+              <br />
               <i className="devicon-jquery-plain"></i>
               <i className="devicon-jupyter-plain"></i>
-              <i className="devicon-linkedin-plain"></i>
-              <br />
               <i className="devicon-mysql-plain"></i>
               <i className="devicon-nginx-plain"></i>
-              <i className="devicon-npm-original-wordmark"></i>
               <i className="devicon-php-plain"></i>
-              <i className="devicon-putty-plain"></i>
               <br />
+              <i className="devicon-putty-plain"></i>
               <i className="devicon-react-plain"></i>
               <i className="devicon-ssh-plain"></i>
-              <i className="devicon-swift-plain"></i>
               <i className="devicon-tailwindcss-plain"></i>
               <i className="devicon-ubuntu-plain"></i>
               <br />
+              <i className="devicon-swift-plain"></i>
               <i className="devicon-unix-original"></i>
               <i className="devicon-vscode-plain"></i>
               <i className="devicon-windows8-plain"></i>
-              <i className="devicon-numpy-plain"></i>
               <i className="devicon-python-plain"></i>
+              <br />
             </div>
           </AnimatedPage>
         </div>
@@ -112,48 +106,43 @@ export default function About() {
           transition={{ ease: "easeInOut", duration: 2 }}
           className="text-3xl tracking-widest font-circular text-white md:absolute bottom-0 right-0 p-10 invisible lg:visible"
         >
-          <p className=" text-2xl tracking-normal"></p>
-          <i className="devicon-amazonwebservices-original"></i>
-          <i className="devicon-atom-original"></i>
-          <i className="devicon-bash-plain"></i>
-          <i className="devicon-behance-plain"></i>
-          <i className="devicon-bootstrap-plain"></i>
-          <br />
-          <i className="devicon-bulma-plain"></i>
-          <i className="devicon-css3-plain"></i>
-          <i className="devicon-django-plain"></i>
-          <i className="devicon-figma-plain"></i>
-          <i className="devicon-git-plain"></i>
-          <br />
-          <i className="devicon-github-plain"></i>
-          <i className="devicon-google-plain"></i>
-          <i className="devicon-googlecloud-plain"></i>
-          <i className="devicon-heroku-plain"></i>
-          <i className="devicon-html5-plain"></i>
-          <br />
-          <i className="devicon-javascript-plain"></i>
-          <i className="devicon-java-plain"></i>
-          <i className="devicon-jquery-plain"></i>
-          <i className="devicon-jupyter-plain"></i>
-          <i className="devicon-linkedin-plain"></i>
-          <br />
-          <i className="devicon-mysql-plain"></i>
-          <i className="devicon-nginx-plain"></i>
-          <i className="devicon-npm-original-wordmark"></i>
-          <i className="devicon-php-plain"></i>
-          <i className="devicon-putty-plain"></i>
-          <br />
-          <i className="devicon-react-plain"></i>
-          <i className="devicon-ssh-plain"></i>
-          <i className="devicon-swift-plain"></i>
-          <i className="devicon-tailwindcss-plain"></i>
-          <i className="devicon-ubuntu-plain"></i>
-          <br />
-          <i className="devicon-unix-original"></i>
-          <i className="devicon-vscode-plain"></i>
-          <i className="devicon-windows8-plain"></i>
-          <i className="devicon-numpy-plain"></i>
-          <i className="devicon-python-plain"></i>
+          <p className="text-lg">SKILLS:</p>
+              <i className="devicon-amazonwebservices-original"></i>
+              <i className="devicon-atom-original"></i>
+              <i className="devicon-bash-plain"></i>
+              <i className="devicon-bootstrap-plain"></i>
+              <i className="devicon-bulma-plain"></i>
+              <br />
+              <i className="devicon-css3-plain"></i>
+              <i className="devicon-django-plain"></i>
+              <i className="devicon-git-plain"></i>
+              <i className="devicon-github-plain"></i>
+              <i className="devicon-google-plain"></i>
+              <br />
+              <i className="devicon-googlecloud-plain"></i>
+              <i className="devicon-heroku-plain"></i>
+              <i className="devicon-html5-plain"></i>
+              <i className="devicon-javascript-plain"></i>
+              <i className="devicon-java-plain"></i>
+              <br />
+              <i className="devicon-jquery-plain"></i>
+              <i className="devicon-jupyter-plain"></i>
+              <i className="devicon-mysql-plain"></i>
+              <i className="devicon-nginx-plain"></i>
+              <i className="devicon-php-plain"></i>
+              <br />
+              <i className="devicon-putty-plain"></i>
+              <i className="devicon-react-plain"></i>
+              <i className="devicon-ssh-plain"></i>
+              <i className="devicon-tailwindcss-plain"></i>
+              <i className="devicon-ubuntu-plain"></i>
+              <br />
+              <i className="devicon-swift-plain"></i>
+              <i className="devicon-unix-original"></i>
+              <i className="devicon-vscode-plain"></i>
+              <i className="devicon-windows8-plain"></i>
+              <i className="devicon-python-plain"></i>
+              <br />
         </motion.div>
       </div>
 

@@ -119,7 +119,7 @@ export default function Project() {
               <li>
                 Frontend: JSX/HTML5/CSS, Tailwind CSS 3.0, React, Framer Motion
               </li>
-              <li>Backend: Google Cloud</li>
+              <li>Backend: Google Cloud, Node.js</li>
               <br />
             </ul>
           </AnimatedPage>
