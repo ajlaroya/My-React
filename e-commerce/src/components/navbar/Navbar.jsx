@@ -32,7 +32,7 @@ const theme = createTheme({
 const pages = ["Shop", "About", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-const Navbar = () => {
+const Navbar = ({ totalItems }) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -133,7 +133,7 @@ const Navbar = () => {
                 aria-label="Show cart items"
                 color="inherit"
               >
-                <Badge badgeContent={2} color="secondary">
+                <Badge badgeContent={totalItems} color="primary">
                   <ShoppingCart />
                 </Badge>
               </IconButton>

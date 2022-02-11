@@ -1,9 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { commerce } from "./lib/commerce";
-import { Products, Navbar } from "./components";
+import { Products, Navbar, Cart } from "./components";
 import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const App = () => {
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#00e676",
+      },
+      secondary: {
+        main: "#11cb5f",
+      },
+    },
+  });
+
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
 
@@ -16,14 +28,14 @@ const App = () => {
 
   // gets cart and sets state
   const fetchCart = async () => {
-    setCart(await commerce.cart.retrieve())
-  }
+    setCart(await commerce.cart.retrieve());
+  };
 
   // passes params to API and adds products to cart
   const handleAddToCart = async (productId, quantity) => {
     const item = await commerce.cart.add(productId, quantity);
     setCart(item.cart);
-  }
+  };
 
   // calls functions on render,
   useEffect(() => {
@@ -31,13 +43,16 @@ const App = () => {
     fetchCart();
   }, []);
 
-  console.log(cart)
+  console.log(cart);
 
   return (
     <div>
-      <CssBaseline />
-      <Navbar />
-      <Products products={products} onAddToCart={handleAddToCart} />
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Navbar totalItems={cart.total_items} />
+        {/* <Products products={products} onAddToCart={handleAddToCart} /> */}
+        <Cart cart={cart} />
+      </ThemeProvider>
     </div>
   );
 };
