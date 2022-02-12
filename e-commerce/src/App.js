@@ -3,6 +3,7 @@ import { commerce } from "./lib/commerce";
 import { Products, Navbar, Cart } from "./components";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
   const theme = createTheme({
@@ -46,14 +47,23 @@ const App = () => {
   console.log(cart);
 
   return (
-    <div>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Navbar totalItems={cart.total_items} />
-        {/* <Products products={products} onAddToCart={handleAddToCart} /> */}
-        <Cart cart={cart} />
-      </ThemeProvider>
-    </div>
+    <Router>
+      <div>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Navbar totalItems={cart.total_items} />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Products products={products} onAddToCart={handleAddToCart} />
+              }
+            />
+            <Route path="/cart" element={<Cart cart={cart} />} />
+          </Routes>
+        </ThemeProvider>
+      </div>
+    </Router>
   );
 };
 

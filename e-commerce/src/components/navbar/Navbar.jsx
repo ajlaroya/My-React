@@ -17,6 +17,7 @@ import { ShoppingCart } from "@mui/icons-material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import logo from "../../assets/logo.svg";
+import { Link, useLocation } from "react-router-dom";
 
 const theme = createTheme({
   palette: {
@@ -33,6 +34,8 @@ const pages = ["Shop", "About", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Navbar = ({ totalItems }) => {
+  const location = useLocation();
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -53,13 +56,15 @@ const Navbar = ({ totalItems }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <AppBar position="static" color="inherit">
+      <AppBar position="fixed" color="inherit">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography
               variant="h6"
               noWrap
-              component="div"
+              component={Link}
+              to="/"
+              style={{ textDecoration: "none", color: "black" }}
               sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
             >
               🌿 Gaea
@@ -127,16 +132,19 @@ const Navbar = ({ totalItems }) => {
                   <Avatar alt="Arthur Laroya" src={logo} />
                 </IconButton>
               </Tooltip>
-              <IconButton
-                component={""}
-                to="/cart"
-                aria-label="Show cart items"
-                color="inherit"
-              >
-                <Badge badgeContent={totalItems} color="primary">
-                  <ShoppingCart />
-                </Badge>
-              </IconButton>
+              {/* If homepage show cart */}
+              {location.pathname === "/" && (
+                <IconButton
+                  component={Link}
+                  to="/cart"
+                  aria-label="Show cart items"
+                  color="inherit"
+                >
+                  <Badge badgeContent={totalItems} color="primary">
+                    <ShoppingCart />
+                  </Badge>
+                </IconButton>
+              )}
               <Menu
                 sx={{ mt: "45px" }}
                 id="menu-appbar"
