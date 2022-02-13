@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { commerce } from "./lib/commerce";
-import { Products, Navbar, Cart } from "./components";
+import { Products, Navbar, Cart, Checkout } from "./components";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -86,6 +86,12 @@ const App = () => {
                   handleEmptyCart={handleEmptyCart}
                   handleUpdateCartQty={handleUpdateCartQty}
                 />
+              }
+            />
+            <Route
+              path="/checkout"
+              element={
+                <Checkout />
               }
             />
           </Routes>
