@@ -109,6 +109,8 @@ const Navbar = ({ totalItems }) => {
             <Typography
               variant="h6"
               noWrap
+              component={Link}
+              to="/"
               component="div"
               sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
             >
