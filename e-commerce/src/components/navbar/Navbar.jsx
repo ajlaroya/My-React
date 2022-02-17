@@ -111,7 +111,7 @@ const Navbar = ({ totalItems }) => {
               noWrap
               component={Link}
               to="/"
-              component="div"
+              style={{ textDecoration: "none", color: "black" }}
               sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
             >
               🌿 Gaea

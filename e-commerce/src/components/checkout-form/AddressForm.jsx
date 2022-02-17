@@ -9,8 +9,8 @@ import {
 } from "@mui/material";
 import { useForm, FormProvider } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { commerce } from "../../lib/commerce";
 
+import { commerce } from "../../lib/commerce";
 import FormInput from "./FormInput";
 
 const AddressForm = ({ checkoutToken, next }) => {
@@ -28,9 +28,11 @@ const AddressForm = ({ checkoutToken, next }) => {
     id: code,
     label: name,
   }));
+
   const subdivisions = Object.entries(shippingSubdivisions).map(
     ([code, name]) => ({ id: code, label: name })
   );
+  
   // shippingOptions is an array by default
   const options = shippingOptions.map((sO) => ({
     id: sO.id,
