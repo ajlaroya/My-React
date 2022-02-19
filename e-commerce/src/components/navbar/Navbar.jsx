@@ -18,6 +18,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import logo from "../../assets/logo.svg";
 import { Link, useLocation } from "react-router-dom";
+import useStyles from "./styles";
+
+const font =  "'Lora', serif";
 
 const theme = createTheme({
   palette: {
@@ -64,7 +67,7 @@ const Navbar = ({ totalItems }) => {
               noWrap
               component={Link}
               to="/"
-              style={{ textDecoration: "none", color: "black" }}
+              style={{ textDecoration: "none", color: "black", fontFamily: font }}
               sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
             >
               🌿 Gaea
@@ -111,7 +114,7 @@ const Navbar = ({ totalItems }) => {
               noWrap
               component={Link}
               to="/"
-              style={{ textDecoration: "none", color: "black" }}
+              style={{ textDecoration: "none", color: "black", fontFamily: font}}
               sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
             >
               🌿 Gaea

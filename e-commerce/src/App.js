@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { commerce } from "./lib/commerce";
-import { Products, Navbar, Cart, Checkout } from "./components";
+import { Products, Navbar, Cart, Checkout, Landing, Plants } from "./components";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
+  // const font =  "'Lora', serif";
+
   const theme = createTheme({
     palette: {
       primary: {
@@ -96,6 +98,10 @@ const App = () => {
             <Route
               path="/"
               element={
+                // <>
+                // <Landing />
+                // <Plants />
+                // </>
                 <Products products={products} onAddToCart={handleAddToCart} />
               }
             />
