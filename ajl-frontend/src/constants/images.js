@@ -35,7 +35,14 @@ import nb from '../assets/nb.png';
 import skype from '../assets/skype.png';
 import spotify from '../assets/spotify.png';
 
+import box1 from '../assets/box1.svg';
+import dizzy from '../assets/dizzy-education.png'
+import bonbon from '../assets/bonbon-teenager.png'
+
 export default {
+  bonbon,
+  dizzy,
+  box1,
   email,
   mobile,
   api,
