@@ -1,7 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 
 :root {
-  --font-base: "DM Sans", sans-serif;
+  /* --font-base: "DM Sans", sans-serif; */
+  /* --font-base: 'Space Grotesk', sans-serif; */
+  /* --font-base: 'Open Sans', sans-serif; */
+  --font-base: 'Poppins', sans-serif;
 
   --primary-color: #edf2f8;
   --secondary-color: #8E3AE2;
