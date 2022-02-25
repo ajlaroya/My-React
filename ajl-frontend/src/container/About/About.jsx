@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-import { AppWrap } from "../../wrapper";
+import { AppWrap, MotionWrap } from "../../wrapper";
 import { images } from "../../constants";
 import "./About.scss";
 import { urlFor, client } from "../../client";
-
-// const abouts = [
-//   { title: 'Web Development', description: 'I am a good web developer.', imgUrl: images.about01 },
-//   { title: 'Web Design', description: 'I am a good web developer.', imgUrl: images.about02 },
-//   { title: 'UI/UX', description: 'I am a good web developer.', imgUrl: images.about03 },
-//   { title: 'Fullstack', description: 'I am a good web developer.', imgUrl: images.about04 },
-// ];
 
 const About = () => {
   const [abouts, setAbouts] = useState([]);
@@ -54,4 +47,8 @@ const About = () => {
   );
 };
 
-export default AppWrap(About, "about");
+export default AppWrap(
+  MotionWrap(About, "app__about"),
+  "about",
+  "app__whitebg"
+);
