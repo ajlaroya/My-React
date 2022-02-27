@@ -36,12 +36,14 @@ import skype from '../assets/skype.png';
 import spotify from '../assets/spotify.png';
 
 import box1 from '../assets/box1.svg';
-import dizzy from '../assets/dizzy-education.png'
 import bonbon from '../assets/bonbon-teenager.png'
+import boy from '../assets/casual-life-boy.png'
+import man from '../assets/casual-life-man.png'
 
 export default {
+  boy,
+  man,
   bonbon,
-  dizzy,
   box1,
   email,
   mobile,
