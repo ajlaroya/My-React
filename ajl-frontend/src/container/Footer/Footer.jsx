@@ -40,7 +40,7 @@ const Footer = () => {
   };
   return (
     <>
-      <h2 className="head-text">Take a Coffee & Chat With Me!</h2>
+      <h2 className="head-text">Get in <span style={{ color: "#51DA7F"}}>Touch</span> & <span style={{ color: "#EDB72B"}}>Chat</span> With Me!</h2>
 
       <div className="app__footer-cards">
         <div className="app__footer-card">
@@ -52,7 +52,7 @@ const Footer = () => {
         <div className="app__footer-card">
           <img src={images.mobile} alt="mobile" />
           <a href="tel: 0403 524 026" className="p-text">
-            0403 524 026
+            please email for number
           </a>
         </div>
       </div>
