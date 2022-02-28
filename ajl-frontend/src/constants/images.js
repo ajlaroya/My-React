@@ -1,12 +1,12 @@
-import email from '../assets/email.png';
-import mobile from '../assets/mobile.png';
+import email from '../assets/email.webp';
+import mobile from '../assets/mobile.webp';
 import python from '../assets/python.svg';
 import react from '../assets/react.svg';
 import django from '../assets/django.svg';
 
 import circle from '../assets/circle.svg';
 import box1 from '../assets/box1.svg';
-import bonbon from '../assets/bonbon-teenager.png'
+import bonbon from '../assets/bonbon-teenager.webp'
 
 export default {
   django,

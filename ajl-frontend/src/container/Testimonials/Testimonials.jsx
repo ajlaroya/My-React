@@ -78,7 +78,7 @@ const Testimonials = () => {
           <motion.div
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.5, type: "tween" }}
-            key={brand.id}
+            key={brand.name}
           >
             <img src={urlFor(brand.imgUrl)} alt={brand.name} />
           </motion.div>
