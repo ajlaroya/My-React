@@ -22,7 +22,7 @@ const Header = () => {
         </Typography>
         <Box display="flex">
           <Typography variant="h6" className={classes.title}>
-            Explore new places!
+            Explore new places
           </Typography>
           {/* <Autocomplete> */}
           <div className={classes.search}>
@@ -30,11 +30,12 @@ const Header = () => {
             <InputBase
               startAdornment={
                 <InputAdornment position="start">
-                  <SearchIcon />
+                  <SearchIcon sx={{ color: '#FAFAFA', marginLeft: 1 }} />
                 </InputAdornment>
               }
               placeholder="Search…"
               classes={{ root: classes.inputRoot, input: classes.inputInput }}
+              sx={{ color: '#FAFAFA'}}
             />
           </div>
           {/* </Autocomplete> */}
