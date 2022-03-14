@@ -1,10 +1,10 @@
-@import '~antd/dist/antd.dark.css';
+@import "~antd/dist/antd.dark.css";
 
 :root {
   --text-primary: #fff;
   --bgPrimary: #121212;
   --bgSecondary: #f9f9f9;
-  --bgSurface: #1F1F1F;
+  --bgSurface: #1f1f1f;
   --pink: #cb2b83;
   --light-blue: #e6f7ff;
   --border: #d9d9d9;
@@ -25,12 +25,20 @@ a:hover {
 body {
   background-color: var(--bgPrimary) !important;
 }
-a.ant-typography, .ant-typography a {
+
+a.ant-typography,
+.ant-typography a {
   color: #cb2b83 !important;
 }
+
 .ant-layout {
   background-color: var(--bgPrimary) !important;
 }
+
+.ant-card {
+  background: var(--bgSurface) !important;
+}
+
 .app {
   display: flex;
   overflow: hidden;
@@ -45,9 +53,11 @@ a.ant-typography, .ant-typography a {
   flex: 0.8;
   width: 100%;
 }
+
 .routes {
   padding: 20px;
 }
+
 .nav-container {
   position: fixed;
   left: 0;
@@ -64,18 +74,23 @@ a.ant-typography, .ant-typography a {
   align-items: center;
   width: 100%;
 }
+
 .logo {
   margin: 0 0 0 15px;
 }
+
 .logo a {
   color: white;
 }
+
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-	background: transparent;
+  background: transparent;
 }
+
 .ant-menu {
   background: var(--bgSurface) !important;
 }
+
 .menu-control-container {
   display: none !important;
   position: absolute !important;
