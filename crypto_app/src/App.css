@@ -1,9 +1,11 @@
+@import '~antd/dist/antd.dark.css';
+
 :root {
-  --text-primary: #000;
-  --bgPrimary: #fff;
+  --text-primary: #fff;
+  --bgPrimary: #121212;
   --bgSecondary: #f9f9f9;
   --bgSurface: #1F1F1F;
-  --pink: #0071bd;
+  --pink: #cb2b83;
   --light-blue: #e6f7ff;
   --border: #d9d9d9;
 }
@@ -13,13 +15,21 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-a:hover {
+.footer a {
   color: var(--pink) !important;
+}
+a:hover {
+  color: #b12672 !important;
 }
 
 body {
-  background-color: #121212 !important;
+  background-color: var(--bgPrimary) !important;
+}
+a.ant-typography, .ant-typography a {
+  color: #cb2b83 !important;
+}
+.ant-layout {
+  background-color: var(--bgPrimary) !important;
 }
 .app {
   display: flex;
