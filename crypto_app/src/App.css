@@ -83,8 +83,8 @@ a.ant-typography,
   color: white;
 }
 
-.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-  background: transparent;
+.ant-menu-item-selected {
+  background-color: var(--pink) !important;
 }
 
 .ant-menu {
@@ -95,10 +95,12 @@ a.ant-typography,
   display: none !important;
   position: absolute !important;
   right: 10px !important;
-  top: 25px !important;
   font-size: 1.2rem !important;
-  background-color: var(--bgSecondary) !important;
   border: none !important;
+}
+
+.ant-btn:hover {
+  color: var(--pink) !important;
 }
 
 .loader {
@@ -244,7 +246,7 @@ a.ant-typography,
   padding-top: 20px;
 }
 
-.coin-desc-link h2 {
+.coin-desc-link h1 {
   font-weight: 700;
   color: var(--pink);
 }
@@ -264,6 +266,11 @@ a.ant-typography,
 
 .coin-desc {
   flex: 0.5;
+}
+
+.coin-desc h3 {
+  font-weight: 700;
+  color: var(--pink);
 }
 
 .coin-links {
@@ -358,7 +365,7 @@ a.ant-typography,
   color: #0071bd;
 }
 .chart-title {
-  color: #0071bd !important;
+  color: var(--pink) !important;
 }
 .price-container {
   display: flex !important;
