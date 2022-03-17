@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import HTMLReactParser from "html-react-parser";
 import { useParams } from "react-router-dom";
 import millify from "millify";
-import { Col, Row, Typography, Select } from "antd";
+import { Col, Row, Typography, Select, Avatar, Space } from "antd";
 import {
   MoneyCollectOutlined,
   DollarCircleOutlined,
@@ -20,6 +20,7 @@ import {
   useGetCryptoHistoryQuery,
 } from "../services/cryptoApi";
 import LineChart from "./LineChart";
+import Loader from "./Loader";
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -34,7 +35,7 @@ const CryptoDetails = () => {
   });
   const cryptoDetails = data?.data?.coin;
 
-  if (isFetching) return "...Loading";
+  if (isFetching) return <Loader />;
 
   const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
 
@@ -110,7 +111,11 @@ const CryptoDetails = () => {
     <Col className="coin-detail-container">
       <Col className="coin-heading-container">
         <Title level={2} className="coin-name">
+          <Space>
+
+          <Avatar src={cryptoDetails.iconUrl} alt={cryptoDetails.name} size={40} />
           {cryptoDetails.name} ({cryptoDetails.symbol}) Price
+          </Space>
         </Title>
         <p>
           {cryptoDetails.name} live price in US dollars. View value statistics,

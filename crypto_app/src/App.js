@@ -36,7 +36,8 @@ const App = () => {
             style={{ color: "white", textAlign: "center" }}
           >
             Cryptohub <br />
-            All rights reserved
+            © 2022 Arthur Laroya <br/>
+            All Rights Reserved.
           </Typography.Title>
           <Space>
             <Link to="/">Home</Link>
