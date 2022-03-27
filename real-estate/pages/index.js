@@ -5,6 +5,9 @@ import { Flex, Box, Text, Button } from '@chakra-ui/react'
 import Property from '../components/Property';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
 
+import place from '../assets/images/undraw_choosing_house.svg'
+import bought from '../assets/images/undraw_buy_house.svg'
+
 const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, linkName, imageUrl }) => (
   <Flex flexWrap="wrap" justifyContent="center" alignItems="center" m="10">
     <Image src={imageUrl} width={500} height={300} alt="banner"/>
@@ -30,7 +33,7 @@ export default function Home({ propertiesForSale, propertiesForRent}) {
         desc2="and more!"
         buttonText="Explore renting"
         linkName="/search?purpose=for-rent"
-        imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4"
+        imageUrl={place}
       />
       <Flex flexWrap="wrap">
         {propertiesForRent.map((property) => <Property property={property} key={property.id} />)}
@@ -43,7 +46,7 @@ export default function Home({ propertiesForSale, propertiesForRent}) {
         desc2="and more!"
         buttonText="Explore buying"
         linkName="/search?purpose=for-sale"
-        imageUrl='https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008'
+        imageUrl={bought}
       />
       <Flex flexWrap="wrap">
         {propertiesForSale.map((property) => <Property property={property} key={property.id} />)}
