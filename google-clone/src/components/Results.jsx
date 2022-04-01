@@ -56,7 +56,12 @@ const Results = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <img src={image?.src} alt={title} loading="lazy" className="rounded-t-lg" />
+              <img
+                src={image?.src}
+                alt={title}
+                loading="lazy"
+                className="rounded-t-lg"
+              />
               <p className="w-36 break-words text-sm mt-2">{title}</p>
             </a>
           ))}
@@ -93,12 +98,14 @@ const Results = () => {
         <div className="flex flex-wrap">
           {results?.map((video, index) => (
             <div key={index} className="p-2">
-              <ReactPlayer
-                url={video.additional_links?.[0].href}
-                controls
-                width="355px"
-                height="200px"
-              />
+              {video?.additional_links?.[0]?.href && (
+                <ReactPlayer
+                  url={video.additional_links?.[0].href}
+                  controls
+                  width="355px"
+                  height="200px"
+                />
+              )}
             </div>
           ))}
         </div>
