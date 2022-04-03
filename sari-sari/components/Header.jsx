@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Avvvatars from 'avvvatars-react'
 
 import Link from 'next/link'
 
@@ -17,8 +18,8 @@ const Header = () => {
       <div className="border-b w-full inline-block border-slate-200 py-8">
         <div className="md:float-left block">
           <Link href="/">
-            <span className="cursor-pointer font-bold text-3xl text-white">
-              ✨sari-sari
+            <span className="cursor-pointer font-bold text-3xl text-white inline-flex gap-x-3 items-center">
+            <Avvvatars value="arthur" style="shape" />sari-sari
             </span>
           </Link>
         </div>
