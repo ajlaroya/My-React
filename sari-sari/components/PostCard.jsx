@@ -3,18 +3,16 @@ import moment from "moment";
 import Link from "next/link";
 
 const PostCard = ({ post }) => {
-  console.log(post);
-
   return (
     <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
-      <div className="relative overflow-hidden shadow-md pb-80 mb-6">
+      <div className="relative overflow-hidden shadow-lg pb-80 mb-6">
         <img
           src={post.featuredImage.url}
           alt={post.title}
-          className="object-top absolute h-80 w-full object-cover shadow-lg rounded-t-lg lg: rounded-lg"
+          className="absolute h-80 w-full object-cover shadow-lg rounded-t-lg lg:rounded-lg opacity-90 transition duration-800 hover:opacity-100"
         />
       </div>
-      <h1 className="transition duration-700 text-center mb-8 cursor:pointer hover:text-pink-600 text-3xl font-semibold">
+      <h1 className="transition duration-700 text-center mb-8 cursor:pointer hover:text-blue-600 text-3xl font-semibold">
         <Link href={`/post/${post.slug}`}>{post.title}</Link>
       </h1>
       <div className="block lg:flex text-center items-center justify-center mb-8 w-full">
@@ -33,7 +31,7 @@ const PostCard = ({ post }) => {
         <div className="font-medium text-gray-700">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 inline mr-2 text-pink-500"
+            className="h-6 w-6 inline mr-2 text-blue-500"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -55,7 +53,7 @@ const PostCard = ({ post }) => {
       </p>
       <div className="text-center">
         <Link href={`/post/${post.slug}`}>
-          <span className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 inline-block text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">
+          <span className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 inline-block text-sm font-medium rounded-full text-white px-8 py-3 cursor-pointer">
             Continue reading
           </span>
         </Link>

@@ -18,7 +18,7 @@ const Header = () => {
       <div className="border-b w-full inline-block border-slate-200 py-8">
         <div className="md:float-left block">
           <Link href="/">
-            <span className="cursor-pointer font-bold text-3xl text-white inline-flex gap-x-3 items-center">
+            <span className="cursor-pointer font-bold text-3xl text-white inline-flex gap-x-3 items-center hover:animate-pulse">
             <Avvvatars value="arthur" style="shape" />sari-sari
             </span>
           </Link>
