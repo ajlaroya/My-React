@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import Avvvatars from 'avvvatars-react'
 
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { getCategories } from "../services";
+
+import sari from '../assets/images/sari.svg'
 
 const Header = () => {
   const [categories, setCategories] = useState([]);
@@ -15,11 +17,11 @@ const Header = () => {
 
   return (
     <div className="container mx-auto px-10 mb-8">
-      <div className="border-b w-full inline-block border-slate-200 py-8">
+      <div className="border-b w-full inline-block border-slate-200 py-6">
         <div className="md:float-left block">
           <Link href="/">
             <span className="cursor-pointer font-bold text-3xl text-white inline-flex gap-x-3 items-center hover:animate-pulse">
-            <Avvvatars value="arthur" style="shape" />sari-sari
+              <Image src={sari} alt="logo" height={35} width={35}/>sari-sari
             </span>
           </Link>
         </div>

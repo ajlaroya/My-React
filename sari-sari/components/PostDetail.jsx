@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import Head from 'next/head'
 
 const PostDetail = ({ post }) => {
   // renders different types of objects of post
@@ -62,6 +63,10 @@ const PostDetail = ({ post }) => {
 
   return (
     <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
+      <Head>
+        <title>{post.title}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className="relative overflow-hidden shadow-md mb-6">
         <img
           src={post.featuredImage.url}
