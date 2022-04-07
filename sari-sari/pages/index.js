@@ -26,8 +26,8 @@ export default function Home({ posts }) {
             breakpointCols={breakpointColumnsObj}
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column">
-          {posts.map((post) => (
-            <PostCard post={post.node} key={post.title}/>
+          {posts.map((post, index) => (
+            <PostCard post={post.node} key={index}/>
           ))}          
           </Masonry>
 
