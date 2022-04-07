@@ -20,7 +20,7 @@ const Header = () => {
       <div className="border-b w-full inline-block border-slate-200 py-6">
         <div className="md:float-left block">
           <Link href="/">
-            <span className="cursor-pointer font-bold text-3xl text-white inline-flex gap-x-3 items-center hover:animate-pulse">
+            <span className="sari-sari cursor-pointer font-black text-4xl text-white inline-flex gap-x-3 items-center hover:animate-pulse">
               <Image src={sari} alt="logo" height={35} width={35}/>sari-sari
             </span>
           </Link>

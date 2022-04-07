@@ -5,20 +5,60 @@ import Link from "next/link";
 const PostCard = ({ post }) => {
   return (
     <div className="max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
-            <img className="rounded-t-lg" src={post.featuredImage.url} alt={post.title} />
-        </a>
-        <div className="p-5">
-            <a href="#">
-                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{post.title}</h5>
-            </a>
-            <p className="mb-3 font-normal text-gray-400 dark:text-gray-400">{moment(post.createdAt).format("MMM DD, YYYY")}</p>
-            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{post.excerpt}</p>
-            <a href="#" className="transition ease-in-out delay-150 inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-500 hover:bg-indigo-500 rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Read more
-                <svg className="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-            </a>
+      <div className="relative overflow-hidden rounded-lg opacity-80 hover:opacity-100 ease-in-out duration-300 cursor-pointer">
+        <img
+          className="object-cover w-full h-48 "
+          src={post.featuredImage.url}
+          alt="Flower and sky"
+        />
+
+        <div className="absolute top-0 left-0 px-6 py-4">
+          <h4 className="mb-3 text-xl font-semibold tracking-tight text-gray-900">
+            {post.title}
+          </h4>
         </div>
+      </div>
+
+      {/* <a href="#">
+        <img
+          className="rounded-t-lg"
+          src={post.featuredImage.url}
+          alt={post.title}
+        />
+      </a> */}
+      <div className="p-5">
+        <a href="#">
+          {/* <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            {post.title}
+          </h5> */}
+        </a>
+        <p className="mb-3 font-normal text-gray-400 dark:text-gray-400">
+          {moment(post.createdAt).format("MMM DD, YYYY")}
+        </p>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          {post.excerpt}
+        </p>
+        <Link href={`/post/${post.slug}`}>
+          <button
+            type="button"
+            className=" cursor-pointer inline-flex items-center text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-xs px-5 py-2.5 text-center mr-2 mb-2 ease-in duration-500"
+          >
+            Read More{" "}
+            <svg
+              className="ml-2 -mr-1 w-4 h-4"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </Link>
+      </div>
     </div>
     // <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
     //   <div className="relative overflow-hidden shadow-lg pb-80 mb-6">
