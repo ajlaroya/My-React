@@ -25,13 +25,13 @@ const PostWidget = ({ categories, slug }) => {
         {slug ? "Related Posts" : "Recent Posts"}
       </h3>
       {relatedPosts.map((post) => (
-        <div class="flex items-center mb-5">
+        <div key={post.title} className="flex items-center mb-5">
           <img
-            class="w-12 h-12 rounded-full mr-6 shadow-sm"
+            className="w-12 h-12 rounded-full mr-6 shadow-sm"
             src={post.featuredImage.url}
             alt={post.title}
           />
-          <div class="text-base">
+          <div className="text-base">
             <Link
               href={`/post/${post.slug}`}
               key={post.title}
@@ -39,7 +39,7 @@ const PostWidget = ({ categories, slug }) => {
             >
               {post.title}
             </Link>
-            <p class="text-gray-600">
+            <p className="text-gray-600">
               {moment(post.createdAt).format("MMM DD, YYYY")}
             </p>
           </div>
