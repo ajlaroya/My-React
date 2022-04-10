@@ -12,15 +12,15 @@ const responsive = {
   },
   desktop: {
     breakpoint: { max: 1024, min: 768 },
-    items: 3,
+    items: 4,
   },
   tablet: {
     breakpoint: { max: 768, min: 640 },
-    items: 2,
+    items: 3,
   },
   mobile: {
-    breakpoint: { max: 640, min: 0 },
-    items: 1,
+    breakpoint: { max: 500, min: 0 },
+    items: 2,
   },
 };
 
@@ -35,59 +35,35 @@ const FeaturedPosts = () => {
     });
   }, []);
 
-  const ArrowFix = (arrowProps) => {
-    const { carouselState, children, ...restArrowProps } = arrowProps;
-    return <span {...restArrowProps}> {children} </span>;
-  };
+  // const ArrowFix = (arrowProps) => {
+  //   const { carouselState, children, ...restArrowProps } = arrowProps;
+  //   return <span {...restArrowProps}> {children} </span>;
+  // };
 
-  const customLeftArrow = (
-    <ArrowFix>
-      <div className="absolute arrow-btn left-0 text-center py-3 cursor-pointer bg-pink-600 rounded-full">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 text-white"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M10 19l-7-7m0 0l7-7m-7 7h18"
-          />
-        </svg>
-      </div>
-    </ArrowFix>
-  );
+  // const customLeftArrow = (
+  //   <ArrowFix>
+  //     <div className="absolute left-0 cursor-pointer text-gray-900">
+  //       <BsFillArrowLeftCircleFill />
+  //     </div>
+  //   </ArrowFix>
+  // );
 
-  const customRightArrow = (
-    <ArrowFix>
-      <div className="absolute arrow-btn right-0 text-center py-3 cursor-pointer bg-pink-600 rounded-full">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 text-white"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M14 5l7 7m0 0l-7 7m7-7H3"
-          />
-        </svg>
-      </div>
-    </ArrowFix>
-  );
+  // const customRightArrow = (
+  //   <ArrowFix>
+  //     <div className="absolute right-0 text-center cursor-pointer bg-pink-600 rounded-full">
+  //       <BsFillArrowRightCircleFill />
+  //     </div>
+  //   </ArrowFix>
+  // );
 
   return (
     <div className="mb-8">
       <Carousel
-        infinite
-        customLeftArrow={customLeftArrow}
-        customRightArrow={customRightArrow}
+        ssr={true} // means to render carousel on server-side.
+        infinite={true}
+        swipeable={true}
+        draggable={false}
+        autoPlay={true}
         responsive={responsive}
         itemClass="px-4"
       >

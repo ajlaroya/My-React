@@ -1,40 +1,30 @@
 import React from "react";
 import moment from "moment";
-import Image from "next/image";
 import Link from "next/link";
+import { BsStars } from "react-icons/bs";
 
 const FeaturedPostCard = ({ post }) => (
-  <div className="relative h-72">
-    <div
-      className="absolute rounded-lg bg-center bg-no-repeat bg-cover shadow-md inline-block w-full h-72 opacity-80"
-      style={{ backgroundImage: `url('${post.featuredImage.url}')` }}
-    />
-    <div className="absolute rounded-lg w-full h-72" />
-    <div className="flex flex-col rounded-lg p-4 items-center justify-center absolute w-full h-full">
-      <p className="text-white mb-4 text-shadow font-semibold text-xs">
-        {moment(post.createdAt).format("MMM DD, YYYY")}
-      </p>
-      <p className="text-white mb-4 text-shadow font-semibold text-2xl text-center">
-        {post.title}
-      </p>
-      <div className="flex items-center absolute bottom-5 w-full justify-center">
-        <Image
-          unoptimized
-          alt={post.author.name}
-          height="30px"
-          width="30px"
-          className="align-middle drop-shadow-lg rounded-full"
-          src={post.author.photo.url}
-        />
-        <p className="inline align-middle text-white text-shadow ml-2 font-medium">
-          {post.author.name}
+  <Link href={`/post/${post.slug}`}>
+    <div className="relative h-72 bg-white rounded-lg">
+      <div className="bg-white absolute z-50 w-full h-full rounded-lg opacity-25 hover:opacity-0 ease-in-out duration-500 cursor-pointer"></div>
+      <div
+        className="absolute rounded-lg bg-center bg-no-repeat bg-cover inline-block w-full h-72"
+        style={{ backgroundImage: `url('${post.featuredImage.url}')` }}
+      />
+      <div className="flex flex-col rounded-lg p-4 items-center justify-center absolute w-full h-full">
+        <p className="mb-4 font-semibold text-xs">
+          {moment(post.createdAt).format("MMM DD, YYYY")}
         </p>
+        <p className="sari-sari mb-4 font-bold text-center">{post.title}</p>
+        <div className="flex absolute top-5 w-full">
+          <p className="inline ml-5 bg-black transparent p-1 rounded-full">
+            <BsStars className="text-white" />
+          </p>
+        </div>
       </div>
-    </div>
-    <Link href={`/post/${post.slug}`}>
       <span className="cursor-pointer absolute w-full h-full hover:bg-opacity-0" />
-    </Link>
-  </div>
+    </div>
+  </Link>
 );
 
 export default FeaturedPostCard;

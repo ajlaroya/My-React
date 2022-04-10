@@ -6,9 +6,11 @@ import Masonry from 'react-masonry-css'
 
 export default function Home({ posts }) {
   const breakpointColumnsObj = {
-    default: 4,
-    1100: 2,
+    default: 3,
+    1100: 3,
+    900: 2,
     700: 2,
+    600: 1,
     500: 1
   };
 
