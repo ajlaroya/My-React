@@ -1,6 +1,8 @@
 import React from "react";
 import moment from "moment";
 import Head from 'next/head'
+import { BsCalendarEvent } from "react-icons/bs";
+import Image from "next/image";
 
 const PostDetail = ({ post }) => {
   // renders different types of objects of post
@@ -67,11 +69,14 @@ const PostDetail = ({ post }) => {
         <title>{post.title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className="relative overflow-hidden shadow-md mb-6">
-        <img
+      <div className="relative overflow-hidden shadow mb-6 rounded-lg">
+        <Image
           src={post.featuredImage.url}
           alt={post.title}
-          className="object-top h-full w-full rounded-t-lg"
+          width="100%"
+          height="100%"
+          layout="responsive"
+          className="object-top h-full w-full"
         />
       </div>
       <div className="px-4 lg:px-0">
@@ -89,26 +94,13 @@ const PostDetail = ({ post }) => {
             </p>
           </div>
           <div className="font-medium text-gray-700">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 inline mr-2 text-pink-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
-            </svg>
+            <BsCalendarEvent className="h-6 w-6 inline mr-2 text-pink-400"/>
             <span className="align-middle">
               {moment(post.createdAt).format("MMM DD, YYYY")}
             </span>
           </div>
         </div>
-        <h1 className="mb-8 text-3xl font-semibold">{post.title}</h1>
+        <h1 className="sari-sari mb-8 text-3xl font-black">{post.title}</h1>
         {/* Loops over every type of content (images, paragraphs, etc..) */}
         {post.content.raw.children.map((typeObj, index) => {
           const children = typeObj.children.map((item, itemIndex) =>

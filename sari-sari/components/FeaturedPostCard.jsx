@@ -6,7 +6,7 @@ import { BsStars } from "react-icons/bs";
 const FeaturedPostCard = ({ post }) => (
   <Link href={`/post/${post.slug}`}>
     <div className="relative h-72 bg-white rounded-lg">
-      <div className="bg-white absolute z-50 w-full h-full rounded-lg opacity-25 hover:opacity-0 ease-in-out duration-500 cursor-pointer"></div>
+      <div className="bg-white absolute z-50 w-full h-full rounded-lg opacity-25 hover:opacity-0 ease-in-out duration-500 cursor-pointer hover:scale-125"></div>
       <div
         className="absolute rounded-lg bg-center bg-no-repeat bg-cover inline-block w-full h-72"
         style={{ backgroundImage: `url('${post.featuredImage.url}')` }}
@@ -22,7 +22,6 @@ const FeaturedPostCard = ({ post }) => (
           </p>
         </div>
       </div>
-      <span className="cursor-pointer absolute w-full h-full hover:bg-opacity-0" />
     </div>
   </Link>
 );

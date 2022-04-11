@@ -62,8 +62,7 @@ const FeaturedPosts = () => {
         ssr={true} // means to render carousel on server-side.
         infinite={true}
         swipeable={true}
-        draggable={false}
-        autoPlay={true}
+        draggable={true}
         responsive={responsive}
         itemClass="px-4"
       >
