@@ -16,7 +16,7 @@ const CategoryPost = ({ posts }) => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-12">
         <div className="col-span-1 lg:col-span-8">
           {posts.map((post, index) => (
-            <div className="mb-8">
+            <div key={index} className="mb-8">
               <PostCard key={index} post={post.node} />
             </div>
           ))}
