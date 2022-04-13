@@ -69,6 +69,8 @@ const PostDetail = ({ post }) => {
         <title>{post.title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
+      
+      <h1 className="sari-sari pt-4 lg:pt-0 mb-8 text-2xl lg:text-4xl font-black text-center">{post.title}</h1>
       <div className="relative overflow-hidden shadow mb-6 rounded-lg">
         <Image
           src={post.featuredImage.url}
@@ -89,18 +91,17 @@ const PostDetail = ({ post }) => {
               width="30px"
               className="align-middle rounded-full"
             />
-            <p className="inline align-middle text-gray-700 ml-2 text-lg">
+            <p className="inline align-middle font-medium text-gray-700 ml-2 text-lg">
               {post.author.name}
             </p>
           </div>
           <div className="font-medium text-gray-700">
-            <BsCalendarEvent className="h-6 w-6 inline mr-2 text-pink-400"/>
+            <BsCalendarEvent className="h-6 w-6 inline mr-2 text-gray-500"/>
             <span className="align-middle">
               {moment(post.createdAt).format("MMM DD, YYYY")}
             </span>
           </div>
         </div>
-        <h1 className="sari-sari mb-8 text-3xl font-black">{post.title}</h1>
         {/* Loops over every type of content (images, paragraphs, etc..) */}
         {post.content.raw.children.map((typeObj, index) => {
           const children = typeObj.children.map((item, itemIndex) =>

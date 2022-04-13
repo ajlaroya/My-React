@@ -23,7 +23,14 @@ const PostCard = ({ post }) => {
           <h3 className="text-gray-700 mb-2">
             {moment(post.createdAt).format("MMM DD, YYYY")}
           </h3>
-          <p className="text-gray-700 mb-2">{post.excerpt}</p>
+          <p className="text-gray-700">{post.excerpt}</p>
+        </div>
+        <div className="px-5 pb-3">
+          {post.categories.map((category, index) => (
+            <span key={index} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+              #{category.name}
+            </span>
+          ))}
         </div>
       </div>
     </Link>
