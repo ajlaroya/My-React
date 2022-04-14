@@ -9,7 +9,7 @@ const FeaturedPostCard = ({ post }) => (
     <div className="relative h-72 bg-white rounded-lg">
       <div className="bg-white absolute z-50 w-full h-full rounded-lg opacity-25 hover:opacity-0 ease-in-out duration-500 cursor-pointer hover:scale-125"></div>
       <div className="absolute rounded-lg w-full h-full">
-      <Image
+        <Image
           src={post.featuredImage.url}
           alt={post.title}
           layout="fill"

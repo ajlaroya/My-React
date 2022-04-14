@@ -1,6 +1,6 @@
 import React from "react";
 import moment from "moment";
-import Head from 'next/head'
+import Head from "next/head";
 import { BsCalendarEvent } from "react-icons/bs";
 import Image from "next/image";
 
@@ -69,8 +69,10 @@ const PostDetail = ({ post }) => {
         <title>{post.title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      
-      <h1 className="sari-sari pt-4 lg:pt-0 mb-8 text-2xl lg:text-4xl font-black text-center">{post.title}</h1>
+
+      <h1 className="sari-sari pt-4 px-4 lg:pt-0 mb-8 text-2xl lg:text-4xl font-black text-center">
+        {post.title}
+      </h1>
       <div className="relative overflow-hidden shadow mb-6 rounded-lg">
         <Image
           src={post.featuredImage.url}
@@ -96,7 +98,7 @@ const PostDetail = ({ post }) => {
             </p>
           </div>
           <div className="font-medium text-gray-700">
-            <BsCalendarEvent className="h-6 w-6 inline mr-2 text-gray-500"/>
+            <BsCalendarEvent className="h-6 w-6 inline mr-2 text-gray-500" />
             <span className="align-middle">
               {moment(post.createdAt).format("MMM DD, YYYY")}
             </span>

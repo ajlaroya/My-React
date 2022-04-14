@@ -1,8 +1,8 @@
-import Head from 'next/head'
-import { PostCard, Categories, PostWidget } from '../components'
-import { getPosts } from '../services'
-import { FeaturedPosts } from '../sections'
-import Masonry from 'react-masonry-css'
+import Head from "next/head";
+import { PostCard, Categories, PostWidget } from "../components";
+import { getPosts } from "../services";
+import { FeaturedPosts } from "../sections";
+import Masonry from "react-masonry-css";
 
 export default function Home({ posts }) {
   const breakpointColumnsObj = {
@@ -11,7 +11,7 @@ export default function Home({ posts }) {
     900: 2,
     700: 2,
     600: 1,
-    500: 1
+    500: 1,
   };
 
   return (
@@ -22,33 +22,23 @@ export default function Home({ posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <FeaturedPosts />
-      {/* <div className="grid grid-cols-1 lg:grid-cols-12 gap-12"> */}
-        {/* <div className="lg:col-span-8 col-span-1"> */}
-          <Masonry
-            breakpointCols={breakpointColumnsObj}
-            className="my-masonry-grid"
-            columnClassName="my-masonry-grid_column">
-          {posts.map((post, index) => (
-            <PostCard post={post.node} key={index}/>
-          ))}          
-          </Masonry>
-
-        {/* </div> */}
-        {/* <div className="lg:col-span-4 col-span-1">
-            <div className="lg:sticky relative top-8">
-              <PostWidget />
-              <Categories />
-            </div>
-        </div> */}
-      {/* </div> */}
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="my-masonry-grid"
+        columnClassName="my-masonry-grid_column"
+      >
+        {posts.map((post, index) => (
+          <PostCard post={post.node} key={index} />
+        ))}
+      </Masonry>
     </div>
-  )
+  );
 }
 
 export async function getStaticProps() {
   const posts = (await getPosts()) || [];
 
   return {
-    props: { posts }
-  }
+    props: { posts },
+  };
 }
