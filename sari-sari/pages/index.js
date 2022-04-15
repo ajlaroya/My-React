@@ -35,8 +35,10 @@ export default function Home({ posts }) {
         <meta name="robots" content="index, follow" />
         <meta name="language" content="English" />
         <meta name="author" content="Arthur Laroya" />
+        <meta name="theme-color" content="#818cf8" />
         <link rel="icon" href="/favicon.ico" />
-
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icon.png"></link>
         {/* Global Site Tag (gtag.js) - Google Analytics */}
         <script
           async
