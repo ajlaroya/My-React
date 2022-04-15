@@ -3,7 +3,6 @@ import moment from "moment";
 import Head from "next/head";
 import { BsCalendarEvent } from "react-icons/bs";
 import Image from "next/image";
-import parse from "html-react-parser";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 
 const PostDetail = ({ post }) => {
@@ -30,7 +29,7 @@ const PostDetail = ({ post }) => {
       <div className="px-4 lg:px-0">
         <div className="flex items-center mb-4 w-full">
           <div className="flex items-center mb-4 lg:mb-0 w-full lg:w-auto mr-8">
-            <img
+            <Image
               src={post.author.photo.url}
               alt={post.author.name}
               height="30px"
@@ -48,8 +47,6 @@ const PostDetail = ({ post }) => {
             </span>
           </div>
         </div>
-        {/* Loops over every type of content (images, paragraphs, etc..) */}
-        {console.log(post.content.raw)}
         <RichText
           content={post.content.raw}
           renderers={{

@@ -18,7 +18,7 @@ const Header = () => {
     <div className="container mx-auto px-10 mb-8">
       <div className="border-b w-full inline-block border-slate-200 py-6">
         <div className="md:float-left block">
-          <Link href="/">
+          <Link passHref href="/">
             <span className="sari-sari cursor-pointer font-black text-3xl text-white inline-flex gap-x-3 items-center transition duration-500 hover:scale-110">
               <Image src={sari} alt="logo" height={30} width={30} />
               sári-sarì
@@ -27,7 +27,7 @@ const Header = () => {
         </div>
         <div className="hidden md:float-left md:contents">
           {categories.map((category) => (
-            <Link key={category.slug} href={`/category/${category.slug}`}>
+            <Link passHref key={category.slug} href={`/category/${category.slug}`}>
               <span className="md:float-right mt-2 align-middle sari-sari text-white ml-4 font-semibold cursor-pointer transform transition duration-500 hover:translate-y-1">
                 {category.name}
               </span>
