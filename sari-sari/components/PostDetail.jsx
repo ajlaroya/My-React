@@ -3,66 +3,10 @@ import moment from "moment";
 import Head from "next/head";
 import { BsCalendarEvent } from "react-icons/bs";
 import Image from "next/image";
+import parse from "html-react-parser";
+import { RichText } from "@graphcms/rich-text-react-renderer";
 
 const PostDetail = ({ post }) => {
-  // renders different types of objects of post
-  const getContentFragment = (index, text, obj, type) => {
-    let modifiedText = text;
-
-    if (obj) {
-      if (obj.bold) {
-        modifiedText = <b key={index}>{text}</b>;
-      }
-
-      if (obj.italic) {
-        modifiedText = <em key={index}>{text}</em>;
-      }
-
-      if (obj.underline) {
-        modifiedText = <u key={index}>{text}</u>;
-      }
-    }
-
-    switch (type) {
-      case "heading-three":
-        return (
-          <h3 key={index} className="text-xl font-semibold mb-4">
-            {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
-            ))}
-          </h3>
-        );
-      case "paragraph":
-        return (
-          <p key={index} className="mb-8">
-            {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
-            ))}
-          </p>
-        );
-      case "heading-four":
-        return (
-          <h4 key={index} className="text-md font-semibold mb-4">
-            {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
-            ))}
-          </h4>
-        );
-      case "image":
-        return (
-          <img
-            key={index}
-            alt={obj.title}
-            height={obj.height}
-            width={obj.width}
-            src={obj.src}
-          />
-        );
-      default:
-        return modifiedText;
-    }
-  };
-
   return (
     <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
       <Head>
@@ -84,7 +28,7 @@ const PostDetail = ({ post }) => {
         />
       </div>
       <div className="px-4 lg:px-0">
-        <div className="flex items-center mb-8 w-full">
+        <div className="flex items-center mb-4 w-full">
           <div className="flex items-center mb-4 lg:mb-0 w-full lg:w-auto mr-8">
             <img
               src={post.author.photo.url}
@@ -105,13 +49,24 @@ const PostDetail = ({ post }) => {
           </div>
         </div>
         {/* Loops over every type of content (images, paragraphs, etc..) */}
-        {post.content.raw.children.map((typeObj, index) => {
-          const children = typeObj.children.map((item, itemIndex) =>
-            getContentFragment(itemIndex, item.text, item)
-          );
-
-          return getContentFragment(index, children, typeObj, typeObj.type);
-        })}
+        {console.log(post.content.raw)}
+        <RichText
+          content={post.content.raw}
+          renderers={{
+            h1: ({ children }) => (
+              <h1 className="text-2xl font-bold">{children}</h1>
+            ),
+            bold: ({ children }) => <strong>{children}</strong>,
+            ul: ({ children }) => (
+              <ul className="list-disc list-inside leading-loose">
+                {children}
+              </ul>
+            ),
+            p: ({ children }) => (
+              <p className="text-base leading-loose py-1">{children}</p>
+            ),
+          }}
+        />
       </div>
     </div>
   );
