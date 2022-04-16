@@ -6,8 +6,8 @@ import { BsStars } from "react-icons/bs";
 
 const FeaturedPostCard = ({ post }) => (
   <Link passHref href={`/post/${post.slug}`}>
-    <div className="relative h-72 bg-white rounded-lg">
-      <div className="bg-white absolute z-50 w-full h-full rounded-lg opacity-25 hover:opacity-0 ease-in-out duration-500 cursor-pointer hover:scale-125"></div>
+    <div className="relative h-72 dark:opacity-80 rounded-lg">
+      <div className="bg-white dark:bg-gray-900 absolute z-50 w-full h-full rounded-lg opacity-20 hover:opacity-0 ease-in-out duration-500 cursor-pointer"></div>
       <div className="absolute rounded-lg w-full h-full">
         <Image
           src={post.featuredImage.url}

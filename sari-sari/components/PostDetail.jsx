@@ -7,7 +7,7 @@ import { RichText } from "@graphcms/rich-text-react-renderer";
 
 const PostDetail = ({ post }) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
+    <div className="bg-white dark:bg-gray-900 dark:text-gray-200 shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
       <Head>
         <title>{post.title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -36,12 +36,12 @@ const PostDetail = ({ post }) => {
               width="30px"
               className="align-middle rounded-full"
             />
-            <p className="inline align-middle font-medium text-gray-700 ml-2 text-lg">
+            <p className="inline align-middle font-medium text-gray-700 dark:text-gray-200 ml-2 text-lg">
               {post.author.name}
             </p>
           </div>
-          <div className="font-medium text-gray-700">
-            <BsCalendarEvent className="h-6 w-6 inline mr-2 text-gray-500" />
+          <div className="font-medium text-gray-700 dark:text-gray-200">
+            <BsCalendarEvent className="h-6 w-6 inline mr-2 text-gray-800 dark:text-gray-200" />
             <span className="align-middle">
               {moment(post.createdAt).format("MMM DD, YYYY")}
             </span>
