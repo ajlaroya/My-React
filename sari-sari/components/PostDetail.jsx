@@ -62,6 +62,12 @@ const PostDetail = ({ post }) => {
             p: ({ children }) => (
               <p className="text-base leading-loose py-1">{children}</p>
             ),
+            pre: ({ children }) => (
+              <pre style="background-color: #EBECE4">{children}</pre>
+            ),
+            code: ({ children }) => (
+              <code className="bg-gray-300">{children}</code>
+            ),
           }}
         />
       </div>
