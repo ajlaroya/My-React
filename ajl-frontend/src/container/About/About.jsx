@@ -19,8 +19,8 @@ const About = () => {
   return (
     <>
       <h2 className="head-text">
-        I Know That <span> Good Design </span>
-        <br /> means <span style={{ color: "#51DA7F"}}>Good Business</span>
+        Full-time <span> worker </span>
+        <br /> coding in my <span style={{ color: "#51DA7F"}}>spare time</span>
       </h2>
 
       <div className="app__profiles">
