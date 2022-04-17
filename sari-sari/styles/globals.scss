@@ -74,3 +74,17 @@ a {
   min-width: 30px !important;
   min-height: 30px !important;
 }
+
+pre {
+  display: block;
+  background-color: #cbd5e1;
+  color: #0f172a;
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  max-width: 100%;
+  min-width: 100px;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 0.3em;
+}

@@ -51,7 +51,7 @@ const PostDetail = ({ post }) => {
           content={post.content.raw}
           renderers={{
             h1: ({ children }) => (
-              <h1 className="text-2xl font-bold">{children}</h1>
+              <h1 className="text-2xl font-bold py-3">{children}</h1>
             ),
             bold: ({ children }) => <strong>{children}</strong>,
             ul: ({ children }) => (
@@ -62,11 +62,8 @@ const PostDetail = ({ post }) => {
             p: ({ children }) => (
               <p className="text-base leading-loose py-1">{children}</p>
             ),
-            pre: ({ children }) => (
-              <pre style="background-color: #EBECE4">{children}</pre>
-            ),
             code: ({ children }) => (
-              <code className="bg-gray-300">{children}</code>
+              <code className="bg-gray-200 text-gray-800 border rounded-lg p-1">{children}</code>
             ),
           }}
         />
