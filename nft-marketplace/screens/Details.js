@@ -71,7 +71,7 @@ const Details = ({ route, navigation }) => {
                     color: COLORS.primary,
                   }}
                 >
-                  Current Bid
+                  Current Bids
                 </Text>
               )}
             </View>
