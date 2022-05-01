@@ -16,7 +16,7 @@ const Features = () => {
       <div className={`${styles.subSection} flex-col text-center`}>
         <div>
           <h1 className={`${styles.h1Text} ${styles.whiteText}`}>Technologies</h1>
-          <p className={`${styles.pText} ${styles.whiteText}`}>Nftinity has been develoepd using a cross-platform technology, React Native.</p>
+          <p className={`${styles.pText} ${styles.whiteText}`}>NFTinity has been developed using the cross-platform technology, <strong>React Native.</strong></p>
         </div>
         <div className={`${styles.flexWrap}`}>
           <FeatureCard iconUrl={assets.react} iconText="React Native" />
