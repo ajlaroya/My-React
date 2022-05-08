@@ -66,8 +66,8 @@ width: 100%;
     margin-left: 6px;
 }
 .logo{
-  color: gray;
-  font-size: 18px;
+  color: rgb(98, 97, 97);
+  font-size: 20px;
 
 }
 .cart-icon{
@@ -213,7 +213,7 @@ text-align: end;
 }
 .footer-banner-container{
   padding: 100px 40px;
-  background-color: #f02d34;
+  background-color: rgba(0, 0, 0, 0.883);
   border-radius: 15px;
   position: relative;
   height: 400px;

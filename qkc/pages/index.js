@@ -1,5 +1,4 @@
 import React from "react";
-import Head from "next/head";
 
 import { client } from "../lib/client";
 import { Product, FooterBanner, HeroBanner } from "../components";
@@ -7,12 +6,6 @@ import { Product, FooterBanner, HeroBanner } from "../components";
 const Home = ({ products, bannerData }) => {
   return (
     <div>
-      <Head>
-        <title>Quiet Kids Club</title>
-        <meta name="description" content="Quiet Kids Club apparel" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
 
       <div className="products-heading">
@@ -21,10 +14,10 @@ const Home = ({ products, bannerData }) => {
       </div>
 
       <div className="products-container">
-        {products?.map((product) => product.name)}
+        {products?.map((product) => <Product key={product.id} product={product} />)}
       </div>
 
-      <FooterBanner />
+      <FooterBanner footerBanner={bannerData && bannerData[0]} />
     </div>
   );
 
