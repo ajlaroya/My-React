@@ -13,10 +13,10 @@ const Member: React.FC<Props> = ({ id, name, socialId, link }) => {
   return (
     <div>
       <Image
-        src={`/assets/ajl_face_${id}.svg`}
+        src={`/assets/ajl_face_${id}.png`}
         alt={name}
-        width={400}
-        height={400}
+        width={250}
+        height={300}
       />
       <div className="text-2xl xl:text-3xl">{name}</div>
       <div className="text-xl">
