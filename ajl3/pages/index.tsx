@@ -20,6 +20,7 @@ const Home: NextPage = () => {
       <AboutUs />
       <Skills />
       <Works />
+      <AboutUs />
     </div>
   )
 }

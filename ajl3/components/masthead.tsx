@@ -34,7 +34,7 @@ const Masthead: React.FC = () => {
         className="absolute w-full h-full object-cover"
       >
         {/* <source src="/assets/masthead-bg.mp4" type="video/mp4; codecs=hvc1" /> */}
-        <source src="/assets/masthead-bg1.webm" type="video/webm; codecs=vp9" />
+        <source src="/assets/masthead-blue-bg.webm" type="video/webm; codecs=vp9" />
       </video>
       <div className={`flex-grow-0 pt-10 transition-opacity duration-1000 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}>
         <Image
