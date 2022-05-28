@@ -25,24 +25,22 @@ export const WorkLeft: React.FC<Props> = ({ children, progress }) => {
   return (
     <div
       className="flex flex-col items-center justify-center text-3xl lg:text-3xl h-[30vh] lg:h-auto"
-      style={{ 
-        transform: `translateY(${translateY}px)` 
+      style={{
+        transform: `translateY(${translateY}px)`,
       }}
     >
-      <div className="leading-10">
-        {children}
-      </div>
+      <div className="leading-10">{children}</div>
     </div>
   );
 };
 
 export const WorkRight: React.FC<Props> = ({ children, progress }) => {
-  let translateY = Math.max(-50, -(progress - 0.5) * 50)
+  let translateY = Math.max(-50, -(progress - 0.5) * 50);
   return (
     <div
       className="flex flex-1 lg:items-center justify-center h-screen"
-      style={{ 
-        transform: `translateY(${translateY}px)` 
+      style={{
+        transform: `translateY(${translateY}px)`,
       }}
     >
       <div className="w-full max-w-md pt-10 lg:pt-0 px-10 md:px-0">
@@ -51,3 +49,16 @@ export const WorkRight: React.FC<Props> = ({ children, progress }) => {
     </div>
   );
 };
+
+interface LinkProps {
+  href: string;
+  children: React.ReactNode;
+}
+
+export const WorkLink: React.FC<LinkProps> = ({ href, children }) => (
+  <Link href={href}>
+    <a target="_blank" rel="noreferrer" className="underline underline-offset-8 decoration-1">
+      {children}
+    </a>
+  </Link>
+);
