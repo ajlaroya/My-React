@@ -12,7 +12,7 @@ const Skills: React.FC = () => {
   const { scrollY } = useContext(ScrollContext);
   const refContainer = useRef<HTMLDivElement>(null);
 
-  const numOfPages = 3;
+  const numOfPages = 4;
   let progress = 0;
 
   const { current: elContainer } = refContainer;
@@ -32,14 +32,14 @@ const Skills: React.FC = () => {
     <div ref={refContainer} className="bg-black text-white">
       <div className="min-h-screen max-w-5xl mx-auto px-10 lg:px-20 py-24 md:py-28 lg:py-36 flex flex-col justify-center items-center text-4xl md:text-6xl lg:text-7xl tracking-tight font-semibold">
         <div className="leading-[1.15]">
-          <div
+          <span
             className={styles.skillText}
             style={{
               opacity: opacityForBlock(progress, 0),
             }}
           >
             I know my tools inside out.
-          </div>
+          </span>
           <span
             className={`${styles.skillText} inline-block after:content-['_']`}
             style={{
@@ -50,9 +50,18 @@ const Skills: React.FC = () => {
             wide variety of different technologies
           </span>
           <span
-            className={`${styles.skillText} inline-block`}
+            className={`${styles.skillText} inline-block after:content-['_']`}
             style={{
               opacity: opacityForBlock(progress, 2),
+            }}
+          >
+            I have created <strong>12</strong> different web projects, using a
+            wide variety of different technologies
+          </span>
+          <span
+            className={`${styles.skillText} inline-block`}
+            style={{
+              opacity: opacityForBlock(progress, 3),
             }}
           >
             Over <strong>370+</strong> git contributions in the last year

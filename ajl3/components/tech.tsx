@@ -1,0 +1,25 @@
+import React from 'react'
+import DevLogos from './dev-logos'
+import Testimonials from './testimonials'
+
+const Tech: React.FC = () => (
+    <section className="bg-white min-h-screen flex flex-col justify-center gap-16 md:gap-32">
+        <div className="flex-1"></div>
+        <div className="flex flex-col justify-center items-center">
+            <h3 className="text-xl mb-10 font-bold text-center">
+                <span className="whitespace-nowrap">Technology used</span>{' '}
+                <span className="whitespace-nowrap">by yours truly</span>
+            </h3>
+            <DevLogos />
+        </div>
+        <div className="flex flex-col justify-center items-center">
+            <div className="container mx-auto lg:max-w-[70%] lg:px-10">
+                <h3 className="text-3xl lg:text-4xl tracking-tight text-center px-10 !leading-[2em]">I believe in clean, responsive design with optimal, efficient yet swift user experience</h3>
+            </div>
+        </div>
+        <Testimonials />
+        <div className="flex-1 bg-black"></div>
+    </section>
+)
+
+export default Tech

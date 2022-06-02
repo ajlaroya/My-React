@@ -33,8 +33,7 @@ const Masthead: React.FC = () => {
         playsInline
         className="absolute w-full h-full object-cover"
       >
-        {/* <source src="/assets/masthead-bg.mp4" type="video/mp4; codecs=hvc1" /> */}
-        <source src="/assets/masthead-blue-bg.webm" type="video/webm; codecs=vp9" />
+        <source src="/assets/paint.webm" type="video/webm; codecs=vp9" />
       </video>
       <div className={`flex-grow-0 pt-10 transition-opacity duration-1000 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}>
         <Image
@@ -45,7 +44,7 @@ const Masthead: React.FC = () => {
         />
       </div>
       <div className="p-12 font-bold z-10 text-white drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] text-center flex-1 flex items-center justify-center flex-col">
-        <h1 className="mb-6 text-4xl xl:text-5xl">Arthur Laroya</h1>
+        <h1 className="mb-6 text-4xl xl:text-5xl">👋 Arthur Laroya</h1>
         <h2 className="mb-2 text-2xl xl:text-3xl tracking-tight">
           <span>Full-stack web development</span> <span>done right.</span>
         </h2>

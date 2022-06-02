@@ -2,6 +2,7 @@ import React from 'react'
 import { Tile, TileBackground, TileContent, TileWrapper } from './tile'
 import { WorkBackground, WorkContainer, WorkLeft, WorkLink, WorkRight } from './work'
 import Image from 'next/image';
+import { SiBootstrap, SiDjango, SiHeroku } from 'react-icons/si'
 
 const Works = () => {
   return (
@@ -15,11 +16,25 @@ const Works = () => {
                 renderContent={({ progress }) => (
                     <WorkContainer progress={0}>
                         <WorkLeft progress={progress}>
-                            <div>I built</div>
-                            <div className="text-4xl md:text-5xl font-semibold tracking-tight">
+                        <div className="-mx-8 overflow-hidden">
+
+                            <div className="my-8 px-8 w-full overflow-hidden">
+                                <div className="text-4xl md:text-5xl font-semibold tracking-tight">
                                 <WorkLink href="https://mysarisari.herokuapp.com/">sari sari ✨</WorkLink>
+                                </div>
+                                <div>my first website & blog</div>
                             </div>
-                            <div>my very first site & blog</div>
+
+                            <div className="my-8 px-8 w-full overflow-hidden ">
+                                <div className="flex flex-row space-x-4">
+                                    <div><SiDjango /></div>
+                                    <div><SiBootstrap /></div>
+                                    <div><SiHeroku /></div>
+                                </div>
+                            </div>
+
+                        </div>
+                            
                         </WorkLeft>
                         <WorkRight progress={progress}>
                             <Image 
@@ -40,11 +55,16 @@ const Works = () => {
                 renderContent={({ progress }) => (
                     <WorkContainer progress={0}>
                         <WorkLeft progress={progress}>
-                            <div>I remastered</div>
                             <div className="text-4xl md:text-5xl font-semibold tracking-tight">
-                                <WorkLink href="https://sari-sari.vercel.app/">sari sari into v2 💎</WorkLink>
+                                <WorkLink href="https://sari-sari.vercel.app/">sari sari v2 💎</WorkLink>
                             </div>
                             <div>(now with dark mode!)</div>
+
+                            <div className="flex flex-row space-x-4">
+                                    <div><SiDjango /></div>
+                                    <div><SiBootstrap /></div>
+                                    <div><SiHeroku /></div>
+                                </div>
                         </WorkLeft>
                         <WorkRight progress={progress}>
                             <Image 

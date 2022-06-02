@@ -12,7 +12,7 @@ const AboutUs: React.FC = () => {
         </p>
       </div>
       <div className='container mx-auto px-11 text-center mt-28'>
-        <h2>Homemade Web Dev</h2>
+        <h2>Indie Web Dev</h2>
         <div className='mt-2'>from Melbourne, AU</div>
         <div className='mt-5 grid grid-cols-1'>
             <Member id='arthur' name='Arthur' socialId='@ajlaroya' link="https://github.com/ajlaroya" />
