@@ -1,9 +1,10 @@
 import React from 'react'
 import DevLogos from './dev-logos'
 import Testimonials from './testimonials'
+import styles from '../styles/tech.module.css'
 
 const Tech: React.FC = () => (
-    <section className="bg-white min-h-screen flex flex-col justify-center gap-16 md:gap-32">
+    <section className={`bg-white min-h-screen flex flex-col justify-center gap-16 md:gap-32 ${styles.bg}`}>
         <div className="flex-1"></div>
         <div className="flex flex-col justify-center items-center">
             <h3 className="text-xl mb-10 font-bold text-center">
