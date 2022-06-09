@@ -20,12 +20,13 @@ import {
   ColorPicker,
   ColorMapping,
   Editor,
+  Line
 } from "./pages";
 
 import "./App.css";
 
 const App = () => {
-  const activeMenu = false;
+  const activeMenu = true;
 
   return (
     <div>
