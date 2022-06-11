@@ -20,7 +20,7 @@ const About = () => {
     <>
       <h2 className="head-text">
         Full-time <span> worker </span>
-        <br /> coding in my <span style={{ color: "#51DA7F"}}>spare time</span>
+        <br /> Part-time<span style={{ color: "#51DA7F"}}> Programmer</span>
       </h2>
 
       <div className="app__profiles">

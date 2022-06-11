@@ -1,5 +1,5 @@
 import email from '../assets/email.webp';
-import mobile from '../assets/mobile.webp';
+import mobile from '../assets/mobile.png';
 import python from '../assets/python.svg';
 import react from '../assets/react.svg';
 import django from '../assets/django.svg';
