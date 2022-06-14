@@ -20,7 +20,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 );
 
 const Navbar = () => {
-  const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize, currentColor } = useStateContext();
+  const { activeMenu, setActiveMenu, isClicked, handleClick, screenSize, setScreenSize, currentColor } = useStateContext();
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
@@ -40,11 +40,13 @@ const Navbar = () => {
     }
   }, [screenSize])
 
+  const handleActiveMenu = () => setActiveMenu(!activeMenu);
+
   return (
     <div className="flex justify-between p-2 md:mx-6 relative">
       <NavButton
         title="Menu"
-        customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
+        customFunc={handleActiveMenu}
         color={currentColor}
         icon={<AiOutlineMenu />}
       />
@@ -80,8 +82,8 @@ const Navbar = () => {
           >
             <img src={avatar} alt="avatar" className="rounded-full object-cover w-8 h-8" />
             <p>
-              <span className="text-gray-600 text-14">Hi, </span> {' '}
-              <span className="text-gray-600 font-bold ml-1 text-14">Arthur</span>
+              <span className="text-gray-600 dark:text-slate-200 text-14">Hi, </span> {' '}
+              <span className="text-gray-600 dark:text-slate-200 font-bold ml-1 text-14">Arthur</span>
             </p>
             <MdKeyboardArrowDown className="text-gray-400 text-14"/>
           </div>
