@@ -6,11 +6,11 @@ import django from '../assets/django.svg';
 
 import circle from '../assets/circle.svg';
 import box1 from '../assets/box1.svg';
-import peep from '../assets/peep.svg'
+import avatar from '../assets/juicy.webp'
 
 export default {
   django,
-  peep,
+  avatar,
   box1,
   email,
   mobile,
