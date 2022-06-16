@@ -17,7 +17,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Josefin Sans"],
+    fontFamily: ["Plus Jakarta Sans"],
   }
 });
 
