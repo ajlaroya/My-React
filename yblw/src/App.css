@@ -71,7 +71,6 @@ body {
     height: 445px;
     background: #fff;
     border-top: 4px solid #FF2625;
-    border-bottom-left-radius: 20px;
     text-decoration: none;
     display: flex;
     justify-content: space-between;
@@ -79,10 +78,13 @@ body {
     padding-bottom: 10px;
     transform: scale(1, 1);
     transition: 0.3s all ease-in-out;
+    border-radius: 30px;
+    box-shadow: 5px 5px 12px #dedede, -5px -5px 12px #ffffff;
   }
   
   .exercise-card img {
-    height: 326px;
+    height: 325px;
+    border-radius: 30px;
   }
   
   .bodyPart-card {
