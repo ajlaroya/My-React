@@ -42,8 +42,8 @@ const Detail = ({ exerciseDetail }) => {
           more efficiently? {name} to the rescue! {name} is a key component of{" "}
           {target}, overall health and fitness for everyone.
         </Typography>
-        {extraDetail.map((item) => (
-          <Stack key={item.name} direction="row" gap="24px" alignItems="center">
+        {extraDetail.map((item, index) => (
+          <Stack key={index} direction="row" gap="24px" alignItems="center">
             <Button
               sx={{
                 background: "#fff2db",
