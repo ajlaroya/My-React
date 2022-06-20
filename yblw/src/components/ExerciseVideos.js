@@ -1,8 +1,9 @@
 import React from 'react'
 import { Box, Stack, Typography } from '@mui/material'
+import Loader from './Loader'
 
 const ExerciseVideos = ({ exerciseVideos, name }) => {
-  if(!exerciseVideos.length) return 'Loading...'
+  if(!exerciseVideos.length) return <Loader />
 
   return (
     <Box
@@ -10,10 +11,16 @@ const ExerciseVideos = ({ exerciseVideos, name }) => {
       p="20px"
     >
       <Typography
-        variant="h4"
+        sx={{
+          fontSize: { lg: "44px", xs: "25px" },
+          ml: "20px",
+          mt: { lg: "100px", xs: "60px" },
+        }}
+        fontWeight={700}
+        color="#000"
         mb="33px"
       >
-        Watch <span style={{ color: '#ff2625', textTransform: 'capitalize', fontWeight: 'bold' }}>{name}</span> exercise videos!
+        Watch <span style={{ color: '#FF5349', textTransform: 'capitalize', fontWeight: 'bold' }}>{name}</span> exercise videos!
       </Typography>
       <Stack
         justifyContent="flex-start"
