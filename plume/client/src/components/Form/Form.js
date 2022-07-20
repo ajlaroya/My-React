@@ -39,8 +39,8 @@ const Form = ({ currentId, setCurrentId }) => {
 
   if(!user?.result?.name) {
     return (
-      <Paper className={classes.paper}>
-        <Typography variant="h6" align="center">
+      <Paper className={classes.paper} elevation={3}>
+        <Typography variant="h6" align="center" style={{fontWeight: 400}}>
           Please sign in to create your own plumes and like other's plumes!
         </Typography>
       </Paper>
@@ -58,15 +58,15 @@ const Form = ({ currentId, setCurrentId }) => {
   };
 
   return (
-    <Paper className={classes.paper}>
+    <Paper className={classes.paper} elevation={3}>
       <form
         autoComplete="off"
         noValidate
         className={`${classes.form} ${classes.root}`}
         onSubmit={handleSubmit}
       >
-        <Typography variant="h4">
-          {currentId ? "Editing" : "Creating"} a Plume
+        <Typography className={classes.title} variant="h5">
+          {currentId ? "Edit" : "Create"} a Plume
         </Typography>
         <TextField
           name="title"

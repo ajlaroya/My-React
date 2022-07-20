@@ -21,4 +21,8 @@ export default makeStyles((theme) => ({
   buttonSubmit: {
     marginBottom: 10,
   },
+  title: {
+    letterSpacing: -1,
+    fontWeight: 600,
+  }
 }));

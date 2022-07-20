@@ -146,7 +146,7 @@ const Auth = () => {
             render={(renderProps) => (
               <Button
                 className={classes.googleButton}
-                color="primary"
+                color="secondary"
                 fullWidth
                 onClick={renderProps.onClick}
                 disabled={renderProps.disabled}

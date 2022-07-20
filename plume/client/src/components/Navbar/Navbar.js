@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 import decode from 'jwt-decode';
 import { useNavigate, useLocation } from 'react-router-dom'
 
+import logo from '../../images/shape-10.svg';
 import useStyles from "./styles";
 
 const Navbar = () => {
@@ -36,7 +37,7 @@ const Navbar = () => {
   
 
   return (
-    <AppBar className={classes.appBar} position="static" color="inherit">
+    <AppBar className={classes.appBar} elevation={3} position="static" color="inherit">
       <div className={classes.brandContainer}>
         <Link style={{textDecoration: 'none'}} to="/">
           <Typography
@@ -44,12 +45,11 @@ const Navbar = () => {
             variant="h2"
             align="center"
           >
-            Plume{" "}
-            <span role="image" aria-label="plume" className={classes.image}>
-              🦚
-            </span>
+            Plume
           </Typography>
         </Link>
+        
+        <img className={classes.image} src={logo} alt="icon" height="30" />
       </div>
       <Toolbar className={classes.toolbar}>
         {user ? (
