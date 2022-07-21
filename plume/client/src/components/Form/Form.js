@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
+import AddIcon from "@material-ui/icons/Add";
 import FileBase from "react-file-base64";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
@@ -94,15 +95,22 @@ const Form = ({ currentId, setCurrentId }) => {
           value={postData.tags}
           onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })}
         />
-        <div className={classes.fileInput}>
+        <Button
+          className={classes.buttonSubmit}
+          variant="contained"
+          color="primary"
+          size="large"
+          fullWidth
+        >
+          <AddIcon /> Upload a pic
           <FileBase
             type="file"
             multiple={false}
             onDone={({ base64 }) =>
-              setPostData({ ...postData, selectedFile: base64 })
+            setPostData({ ...postData, selectedFile: base64 })
             }
           />
-        </div>
+        </Button>
         <Button
           className={classes.buttonSubmit}
           variant="contained"

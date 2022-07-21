@@ -18,7 +18,7 @@ const theme = createTheme({
       main: "#000000",
     },
     secondary: {
-      main: 'hsl(245, 100%, 75%)',
+      main: '#7b68ee',
     },
   },
   shape: {

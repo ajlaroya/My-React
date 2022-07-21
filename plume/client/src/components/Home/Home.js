@@ -12,7 +12,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
 import ChipInput from "material-ui-chip-input";
 
-import { getPosts } from "../../actions/posts";
+import { getPosts, getPostsBySearch } from "../../actions/posts";
 import Pagination from "../Pagination";
 import Posts from "../Posts/Posts";
 import Form from "../Form/Form";
@@ -39,9 +39,9 @@ const Home = () => {
   }, [currentId, dispatch]);
 
   const searchPost = () => {
-    if(search.trim()) {
-      // dispatch
-
+    if(search.trim() || tags) {
+      dispatch(getPostsBySearch({ search, tags: tags.join(',') }))
+      navigate(`/posts/search?searchQuery=${search || 'none'}&tags=${tags.join(',')}`)
     } else {
       navigate('/');
     }
@@ -91,8 +91,8 @@ const Home = () => {
                 newChipKeyCodes={[13, 32]}
                 style={{ margin: '10px 0'}}
                 value={tags}
-                onAdd={handleAdd}
-                onDelete={handleDelete}
+                onAdd={(chip) => handleAdd(chip)}
+                onDelete={(chip) => handleDelete(chip)}
                 label="Search tags"
                 variant="outlined"
               />
