@@ -51,4 +51,8 @@ export default makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
   },
+  cardAction: {
+    display: 'block',
+    textAlign: 'initial',
+  },
 }));
