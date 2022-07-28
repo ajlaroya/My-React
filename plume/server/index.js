@@ -17,6 +17,10 @@ app.use(cors());
 app.use('/posts', postRoutes);
 app.use('/user', userRoutes);
 
+app.get('/', (req, res) => {
+    res.send("Plume is running!")
+})
+
 const PORT = process.env.MONGODB_PORT || 5000;
 
 mongoose.connect(process.env.MONGODB_CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })

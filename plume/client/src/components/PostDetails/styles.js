@@ -7,6 +7,9 @@ export default makeStyles((theme) => ({
     width: "100%",
     float: "right",
     maxHeight: "600px",
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: "20px",
+    },
   },
   card: {
     display: "flex",
@@ -26,6 +29,7 @@ export default makeStyles((theme) => ({
   },
   imageSection: {
     marginLeft: "20px",
+    marginRight: "20px",
     [theme.breakpoints.down("sm")]: {
       marginLeft: 0,
     },
@@ -49,7 +53,7 @@ export default makeStyles((theme) => ({
     padding: "20px",
   },
   commentsOuterContainer: {
-    display: 'flex',
+    display: 'column',
     justifyContent: 'space-between',
   },
   commentsInnerContainer: {

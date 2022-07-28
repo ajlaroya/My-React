@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardActions,
@@ -14,7 +14,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import moment from "moment";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 import { deletePost, likePost } from "../../../actions/posts";
 import useStyles from "./styles";
@@ -24,23 +24,35 @@ const Post = ({ post, setCurrentId }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("profile"));
+  const [likes, setLikes] = useState(post?.likes);
+
+  const userId = user?.result?.googleId || user?.result?._id;
+  const hasLikedPost = post.likes.find((like) => like === userId);
+
+  const handleLike = async () => {
+    dispatch(likePost(post._id));
+
+    if (hasLikedPost) {
+      setLikes(post.likes.filter((id) => id !== userId));
+    } else {
+      setLikes([...post.likes, userId]);
+    }
+  };
 
   const Likes = () => {
-    if (post?.likes?.length > 0) {
-      return post.likes.find(
-        (like) => like === (user?.result?.googleId || user?.result?._id)
-      ) ? (
+    if (likes.length > 0) {
+      return likes.find((like) => like === userId) ? (
         <>
           <ThumbUpAltIcon fontSize="small" />
           &nbsp;
-          {post.likes.length > 2
-            ? `You and ${post.likes.length - 1} others`
-            : `${post.likes.length} like${post.likes.length > 1 ? "s" : ""}`}
+          {likes.length > 2
+            ? `You and ${likes.length - 1} others`
+            : `${likes.length} like${likes.length > 1 ? "s" : ""}`}
         </>
       ) : (
         <>
           <ThumbUpAltOutlined fontSize="small" />
-          &nbsp;{post.likes.length} {post.likes.length === 1 ? "Like" : "Likes"}
+          &nbsp;{likes.length} {likes.length === 1 ? "Like" : "Likes"}
         </>
       );
     }
@@ -54,12 +66,16 @@ const Post = ({ post, setCurrentId }) => {
   };
 
   const openPost = () => {
-    navigate(`/posts/${post._id}`)
-  }
+    navigate(`/posts/${post._id}`);
+  };
 
   return (
     <Card className={classes.card} raised elevation={3}>
-      <ButtonBase component="span" className={classes.cardAction} onClick={openPost}>
+      <ButtonBase
+        component="span"
+        className={classes.cardAction}
+        onClick={openPost}
+      >
         <CardMedia
           className={classes.media}
           image={post.selectedFile}
@@ -73,13 +89,13 @@ const Post = ({ post, setCurrentId }) => {
         </div>
         {(user?.result?.googleId === post?.creator ||
           user?.result?._id === post?.creator) && (
-            <div className={classes.overlay2} name="edit">
+          <div className={classes.overlay2} name="edit">
             <Button
               onClick={(e) => {
                 e.stopPropagation();
                 setCurrentId(post._id);
               }}
-              style={{ color: 'white' }}
+              style={{ color: "white" }}
               size="small"
             >
               <MoreHorizIcon fontSize="medium" />
@@ -105,7 +121,7 @@ const Post = ({ post, setCurrentId }) => {
           size="small"
           color="primary"
           disabled={!user?.result}
-          onClick={() => dispatch(likePost(post._id))}
+          onClick={handleLike}
         >
           <Likes />
         </Button>
