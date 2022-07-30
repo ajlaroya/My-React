@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'http://localhost:5000' })
+const API = axios.create({ baseURL: 'https://plume-social.herokuapp.com/' })
 
 // sends token to each API request
 API.interceptors.request.use((req) => {
