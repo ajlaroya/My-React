@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
+import Head from 'next/head'
 import { useState, useEffect } from 'react'
 
 import Navbar from '../components/Navbar'
@@ -16,6 +17,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <div>
+      <Head>
+        <title>Azalea</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Navbar />
       <div className="flex gap-6 md:gap-20">
         <div className="h-[92vh] overflow-hidden xl:hover:overflow-auto">
