@@ -10,7 +10,7 @@ const Discover = () => {
   
   const activeTopicStyle = "xl:border-2 hover:bg-primary xl:border-purple-400 px-3 py-2 rounded xl:rounded-full flex items-center gap-2 justify-center cursor-pointer text-purple-400"
 
-  const topicStyle = "text-gray-800 xl:border-2 hover:bg-primary xl:border-gray-300 px-3 py-2 rounded xl:rounded-full flex items-center gap-2 justify-center cursor-pointer text-black"
+  const topicStyle = "text-gray-800 xl:border-2 hover:bg-primary xl:border-gray-300 px-3 py-2 rounded xl:rounded-full flex items-center gap-2 justify-center cursor-pointer text-sm text-black"
 
   return (
     <div className="xl:border-b-2 xl:border-gray-200 pb-6">
@@ -21,7 +21,7 @@ const Discover = () => {
         {topics.map((item) => (
           <Link href={`?topic=${item.name}`} key={item.name}>
             <div className={topic === item.name ? activeTopicStyle : topicStyle}>
-              <span className="font-bold text-2xl xl:text-md">
+              <span className="font-bold text-xl xl:text-md">
                 {item.icon}
               </span>
               <span className="font-medium text-md hidden xl:block capitalize">
