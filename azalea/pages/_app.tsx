@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
 
+import { GoogleOAuthProvider } from '@react-oauth/google';
+
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [isSSR, setIsSSR] = useState(true)
 
@@ -16,7 +18,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   if(isSSR) return null;
 
   return (
-    <div>
+    <GoogleOAuthProvider clientId={`${process.env.NEXT_PUBLIC_GOOGLE_API_TOKEN}`}>
       <Head>
         <title>Azalea</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -30,7 +32,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           <Component {...pageProps} />
         </div>
       </div>
-    </div>
+    </GoogleOAuthProvider>
   )
 }
 
