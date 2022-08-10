@@ -7,7 +7,7 @@ import { FiLogOut } from "react-icons/fi";
 import { BiSearch } from "react-icons/bi";
 import { IoMdAdd } from "react-icons/io";
 
-import { IUser } from '../types';
+import { IUser } from "../types";
 import Logo from "../utils/shape-57.svg";
 import { createOrGetUser } from "../utils";
 
@@ -16,26 +16,26 @@ import useAuthStore from "../store/authStore";
 const Navbar = () => {
   const [user, setUser] = useState<IUser | null>();
   const { userProfile, addUser, removeUser } = useAuthStore();
-  const [searchValue, setSearchValue] = useState('')
+  const [searchValue, setSearchValue] = useState("");
   const router = useRouter();
 
   const handleSearch = (e: { preventDefault: () => void }) => {
     // prevents full page reload
     e.preventDefault();
 
-    if(searchValue) {
-      router.push(`/search/${searchValue}`)
+    if (searchValue) {
+      router.push(`/search/${searchValue}`);
     }
-  }
+  };
 
   useEffect(() => {
     setUser(userProfile);
   }, [userProfile]);
 
   return (
-    <div className="w-full flex justify-between items-center border-b-2 border-gray-100 py-2 px-4">
+    <div className="w-full flex justify-between items-center border-b-2 border-gray-100 py-2 px-3">
       <Link href="/">
-        <div className="w-[40px] md:w-[50px]">
+        <div className="md:w-11 sm:w-10">
           <Image
             className="cursor-pointer"
             src={Logo}
@@ -45,21 +45,21 @@ const Navbar = () => {
         </div>
       </Link>
 
-      <div className="relative hidden md:block">
+      <div className="relative hidden sm:block">
         <form
           onSubmit={handleSearch}
-          className="absolute md:static top-10 -left-20 bg-white"
+          className="absolute sm:static top-10 -left-20 bg-white"
         >
           <input
             type="text"
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
             placeholder="Search accounts and videos"
-            className="input input-bordered max-w-xs w-[300px] md:w-[350px] rounded-full md:top-0"
+            className="input input-bordered max-w-xs w-[300px] md:w-[350px] text-sm rounded-full md:top-0 text-gray-400 placeholder:text-gray-400 placeholder:italic"
           />
           <button
             onClick={handleSearch}
-            className="absolute md:right-5 right-6 top-3 border-l-2 border-gray-300 pl-4 text-2xl text-gray-400"
+            className="absolute md:right-5 right-6 top-3 border-l-2 border-gray-300 pl-4 text-xl text-gray-400"
           >
             <BiSearch />
           </button>

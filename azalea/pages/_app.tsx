@@ -20,8 +20,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <GoogleOAuthProvider clientId={`${process.env.NEXT_PUBLIC_GOOGLE_API_TOKEN}`}>
       <Head>
-        <title>Azalea</title>
+        <title>Azalea | Video-sharing For All</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Azalea - trends start here. On a device or on the web, viewers can watch and discover many short videos."/>
       </Head>
       <div className="xl:w-[1200px] m-auto overflow-hidden h-[100vh]">
         <Navbar />
