@@ -41,8 +41,7 @@ const Footer = () => {
   return (
     <>
       <h2 className="head-text">
-        Let's connect &{" "}
-        have a <span>Chat</span>
+        Interested? I would love to connect with you! 🤝
       </h2>
 
       <div className="app__footer-cards">
@@ -55,7 +54,7 @@ const Footer = () => {
         <div className="app__footer-card">
           <img src={images.mobile} alt="mobile" />
           <a href="tel: #" className="p-text">
-            please email me for number
+            please email for number
           </a>
         </div>
       </div>

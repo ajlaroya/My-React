@@ -19,8 +19,8 @@ const About = () => {
   return (
     <>
       <h2 className="head-text">
-        Full-time <span> worker </span>
-        <br /> Part-time<span style={{ color: "#51DA7F"}}> Programmer</span>
+        Self taught developer
+        <br /> with a growing skill set 🌱
       </h2>
 
       <div className="app__profiles">
