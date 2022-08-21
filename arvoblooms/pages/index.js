@@ -1,11 +1,12 @@
 import Head from 'next/head'
+import Featured from '../components/Featured';
 
 import Landing from '../components/Landing';
 import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (
-    <div className="font-avenir">
+    <div className="font-avenir flex flex-col w-full min-h-screen overflow-x-hidden">
       <Head>
         <title>arvoblooms</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -14,6 +15,7 @@ export default function Home() {
 
       <Navbar />
       <Landing />
+      <Featured />
     </div>
   );
 }
