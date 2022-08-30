@@ -3,6 +3,7 @@ import Featured from '../components/Featured';
 
 import Landing from '../components/Landing';
 import Navbar from "../components/Navbar";
+import Search from '../components/Search';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Navbar />
       <Landing />
       <Featured />
+      <Search />
     </div>
   );
 }

@@ -5,6 +5,9 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    minHeight: {
+      '1/2': '50%',
+    },
     extend: {
       fontFamily: {
         avenir: ["Avenir Next", "sans-serif"],
