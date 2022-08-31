@@ -1,19 +1,19 @@
 export const links = [
   {
     link: "/about",
-    label: "Features",
+    label: "About",
   },
   {
-    link: "/pricing",
-    label: "Pricing",
+    link: "/collections/men",
+    label: "Mens",
   },
   {
-    link: "/learn",
-    label: "Learn",
+    link: "/collections/women",
+    label: "Womens",
   },
   {
-    link: "/community",
-    label: "Community",
+    link: "/catalogue",
+    label: "Catalogue",
   },
 ];
 

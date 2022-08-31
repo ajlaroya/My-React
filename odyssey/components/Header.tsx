@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { createStyles, Header, Container, Group, Burger, Paper, Transition, ActionIcon, useMantineColorScheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-// import { MantineLogo } from '@mantine/ds';
+import Link from 'next/link'
 
 const HEADER_HEIGHT = 60;
 
@@ -32,6 +32,7 @@ const useStyles = createStyles((theme) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     height: '100%',
+    cursor: 'pointer',
   },
 
   links: {
@@ -76,9 +77,10 @@ const useStyles = createStyles((theme) => ({
 
 interface HeaderResponsiveProps {
   links: { link: string; label: string }[];
+  marginBottom: number
 }
 
-export function HeaderResponsive({ links }: HeaderResponsiveProps) {
+export function HeaderResponsive({ links, marginBottom }: HeaderResponsiveProps) {
   const [opened, { toggle, close }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
@@ -99,10 +101,10 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
   ));
 
   return (
-    <Header height={HEADER_HEIGHT} mb={120} className={classes.root}>
+    <Header height={HEADER_HEIGHT} mb={marginBottom} className={classes.root}>
       <Container className={classes.header}>
         {/* <MantineLogo size={28} /> */}
-        <p>Odyssey 🌊</p>
+        <Link href="/"><h3>Odyssey 🌊</h3></Link>
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>

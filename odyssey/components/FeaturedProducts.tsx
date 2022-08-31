@@ -1,12 +1,12 @@
 import { Grid, Skeleton, Container } from "@mantine/core";
 import { ProductCard } from "./ProductCard";
-import products from '../utils/data'
+import { Key } from "react";
 
-const FeaturedProducts = () => (
-  <Container my="md">
+const FeaturedProducts = ({ products }:any) => (
+  <Container>
     <Grid>
-    {products.map((product) => (
-      <Grid.Col xs={4}><ProductCard product={product} /></Grid.Col>
+    {products.map((product: { handle: number; name: string; price: string; collection: string; image: string; }, index: Key | null | undefined) => (
+      <Grid.Col xs={4} key={index}><ProductCard product={product} /></Grid.Col>
     ))}
     </Grid>
   </Container>
