@@ -11,13 +11,14 @@ import {
   Button,
 } from "@mantine/core";
 import { IconShoppingCartPlus } from '@tabler/icons';
+import { shopifyClient, parseShopifyResponse } from '../../lib/shopify'
 
 import { HeaderResponsive } from "../../components/Header";
 
 import productData from "../../utils/data";
 import { links } from "../../utils/constants";
 
-const ProductPage = () => {
+const ProductPage = ({product}) => {
   const router = useRouter();
   // Get productHandle from url: /products/[productHandle]
   const { productHandle }: any = router.query;
@@ -68,6 +69,19 @@ const ProductPage = () => {
       }
     </>
   );
+};
+
+export const getServerSideProps = async ({params}) => {
+  const { productHandle } = params
+  // Fetch one product
+  const product = await shopifyClient.product.fetchByHandle(productHandle);
+
+
+  return {
+   props: {
+    product: parseShopifyResponse(product),
+  },
+ };
 };
 
 export default ProductPage;
