@@ -6,7 +6,7 @@ module.exports = {
   ],
   theme: {
     minHeight: {
-      '1/2': '50%',
+      "1/2": "50%",
     },
     extend: {
       fontFamily: {
@@ -16,6 +16,29 @@ module.exports = {
   },
   plugins: [require("daisyui")],
   daisyui: {
+    themes: [
+      {
+        mytheme: {
+          primary: "#F06292",
+
+          secondary: "#F8BBD0",
+
+          accent: "#880E4F",
+
+          neutral: "#fce7f3",
+
+          "base-100": "#2A303C",
+
+          info: "#3ABFF8",
+
+          success: "#36D399",
+
+          warning: "#FBBD23",
+
+          error: "#F87272",
+        },
+      },
+    ],
     styled: true,
     themes: false,
     base: true,
@@ -24,4 +47,4 @@ module.exports = {
     rtl: false,
     prefix: "",
   },
-}
+};

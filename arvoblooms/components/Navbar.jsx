@@ -1,8 +1,11 @@
 import React from "react";
+import { useRouter } from 'next/router'
 
 import "material-icons/iconfont/material-icons.css";
 
 const Navbar = () => {
+  const router = useRouter()
+
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -28,19 +31,22 @@ const Navbar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Homepage</a>
-            </li>
-            <li>
-              <a>Portfolio</a>
+              <a>Home</a>
             </li>
             <li>
               <a>About</a>
+            </li>
+            <li>
+              <a>Shop</a>
+            </li>
+            <li>
+              <a>Contact</a>
             </li>
           </ul>
         </div>
       </div>
       <div className="navbar-center">
-        <a className="btn btn-ghost normal-case text-xl">arvoblooms 🌺</a>
+        <a href="/" className="btn btn-ghost normal-case text-xl">arvoblooms 🌺</a>
       </div>
       <div className="navbar-end">
         <button className="btn btn-ghost btn-circle">
@@ -49,9 +55,9 @@ const Navbar = () => {
         <button className="btn btn-ghost btn-circle">
           <span className="material-icons-outlined">account_circle</span>
         </button>
-        <button className="btn btn-ghost btn-circle">
+        <button className="btn btn-ghost btn-circle" onClick={() => {router.push("/cart")}}>
           <div className="indicator">
-            <span className="material-icons-outlined">shopping_cart</span>
+            <span className="material-icons-outlined">shopping_bag</span>
             <span className="badge badge-xs badge-secondary indicator-item"></span>
           </div>
         </button>
