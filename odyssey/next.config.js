@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['external-content.duckduckgo.com'],
+    domains: ['external-content.duckduckgo.com','cdn.shopify.com'],
   },
 }
 
