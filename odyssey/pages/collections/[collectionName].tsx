@@ -4,16 +4,10 @@ import { useRouter } from "next/router";
 import { HeaderResponsive } from "../../components/Header";
 import FeaturedProducts from "../../components/FeaturedProducts";
 
-import productData from "../../utils/data";
 import { links } from "../../utils/constants";
+import { shopifyClient, parseShopifyResponse } from '../../lib/shopify'
 
-const CollectionPage = () => {
-  const router = useRouter();
-  const { collectionName } = router.query;
-  const products = productData.filter(
-    (product) => product.collection === collectionName
-  );
-
+const CollectionPage = ({products}:any) => {
   return (
     <>
       <HeaderResponsive links={links} marginBottom={30} />
@@ -23,3 +17,21 @@ const CollectionPage = () => {
 };
 
 export default CollectionPage;
+
+export const getServerSideProps = async ({params}:any) => {
+  const { collectionName } = params
+  // Fetch all the collections
+  const collectionsData = await shopifyClient.collection.fetchAllWithProducts()
+  const collections = parseShopifyResponse(collectionsData);
+
+  // Get the right products from collection
+  const collection = collections.find((collection:any) => collection.title.toLowerCase() === collectionName)
+
+  return {
+   props: {
+    collectionName,
+    collections,
+    products: collection.products
+  },
+ };
+};

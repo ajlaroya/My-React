@@ -4,11 +4,11 @@ export const links = [
     label: "About",
   },
   {
-    link: "/collections/men",
+    link: "/collections/mens",
     label: "Mens",
   },
   {
-    link: "/collections/women",
+    link: "/collections/womens",
     label: "Womens",
   },
   {

@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import {
   SimpleGrid,
-  Skeleton,
   Container,
   Stack,
   Text,
@@ -14,37 +13,36 @@ import { IconShoppingCartPlus } from '@tabler/icons';
 import { shopifyClient, parseShopifyResponse } from '../../lib/shopify'
 
 import { HeaderResponsive } from "../../components/Header";
-
-import productData from "../../utils/data";
 import { links } from "../../utils/constants";
 
-const ProductPage = ({product}) => {
-  const router = useRouter();
-  // Get productHandle from url: /products/[productHandle]
-  const { productHandle }: any = router.query;
-  // Get product data
-  const product = productData.find(
-    (product) => product.handle === parseInt(productHandle)
-  );
-  const { name, image, price }: any = product || {};
+const ProductPage = ({product}:any) => {
+  const { id, title, images, variants, collection, description } = product
+  const { src: productImage } = images[0]
+  const { price } = variants[0]
 
   return (
     <>
       <HeaderResponsive links={links} marginBottom={30} />
-      {
+      { product &&
         <Container my="md">
-          <SimpleGrid cols={2} breakpoints={[{ maxWidth: "xs", cols: 1 }]}>
-            {image?.length > 0 && (
+          <SimpleGrid cols={2} breakpoints={[{ maxWidth: "sm", cols: 1 }]}>
               <Image
-                src={image}
-                alt={name}
-                layout="responsive"
+                src={productImage}
+                alt={title}
+                layout="fixed"
                 width={500}
                 height={500}
               />
-            )}
             <Stack>
-              <Title order={1}>{name}</Title>
+              <Title order={1}>{title}</Title>
+              <Text
+                component="p"
+                size="md"
+                color="dimmed"
+              >
+                {description}
+              </Text>
+              <p>{collection}</p>
               <Text
                 component="span"
                 variant="gradient"
@@ -71,7 +69,7 @@ const ProductPage = ({product}) => {
   );
 };
 
-export const getServerSideProps = async ({params}) => {
+export const getServerSideProps = async ({params}:any) => {
   const { productHandle } = params
   // Fetch one product
   const product = await shopifyClient.product.fetchByHandle(productHandle);

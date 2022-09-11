@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   createStyles,
   Header,
@@ -7,8 +6,6 @@ import {
   Burger,
   Paper,
   Transition,
-  ActionIcon,
-  useMantineColorScheme,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
