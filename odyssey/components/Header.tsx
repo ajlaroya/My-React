@@ -1,3 +1,4 @@
+import React, { useContext } from "react";
 import {
   createStyles,
   Header,
@@ -10,6 +11,9 @@ import {
 import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { IconShoppingCartPlus } from '@tabler/icons';
+
+import { ShopContext } from "../context/shopContext";
 
 const HEADER_HEIGHT = 60;
 
@@ -103,6 +107,7 @@ export function HeaderResponsive({
   marginBottom,
 }: HeaderResponsiveProps) {
   const router = useRouter();
+  const { openCart } = useContext(ShopContext)
   const [opened, { toggle, close }] = useDisclosure(false);
   const { classes, cx } = useStyles();
 
@@ -132,6 +137,10 @@ export function HeaderResponsive({
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
+        <button onClick={() => openCart()}>
+        Cart
+        <IconShoppingCartPlus className="icon" />
+      </button>
 
         <Burger
           opened={opened}

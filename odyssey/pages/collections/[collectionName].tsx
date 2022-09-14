@@ -1,5 +1,4 @@
 import React from "react";
-import { useRouter } from "next/router";
 
 import { HeaderResponsive } from "../../components/Header";
 import FeaturedProducts from "../../components/FeaturedProducts";

@@ -16,6 +16,7 @@ import { HeaderResponsive } from "../../components/Header";
 import { links } from "../../utils/constants";
 
 const ProductPage = ({product}:any) => {
+  {console.log(product.variants[0].id)}
   const { id, title, images, variants, collection, description } = product
   const { src: productImage } = images[0]
   const { price } = variants[0]
