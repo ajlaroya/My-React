@@ -1,13 +1,14 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from 'react'
+import Link from 'next/link'
+
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, UserIcon, XMarkIcon, ShoppingBagIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
   { name: 'Shop', href: '#', current: true },
-  { name: 'Collections', href: '#', current: false },
+  { name: 'Flowers', href: '#', current: false },
   { name: 'Our Story', href: '#', current: false },
-  { name: 'Flower Care', href: '#', current: false },
+  { name: 'Care', href: '#', current: false },
 ]
 
 function classNames(...classes) {
@@ -34,7 +35,9 @@ export default function Navbar() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <p>🌺 arvoblooms</p>
+                  <Link href="/">
+                    <p className="font-semibold tracking-tight cursor-pointer">🌺 arvoblooms</p>
+                  </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
