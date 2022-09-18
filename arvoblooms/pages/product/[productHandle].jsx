@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { CheckIcon, QuestionMarkCircleIcon, StarIcon } from '@heroicons/react/24/solid'
 import { RadioGroup } from '@headlessui/react'
 import { ShieldCheckIcon } from '@heroicons/react/24/outline'
 
+import { ShopContext } from "../../context/shopContext";
 import { shopifyClient, parseShopifyResponse } from "../../utils/shopify";
 
 const product = {
@@ -22,14 +23,15 @@ const product = {
     { name: 'Large', description: 'Enough room for a serious amount of flowers.' },
   ],
 }
-const reviews = { average: 4, totalCount: 1624 }
+const reviews = { average: 4, totalCount: 56 }
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function ProductPage({product1}) {
-  console.log(product1);
+  console.log(product1.variants[0].id);
+  const { addItemToCheckout, openCart } = useContext(ShopContext);
   const [selectedSize, setSelectedSize] = useState(product.sizes[0])
   const { title, handle, description, productType } = product1
   const { src } = product1.images[0]
@@ -177,8 +179,11 @@ export default function ProductPage({product1}) {
               </div>
               <div className="mt-10">
                 <button
-                  type="submit"
                   className="w-full bg-pink-500 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-pink-500"
+                  onClick={() => {
+                    addItemToCheckout(product1.variants[0].id, 1)
+                    openCart();
+                  }}
                 >
                   Add to bag
                 </button>

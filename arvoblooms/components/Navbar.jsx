@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import Link from "next/link";
 
 import { Disclosure, Menu, Transition } from "@headlessui/react";
@@ -9,6 +9,8 @@ import {
   ShoppingBagIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
+
+import { ShopContext } from "../context/shopContext";
 
 const navigation = [
   { name: "Shop", href: "#", current: true },
@@ -22,6 +24,8 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+  const { openCart, checkout } = useContext(ShopContext);
+
   return (
     <Disclosure as="nav">
       {({ open }) => (
@@ -70,7 +74,7 @@ export default function Navbar() {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 gap-2">
                 <button
                   type="button"
-                  className="rounded-full hover:bg-gray-100 p-2 text-gray-400 hover:text-gray-800"
+                  className="hidden md:block rounded-full hover:bg-gray-100 p-2 text-gray-400 hover:text-gray-800"
                 >
                   <span className="sr-only">Search</span>
                   <MagnifyingGlassIcon className="h-6 w-6" aria-hidden="true" />
@@ -78,6 +82,7 @@ export default function Navbar() {
                 <button
                   type="button"
                   className="rounded-full hover:bg-gray-100 p-2 text-gray-400 hover:text-gray-800 relative"
+                  onClick={() => openCart()}
                 >
                   <span className="sr-only">Cart</span>
                   <ShoppingBagIcon
@@ -85,15 +90,17 @@ export default function Navbar() {
                     aria-hidden="true"
                   />
                   {/* Bag badge */}
-                  <span className="inline-flex absolute items-center justify-center w-4 h-4 text-xs leading-none text-pink-100 bg-pink-500 rounded-full top-0 right-0">
-                    1
-                  </span>{" "}
+                  {checkout && (
+                    <span className="inline-flex absolute items-center justify-center w-4 h-4 text-xs leading-none text-pink-100 bg-pink-500 rounded-full top-0 right-0">
+                     {checkout?.lineItems?.length}
+                  </span>
+                  )}
                 </button>
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative">
                   <div>
-                    <Menu.Button className="rounded-full hover:bg-gray-100 p-2 text-gray-400 hover:text-gray-800">
+                    <Menu.Button className="hidden md:block rounded-full hover:bg-gray-100 p-2 text-gray-400 hover:text-gray-800">
                       <span className="sr-only">Account</span>
                       <UserIcon className="h-6 w-6" aria-hidden="true" />
                     </Menu.Button>

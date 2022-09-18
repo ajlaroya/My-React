@@ -1,18 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import CTA from "../components/CTA";
 import Hero from "../components/Hero";
 import ProductList from "../components/ProductList";
 
 import { shopifyClient, parseShopifyResponse } from "../utils/shopify";
 
-export default function Home({ products, checkout }) {
-  console.log(checkout)
-
-  // sets checkout id on initial load and saves to local storage
-  useEffect(() => {
-    localStorage.setItem("checkout_id", checkout.id);
-  }, [])
-  
+export default function Home({ products }) {
   return (
     <div>
       <Hero />
@@ -30,7 +23,7 @@ export const getServerSideProps = async () => {
   return {
    props: {
     products: parseShopifyResponse(products),
-    checkout: parseShopifyResponse(checkout)
+    checkout: parseShopifyResponse(checkout),
   },
  };
 };

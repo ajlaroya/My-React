@@ -1,12 +1,20 @@
-import Layout from '../components/Layout'
-import '../styles/globals.css'
+import Head from "next/head";
+
+import ShopProvider from "../context/shopContext";
+import Layout from "../components/Layout";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  )
+    <ShopProvider>
+      <Layout>
+        <Head>
+          <title>Arvoblooms</title>
+        </Head>
+        <Component {...pageProps} />
+      </Layout>
+    </ShopProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
