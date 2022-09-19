@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import Category from "../components/Category";
 import CTA from "../components/CTA";
 import Hero from "../components/Hero";
 import ProductList from "../components/ProductList";
+import PromoSection from "../components/PromoSection";
 
 import { shopifyClient, parseShopifyResponse } from "../utils/shopify";
 
@@ -11,6 +12,8 @@ export default function Home({ products }) {
       <Hero />
       <CTA />
       <ProductList products={products} />
+      <Category />
+      <PromoSection/>
     </div>
   );
 }

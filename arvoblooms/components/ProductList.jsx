@@ -1,13 +1,22 @@
 import React from "react";
-import Image from 'next/future/image'
+import Image from "next/future/image";
 
 const ProductList = ({ products }) => {
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl py-16 px-4 sm:py-10 sm:px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="text-2xl font-bold tracking-tight text-gray-900">
-          Featured
-        </h2>
+        <div className="md:flex md:items-center md:justify-between">
+          <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+            Trending products
+          </h2>
+          <a
+            href="#"
+            className="hidden text-sm font-medium text-pink-600 hover:text-pink-500 md:block"
+          >
+            Shop the collection<span aria-hidden="true"> &rarr;</span>
+          </a>
+        </div>
+
         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {products.map((product) => (
             <div key={product.handle} className="group relative">
@@ -34,7 +43,9 @@ const ProductList = ({ products }) => {
                       {product.title}
                     </a>
                   </h3>
-                  <p className="mt-1 text-sm text-gray-500">{product.productType}</p>
+                  <p className="mt-1 text-sm text-gray-500">
+                    {product.productType}
+                  </p>
                 </div>
                 <p className="text-sm font-medium text-gray-900">
                   ${product.variants[0].price}
@@ -45,7 +56,6 @@ const ProductList = ({ products }) => {
         </div>
       </div>
     </div>
-    
   );
 };
 
