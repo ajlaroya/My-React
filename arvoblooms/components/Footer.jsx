@@ -18,11 +18,10 @@ const Footer = () => {
             </a>
             <div className="mt-4 lg:max-w-sm">
               <p className="text-sm text-gray-800">
-                Thank you for visiting my little local florist based in
-                Melbourne, AU
+                Thank you for visiting arvoblooms
               </p>
-              <p className="mt-4 text-sm text-gray-600 italic">
-                [ Currently under construction ]
+              <p className="mt-4 text-sm text-gray-500 ">
+                Currently under construction by Arthur L.
               </p>
             </div>
           </div>
@@ -133,7 +132,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col justify-between py-5 border-t sm:flex-row">
           <p className="text-sm text-gray-600">
-            © Copyright 2022 Arthur Laroya. All rights reserved.
+            © Copyright 2022 Arvoblooms. All rights reserved.
           </p>
           <div className="flex items-center mt-4 space-x-4 sm:mt-0">
             <a

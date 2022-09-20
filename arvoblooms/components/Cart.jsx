@@ -5,8 +5,8 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { ShopContext } from "../context/shopContext";
 
 const Cart = () => {
-  const { isCartOpen, checkout, closeCart } = useContext(ShopContext);
-
+  const { isCartOpen, checkout, closeCart, removeItemFromCheckout } = useContext(ShopContext);
+  
   return (
     <Transition show={isCartOpen} as={Fragment}>
       <Dialog
@@ -100,6 +100,9 @@ const Cart = () => {
                                       <button
                                         type="button"
                                         className="font-medium text-pink-600 hover:text-pink-500"
+                                        onClick={() => {
+                                          removeItemFromCheckout(checkout.id, item.id)
+                                        }}
                                       >
                                         Remove
                                       </button>
@@ -118,7 +121,7 @@ const Cart = () => {
                     <div className="flex justify-between text-base font-medium text-gray-900">
                       <p>Subtotal</p>
                       {checkout.lineItems &&
-                      <p>${checkout.lineItemsSubtotalPrice.amount}0</p>
+                      <p>${checkout.lineItemsSubtotalPrice.amount}</p>
                         }
                     </div>
                     <p className="mt-0.5 text-sm text-gray-500">
@@ -126,7 +129,7 @@ const Cart = () => {
                     </p>
                     <div className="mt-6">
                       <a
-                        href="#"
+                        href={checkout.webUrl}
                         className="flex items-center justify-center rounded-md border border-transparent bg-pink-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-pink-700"
                       >
                         Checkout

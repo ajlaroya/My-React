@@ -39,14 +39,21 @@ const ShopProvider = ({ children }) => {
       },
     ];
 
-    const newCheckout = await shopifyClient.checkout.addLineItems(
-      checkout.id,
-      lineItemToAdd
-    );
+    shopifyClient.checkout.addLineItems(checkout.id, lineItemToAdd).then((checkout) => {
+      setCheckout(checkout);
+      openCart()
+      console.log("item added", checkout)
+    })
 
-    setCheckout(newCheckout);
-    console.log("added", newCheckout)
   };
+
+  const removeItemFromCheckout = async (checkoutId, variantId) => {
+    shopifyClient.checkout.removeLineItems(checkoutId, variantId).then((checkout) => {
+      console.log("item removed")
+      setCheckout(checkout)
+      console.log(checkout.lineItems);
+    })
+  }
 
   const closeCart = () => {
     setIsCartOpen(false)
@@ -66,6 +73,7 @@ const ShopProvider = ({ children }) => {
             closeCart,
             openCart,
             addItemToCheckout,
+            removeItemFromCheckout
         }}
     >
         {children}

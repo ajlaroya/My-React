@@ -90,7 +90,7 @@ export default function Navbar() {
                     aria-hidden="true"
                   />
                   {/* Bag badge */}
-                  {checkout && (
+                  {checkout?.lineItems?.length > 0 && (
                     <span className="inline-flex absolute items-center justify-center w-4 h-4 text-xs leading-none text-pink-100 bg-pink-500 rounded-full top-0 right-0">
                      {checkout?.lineItems?.length}
                   </span>

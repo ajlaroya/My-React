@@ -180,7 +180,8 @@ export default function ProductPage({product1}) {
               <div className="mt-10">
                 <button
                   className="w-full bg-pink-500 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-pink-500"
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
                     addItemToCheckout(product1.variants[0].id, 1)
                     openCart();
                   }}
