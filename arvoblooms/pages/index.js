@@ -1,4 +1,5 @@
 import Category from "../components/Category";
+import ComingSoon from "../components/ComingSoon";
 import CTA from "../components/CTA";
 import Hero from "../components/Hero";
 import ProductList from "../components/ProductList";
@@ -9,6 +10,7 @@ import { shopifyClient, parseShopifyResponse } from "../utils/shopify";
 export default function Home({ products }) {
   return (
     <div>
+      <ComingSoon />
       <Hero />
       <CTA />
       <ProductList products={products} />
