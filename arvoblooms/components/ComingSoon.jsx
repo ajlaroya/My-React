@@ -1,4 +1,34 @@
+import { useRef, useState, useEffect } from "react";
+
 export default function ComingSoon() {
+  const inputRef = useRef(null);
+  const [subscribed, setSubscribed] = useState(false);
+
+  useEffect(() => {
+    setSubscribed(false)
+  }, [])
+  
+
+  const subscribeUser = async (e) => {
+    e.preventDefault();
+
+    // mailchimp request
+
+    const res = await fetch("/api/subscribeUser", {
+      body: JSON.stringify({
+        email: inputRef.current.value,
+      }),
+
+      headers: {
+        "Content-Type": "application/json",
+      },
+
+      method: "POST",
+    });
+
+    setSubscribed(true);
+  };
+
   return (
     <div className="bg-white">
       <div className="relative sm:py-16">
@@ -72,14 +102,24 @@ export default function ComingSoon() {
                   website goes live, subscribe to our mailing list!
                 </p>
               </div>
-              <form action="#" className="mt-12 sm:mx-auto sm:max-w-lg sm:flex">
+
+              {/* Subscribe form */}
+              <form
+                onSubmit={subscribeUser}
+                className="mt-12 sm:mx-auto sm:max-w-lg sm:flex"
+              >
                 <div className="min-w-0 flex-1">
-                  <label htmlFor="cta-email" className="sr-only">
+                  <label htmlFor="email-input" className="sr-only">
                     Email address
                   </label>
                   <input
-                    id="cta-email"
+                    id="email-input"
                     type="email"
+                    name="email"
+                    ref={inputRef}
+                    required
+                    autoCapitalize="off"
+                    autoCorrect="off"
                     className="block w-full border border-transparent rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-pink-600"
                     placeholder="Enter your email"
                   />
@@ -87,12 +127,22 @@ export default function ComingSoon() {
                 <div className="mt-4 sm:mt-0 sm:ml-3">
                   <button
                     type="submit"
+                    value=""
+                    name="subscribe"
                     className="block w-full rounded-md border border-transparent px-5 py-3 bg-pink-400 text-base font-medium text-white shadow hover:bg-pink-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-pink-600 sm:px-10"
                   >
                     Notify me
                   </button>
                 </div>
               </form>
+
+              {subscribed && (
+                <div className="sm:text-center">
+                  <p className="mt-6 mx-auto max-w-2xl text-md text-pink-100">
+                    You have successfully subscribed!
+                  </p>
+                </div>
+              )}
 
               {/* Social icons */}
               <div className="flex items-center justify-center mt-12 space-x-6 sm:mt-12">
