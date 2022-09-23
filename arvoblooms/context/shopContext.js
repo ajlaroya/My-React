@@ -6,6 +6,7 @@ const ShopContext = React.createContext();
 const ShopProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [product, setProduct] = useState({});
+  const [collection, setCollection] = useState({})
   const [checkout, setCheckout] = useState({});
   const [isCartOpen, setIsCartOpen] = useState(false);
 
@@ -55,6 +56,13 @@ const ShopProvider = ({ children }) => {
     })
   }
 
+  const fetchCollection = async () => {
+    shopifyClient.collection.fetchAllWithProducts().then((collections) => {
+      // Do something with the collections
+      setCollection(parseShopifyResponse(collections))
+    });
+  }
+
   const closeCart = () => {
     setIsCartOpen(false)
     console.log("closing cart")
@@ -69,11 +77,13 @@ const ShopProvider = ({ children }) => {
     <ShopContext.Provider
         value={{
             checkout,
+            collection,
             isCartOpen,
             closeCart,
             openCart,
             addItemToCheckout,
-            removeItemFromCheckout
+            removeItemFromCheckout,
+            fetchCollection,
         }}
     >
         {children}

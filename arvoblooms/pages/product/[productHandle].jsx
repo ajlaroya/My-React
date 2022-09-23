@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import {
   CheckIcon,
   QuestionMarkCircleIcon,
@@ -43,12 +43,15 @@ function classNames(...classes) {
 }
 
 export default function ProductPage({ product1 }) {
-  console.log(product1.variants[0].id);
-  const { addItemToCheckout, openCart } = useContext(ShopContext);
+  const { addItemToCheckout, openCart, fetchCollection, collection } = useContext(ShopContext);
   const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
   const { title, handle, description, productType } = product1;
   const { src } = product1.images[0];
   const { price } = product1.variants[0];
+  
+  useEffect(() => {
+    fetchCollection()
+  }, [])
 
   return (
     <>
@@ -255,7 +258,8 @@ export default function ProductPage({ product1 }) {
           </div>
         </div>
       </div>
-      <RelatedProducts />
+
+      <RelatedProducts addItemToCheckout={addItemToCheckout} openCart={openCart} collection={collection} />
     </>
   );
 }
