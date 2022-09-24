@@ -1,12 +1,16 @@
+import Image from "next/future/image";
+
 export default function PromoSection() {
     return (
       <div className="bg-white">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
           <div className="relative rounded-lg overflow-hidden">
             <div className="absolute inset-0">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1543157145-f78c636d023d"
-                alt=""
+                alt="flower arrangement background"
+                width={600}
+                height={600}
                 className="w-full h-full object-center object-cover"
               />
             </div>

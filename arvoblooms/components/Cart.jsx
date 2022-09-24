@@ -1,4 +1,5 @@
 import React, { Fragment, useContext } from "react";
+import Image from 'next/future/image'
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
@@ -70,9 +71,11 @@ const Cart = () => {
                             checkout.lineItems.map((item) => (
                               <li key={item.id} className="flex py-6">
                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                  <img
+                                  <Image
                                     src={item.variant.image.src}
                                     alt={item.title}
+                                    width={100}
+                                    height={100}
                                     className="h-full w-full object-cover object-center"
                                   />
                                 </div>

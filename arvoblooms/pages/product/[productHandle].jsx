@@ -10,6 +10,7 @@ import { ShieldCheckIcon } from "@heroicons/react/24/outline";
 import { ShopContext } from "../../context/shopContext";
 import { shopifyClient, parseShopifyResponse } from "../../utils/shopify";
 import RelatedProducts from "../../components/RelatedProducts";
+import Image from "next/future/image";
 
 const product = {
   name: "Everyday Ruck Snack",
@@ -149,9 +150,11 @@ export default function ProductPage({ product1 }) {
           {/* Product image */}
           <div className="mt-10 lg:mt-0 lg:col-start-2 lg:row-span-2 lg:self-center">
             <div className="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
-              <img
+              <Image
                 src={src}
                 alt={title}
+                width={500}
+                height={500}
                 className="w-full h-full object-center object-cover"
               />
             </div>

@@ -1,3 +1,5 @@
+import Image from 'next/future/image'
+
 export default function Category() {
     return (
       <div className="bg-pink-50">
@@ -9,12 +11,15 @@ export default function Category() {
             </a>
           </div>
   
+          {/* Image cards */}
           <div className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:grid-rows-2 sm:gap-x-6 lg:gap-8">
             <div className="group aspect-w-2 aspect-h-1 rounded-lg overflow-hidden sm:aspect-h-1 sm:aspect-w-1 sm:row-span-2">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1606104218551-2c2ad1231dc3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-                alt="Two models wearing women's black cotton crewneck tee and off-white cotton crewneck tee."
-                className="object-center object-cover group-hover:opacity-75"
+                alt="creation of orange bouquet"
+                width={500}
+                height={500}
+                className="object-center object-cover transition ease-in-out delay-50 group-hover:opacity-75"
               />
               <div aria-hidden="true" className="bg-gradient-to-b from-transparent to-black opacity-50" />
               <div className="p-6 flex items-end">
@@ -32,10 +37,12 @@ export default function Category() {
               </div>
             </div>
             <div className="group aspect-w-2 aspect-h-1 rounded-lg overflow-hidden sm:relative sm:aspect-none sm:h-full">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1622658641558-1bf6a846adeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-                alt="Wooden shelf with gray and olive drab green baseball caps, next to wooden clothes hanger with sweaters."
-                className="object-center object-cover group-hover:opacity-75 sm:absolute sm:inset-0 sm:w-full sm:h-full"
+                alt="rose gold and pink bouquets"
+                width={500}
+                height={500}
+                className="object-center object-cover transition ease-in-out delay-50 group-hover:opacity-75 sm:absolute sm:inset-0 sm:w-full sm:h-full"
               />
               <div
                 aria-hidden="true"
@@ -56,10 +63,12 @@ export default function Category() {
               </div>
             </div>
             <div className="group aspect-w-2 aspect-h-1 rounded-lg overflow-hidden sm:relative sm:aspect-none sm:h-full">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1581790952049-7b602ddfe09a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-                alt="Walnut desk organizer set with white modular trays, next to porcelain mug on wooden desk."
-                className="object-center object-cover group-hover:opacity-75 sm:absolute sm:inset-0 sm:w-full sm:h-full"
+                alt="mint and white flower arrangements"
+                width={500}
+                height={500}
+                className="object-center object-cover transition ease-in-out delay-50 group-hover:opacity-75 sm:absolute sm:inset-0 sm:w-full sm:h-full"
               />
               <div
                 aria-hidden="true"

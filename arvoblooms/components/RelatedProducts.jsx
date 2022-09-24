@@ -1,3 +1,5 @@
+import Image from "next/future/image";
+
 export default function RelatedProducts({
   addItemToCheckout,
   openCart,
@@ -13,11 +15,13 @@ export default function RelatedProducts({
         <div className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
           {collection[0]?.products?.map((product) => (
             <div key={product.id}>
-              <div className="relative">
-                <div className="relative w-full h-72 rounded-lg overflow-hidden">
-                  <img
+              <div className="group relative">
+                <div className="relative w-full h-72 rounded-lg overflow-hidden bg-gray-200 transition ease-in-out delay-50 group-hover:opacity-75">
+                  <Image
                     src={product.images[0].src}
                     alt={product.title}
+                    width={300}
+                    height={300}
                     className="w-full h-full object-center object-cover"
                   />
                 </div>
@@ -53,12 +57,6 @@ export default function RelatedProducts({
                 >
                   Add to bag<span className="sr-only">, {product.name}</span>
                 </button>
-                {/* <a
-                  href={product.href}
-                  className="relative flex bg-gray-100 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-900 hover:bg-gray-200"
-                >
-                  Add to bag<span className="sr-only">, {product.name}</span>
-                </a> */}
               </div>
             </div>
           ))}

@@ -1,3 +1,4 @@
+import Image from 'next/future/image'
 import { StarIcon } from '@heroicons/react/24/solid'
 
 export default function Hero() {
@@ -85,10 +86,12 @@ export default function Hero() {
               </svg>
             </div>
             <div className="relative pl-5 -mr-40 sm:mx-auto sm:max-w-3xl sm:px-0 lg:max-w-none lg:h-full lg:pl-12">
-              <img
-                className="w-full rounded-md lg:h-[75%] lg:w-auto lg:max-w-none"
+              <Image
+                className="w-auto lg:h-[75%] lg:w-auto lg:max-w-none"
+                width={500}
+                height={500}
                 src="https://64.media.tumblr.com/14239a162e0418efefe2dfc22942e1a6/tumblr_ndns1yItak1rm6jd7o1_1280.png"
-                alt=""
+                alt="pink rose vector"
               />
             </div>
           </div>
