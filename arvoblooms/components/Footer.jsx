@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="px-4 pt-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 border-t">
-        <div className="grid gap-16 row-gap-10 mb-8 lg:grid-cols-6">
+        <div className="py-5 grid gap-16 row-gap-10 mb-8 lg:grid-cols-6">
           <div className="md:max-w-md lg:col-span-2">
             <a
               href="/"
@@ -13,23 +13,25 @@ const Footer = () => {
               className="inline-flex items-center"
             >
               <span className="ml-2 text-xl font-bold tracking-tight text-gray-800">
-                🌺 arvoblooms
+                🌺 flowery
               </span>
             </a>
             <div className="mt-4 lg:max-w-sm">
-              <p className="text-sm text-gray-800">
-                Thank you for visiting arvoblooms
+              <p className="text-sm text-gray-700 tracking-tight">
+                Flowery acknowledges the Traditional Custodians of the land
+                where we work and recognise their connections to land, sea and
+                community. We pay our respect to their Elders past and present
+                and extend that respect to all Aboriginal and Torres Strait
+                Islander peoples today
               </p>
-              <p className="mt-4 text-sm text-gray-500 ">
-                Currently under construction by Arthur L.
+              <p className="mt-4 text-sm text-gray-500 tracking-widest">
+                Currently under construction by @ajlaroya
               </p>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-10 row-gap-8 lg:col-span-4 md:grid-cols-4">
             <div>
-              <p className="font-semibold tracking-tight text-gray-800">
-                Catalog
-              </p>
+              <p className="font-semibold tracking-tight text-gray-800">Shop</p>
               <ul className="mt-2 space-y-2">
                 <li>
                   <a
@@ -44,7 +46,7 @@ const Footer = () => {
                     href="/"
                     className="text-gray-600 transition-colors duration-300 hover:text-pink-400"
                   >
-                    Pots
+                    Arrangements
                   </a>
                 </li>
                 <li>
@@ -60,7 +62,7 @@ const Footer = () => {
                     href="/"
                     className="text-gray-600 transition-colors duration-300 hover:text-pink-400"
                   >
-                    Soil
+                    Pots n Vases
                   </a>
                 </li>
               </ul>
@@ -124,15 +126,16 @@ const Footer = () => {
                   Subscribe
                 </button>
               </form>
-              <p className="mt-4 text-sm text-gray-500">
-                Subscribe for future announcements and exclusive deals
+              <p className="mt-4 text-sm text-gray-600 tracking-tight">
+                Sign up and be the first to know about discounts, tips and
+                everything flowery.
               </p>
             </div>
           </div>
         </div>
         <div className="flex flex-col justify-between py-5 border-t sm:flex-row">
           <p className="text-sm text-gray-600">
-            © Copyright 2022 Arvoblooms. All rights reserved.
+            © Copyright 2022 🌺flowery. All rights reserved.
           </p>
           <div className="flex items-center mt-4 space-x-4 sm:mt-0">
             <a

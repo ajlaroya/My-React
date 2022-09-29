@@ -7,13 +7,13 @@ const ProductList = ({ products }) => {
       <div className="mx-auto max-w-2xl py-16 px-4 sm:py-10 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="md:flex md:items-center md:justify-between">
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">
-            Trending products
+            Featured flowers
           </h2>
           <a
             href="#"
             className="hidden text-sm font-medium text-pink-600 hover:text-pink-500 md:block"
           >
-            Shop the collection<span aria-hidden="true"> &rarr;</span>
+            See all<span aria-hidden="true"> &rarr;</span>
           </a>
         </div>
 

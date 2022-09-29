@@ -14,7 +14,7 @@ import { ShopContext } from "../context/shopContext";
 
 const navigation = [
   { name: "Shop", href: "#", current: true },
-  { name: "Flowers", href: "#", current: false },
+  { name: "Collection", href: "#", current: false },
   { name: "Our Story", href: "#", current: false },
   { name: "Care", href: "#", current: false },
 ];
@@ -47,7 +47,7 @@ export default function Navbar() {
                 <div className="flex flex-shrink-0 items-center">
                   <Link href="/">
                     <p className="font-semibold tracking-tight cursor-pointer">
-                      🌺 arvoblooms
+                      🌺 flowery
                     </p>
                   </Link>
                 </div>
@@ -85,15 +85,12 @@ export default function Navbar() {
                   onClick={() => openCart()}
                 >
                   <span className="sr-only">Cart</span>
-                  <ShoppingBagIcon
-                    className="h-6 w-6"
-                    aria-hidden="true"
-                  />
+                  <ShoppingBagIcon className="h-6 w-6" aria-hidden="true" />
                   {/* Bag badge */}
                   {checkout?.lineItems?.length > 0 && (
                     <span className="inline-flex absolute items-center justify-center w-4 h-4 text-xs leading-none text-pink-100 bg-pink-500 rounded-full top-0 right-0">
-                     {checkout?.lineItems?.length}
-                  </span>
+                      {checkout?.lineItems?.length}
+                    </span>
                   )}
                 </button>
 

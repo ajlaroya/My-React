@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
     <ShopProvider>
       <Layout>
         <Head>
-          <title>Arvoblooms</title>
+          <title>Flowery</title>
         </Head>
         <Component {...pageProps} />
       </Layout>
