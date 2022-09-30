@@ -53,17 +53,11 @@ function classNames(...classes) {
 
 export default function Navbar2() {
   const router = useRouter()
-  const { pid } = router.query
+  const activeLink = router.pathname
   const [open, setOpen] = useState(false);
   const { openCart, checkout } = useContext(ShopContext);
   
-  useEffect(() => {
-    if (router.isReady) {
-      // Code using query
-      console.log(pid);
-     }
-  }, [router.isReady])
-  
+  console.log(activeLink)
 
   return (
     <div className="bg-white">
@@ -208,8 +202,9 @@ export default function Navbar2() {
                   <div key={page.name} className="flow-root">
                     <a
                       href={page.href}
-                      className="-m-2 p-2 block font-medium text-gray-900"
+                      className={activeLink == page.href ? "-m-2 p-2 block font-medium text-pink-600" : "-m-2 p-2 block font-medium text-gray-900"}
                     >
+                      {console.log(page.href)}
                       {page.name}
                     </a>
                   </div>
@@ -295,7 +290,7 @@ export default function Navbar2() {
                     <a
                       key={page.name}
                       href={page.href}
-                      className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                      className={activeLink == page.href ? "flex items-center text-sm font-medium text-pink-600 border-pink-600 border-b-2" : "flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"}
                     >
                       {page.name}
                     </a>
