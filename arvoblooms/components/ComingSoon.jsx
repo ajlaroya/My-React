@@ -31,13 +31,25 @@ export default function Example() {
   return (
     <div className="bg-white">
       <div className="relative bg-gray-900">
-        {/* Decorative image and overlay */}
+        {/* Decorative image/video and overlay */}
         <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
-          <img
+          {/* <img
             src="https://images.unsplash.com/photo-1543157145-f78c636d023d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1738&q=80"
             alt=""
             className="w-full h-full object-center object-cover"
-          />
+          /> */}
+          <video
+            autoPlay
+            loop
+            muted
+            className="w-full min-h-screen object-center object-cover"
+          >
+            <source
+              src="/assets/blooms.webm"
+              type="video/webm"
+            />
+            Your browser does not support the video tag.
+          </video>
         </div>
         <div
           aria-hidden="true"

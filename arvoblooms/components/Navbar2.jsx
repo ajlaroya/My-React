@@ -1,4 +1,5 @@
-import { Fragment, useState, useContext } from "react";
+import { useRouter } from 'next/router'
+import { Fragment, useState, useContext, useEffect } from "react";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
@@ -41,7 +42,7 @@ const navigation = {
     },
   ],
   pages: [
-    { name: "Our Story", href: "#" },
+    { name: "Our Story", href: "/our-story" },
     { name: "Guide", href: "#" },
   ],
 };
@@ -51,8 +52,18 @@ function classNames(...classes) {
 }
 
 export default function Navbar2() {
+  const router = useRouter()
+  const { pid } = router.query
   const [open, setOpen] = useState(false);
   const { openCart, checkout } = useContext(ShopContext);
+  
+  useEffect(() => {
+    if (router.isReady) {
+      // Code using query
+      console.log(pid);
+     }
+  }, [router.isReady])
+  
 
   return (
     <div className="bg-white">

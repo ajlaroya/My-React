@@ -20,9 +20,7 @@ const Footer = () => {
               <p className="text-sm text-gray-700 tracking-tight">
                 Flowery acknowledges the Traditional Custodians of the land
                 where we work and recognise their connections to land, sea and
-                community. We pay our respect to their Elders past and present
-                and extend that respect to all Aboriginal and Torres Strait
-                Islander peoples today
+                community.
               </p>
               <p className="mt-4 text-sm text-gray-500 tracking-widest">
                 Currently under construction by @ajlaroya

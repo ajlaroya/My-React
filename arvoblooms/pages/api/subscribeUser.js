@@ -1,6 +1,6 @@
 import fetch from "isomorphic-unfetch";
 
-// Subscribe user API route
+// Mailchimp Subscribe user API route
 export default async (req, res) => {
   const { email } = req.body;
 
