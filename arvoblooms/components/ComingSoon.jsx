@@ -30,7 +30,7 @@ export default function Example() {
 
   return (
     <div className="bg-white">
-      <div className="relative bg-gray-900">
+      <div className="relative bg-gray-900 min-h-screen">
         {/* Decorative image/video and overlay */}
         <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
           {/* <img
@@ -42,7 +42,7 @@ export default function Example() {
             autoPlay
             loop
             muted
-            className="w-full min-h-screen object-center object-cover"
+            className="w-full h-full object-center object-cover"
           >
             <source
               src="/assets/blooms.webm"

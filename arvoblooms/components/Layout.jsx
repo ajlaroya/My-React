@@ -2,12 +2,12 @@ import React from "react";
 
 import Footer from "./Footer";
 import Cart from "./Cart";
-import Navbar2 from "./Navbar2";
+import Navbar from "./Navbar";
 
 export default function Layout({ children }) {
   return (
     <>
-      <Navbar2 />
+      <Navbar />
       <Cart />
       <main>{children}</main>
       <Footer />

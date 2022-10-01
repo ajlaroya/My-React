@@ -17,12 +17,12 @@ const Footer = () => {
               </span>
             </a>
             <div className="mt-4 lg:max-w-sm">
-              <p className="text-sm text-gray-700 tracking-tight">
+              <p className="text-sm text-gray-700">
                 Flowery acknowledges the Traditional Custodians of the land
                 where we work and recognise their connections to land, sea and
                 community.
               </p>
-              <p className="mt-4 text-sm text-gray-500 tracking-widest">
+              <p className="mt-4 text-sm text-gray-500">
                 Currently under construction by @ajlaroya
               </p>
             </div>
