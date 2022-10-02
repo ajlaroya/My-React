@@ -8,9 +8,7 @@ export default function RelatedProducts({
   return (
     <div className="bg-white">
       <div className="max-w-2xl border-t mx-auto py-16 px-4 sm:py-8 sm:px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="text-xl font-bold text-gray-900">
-          Customers also bought
-        </h2>
+        <h2 className="text-xl font-bold text-gray-900">You might also like</h2>
 
         <div className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
           {collection[0]?.products?.map((product) => (
@@ -26,9 +24,11 @@ export default function RelatedProducts({
                   />
                 </div>
                 <div className="relative mt-4">
-                  <h3 className="text-sm font-medium text-gray-900">
-                    {product.title}
-                  </h3>
+                  <a href={`/product/${product.handle}`}>
+                    <h3 className="text-sm font-medium text-gray-900">
+                      {product.title}
+                    </h3>
+                  </a>
                   <p className="mt-1 text-sm text-gray-500">
                     {product.productType}
                   </p>

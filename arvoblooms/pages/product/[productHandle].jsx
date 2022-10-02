@@ -10,7 +10,9 @@ import { ShieldCheckIcon } from "@heroicons/react/24/outline";
 import { ShopContext } from "../../context/shopContext";
 import { shopifyClient, parseShopifyResponse } from "../../utils/shopify";
 import RelatedProducts from "../../components/RelatedProducts";
+
 import Image from "next/future/image";
+import Head from "next/head";
 
 const product = {
   name: "Everyday Ruck Snack",
@@ -44,18 +46,23 @@ function classNames(...classes) {
 }
 
 export default function ProductPage({ product1 }) {
-  const { addItemToCheckout, openCart, fetchCollection, collection } = useContext(ShopContext);
+  const { addItemToCheckout, openCart, fetchCollection, collection } =
+    useContext(ShopContext);
   const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
   const { title, handle, description, productType } = product1;
   const { src } = product1.images[0];
   const { price } = product1.variants[0];
-  
+
   useEffect(() => {
-    fetchCollection()
-  }, [])
+    fetchCollection();
+  }, []);
 
   return (
     <>
+      <Head>
+        <title>{title} | Flowery</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className="bg-white">
         <div className="max-w-2xl mx-auto py-8 px-4 sm:py-18 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
           {/* Product details */}
@@ -262,7 +269,11 @@ export default function ProductPage({ product1 }) {
         </div>
       </div>
 
-      <RelatedProducts addItemToCheckout={addItemToCheckout} openCart={openCart} collection={collection} />
+      <RelatedProducts
+        addItemToCheckout={addItemToCheckout}
+        openCart={openCart}
+        collection={collection}
+      />
     </>
   );
 }

@@ -33,7 +33,7 @@ const Footer = () => {
               <ul className="mt-2 space-y-2">
                 <li>
                   <a
-                    href="/"
+                    href="/shop"
                     className="text-gray-600 transition-colors duration-300 hover:text-pink-400"
                   >
                     Flowers
@@ -60,7 +60,7 @@ const Footer = () => {
                     href="/"
                     className="text-gray-600 transition-colors duration-300 hover:text-pink-400"
                   >
-                    Pots n Vases
+                    Vase
                   </a>
                 </li>
               </ul>
@@ -72,7 +72,7 @@ const Footer = () => {
               <ul className="mt-2 space-y-2">
                 <li>
                   <a
-                    href="/"
+                    href="/faq"
                     className="text-gray-600 transition-colors duration-300 hover:text-pink-400"
                   >
                     FAQ
@@ -80,7 +80,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="/"
+                    href="/our-story"
                     className="text-gray-600 transition-colors duration-300 hover:text-pink-400"
                   >
                     Our Story
@@ -88,7 +88,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="/"
+                    href="/care"
                     className="text-gray-600 transition-colors duration-300 hover:text-pink-400"
                   >
                     Flower Care

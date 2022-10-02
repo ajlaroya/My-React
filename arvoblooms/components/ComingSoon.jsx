@@ -8,6 +8,7 @@ export default function Example() {
     setSubscribed(false);
   }, []);
 
+  // Subscribe user to mailchimps mailing
   const subscribeUser = async (e) => {
     e.preventDefault();
 
@@ -33,21 +34,13 @@ export default function Example() {
       <div className="relative bg-gray-900 min-h-screen">
         {/* Decorative image/video and overlay */}
         <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
-          {/* <img
-            src="https://images.unsplash.com/photo-1543157145-f78c636d023d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1738&q=80"
-            alt=""
-            className="w-full h-full object-center object-cover"
-          /> */}
           <video
             autoPlay
             loop
             muted
             className="w-full h-full object-center object-cover"
           >
-            <source
-              src="/assets/blooms.webm"
-              type="video/webm"
-            />
+            <source src="/assets/blooms.webm" type="video/webm" />
             Your browser does not support the video tag.
           </video>
         </div>
