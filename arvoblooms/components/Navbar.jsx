@@ -199,7 +199,7 @@ export default function Navbar() {
       <header className="relative bg-white">
         <nav
           aria-label="Top"
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 "
         >
           <div className="border-b border-gray-200">
             <div className="h-16 flex items-center justify-between">

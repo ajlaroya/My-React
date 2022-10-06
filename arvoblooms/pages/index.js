@@ -1,5 +1,6 @@
 import ProductList from "../components/ProductList";
 import ComingSoon from "../components/ComingSoon";
+import About from "../components/About";
 
 import { shopifyClient, parseShopifyResponse } from "../utils/shopify";
 
@@ -8,6 +9,7 @@ export default function Home({ products }) {
     <div>
       <ComingSoon />
       <ProductList products={products} />
+      <About />
     </div>
   );
 }
