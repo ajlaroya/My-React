@@ -196,17 +196,18 @@ export default function Navbar() {
         </Dialog>
       </Transition.Root>
 
-      <header className="relative bg-white">
+      {/* Navbar */}
+      <header className="fixed w-full z-10 backdrop-blur-lg bg-black/30 border-b border-gray-50">
         <nav
           aria-label="Top"
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 "
+          className="mx-auto px-4 sm:px-6 lg:px-12 "
         >
-          <div className="border-b border-gray-200">
+          <div className="">
             <div className="h-16 flex items-center justify-between">
               <div className="flex-1 flex items-center lg:hidden">
                 <button
                   type="button"
-                  className="-ml-2 bg-white p-2 rounded-md text-gray-400"
+                  className="-ml-2 bg-transparent p-2 rounded-md text-gray-100"
                   onClick={() => setOpen(true)}
                 >
                   <span className="sr-only">Open menu</span>
@@ -215,7 +216,7 @@ export default function Navbar() {
 
                 <a
                   href="#"
-                  className="ml-2 p-2 text-gray-400 hover:text-gray-500"
+                  className="ml-2 p-2 text-gray-100 hover:text-gray-200"
                 >
                   <span className="sr-only">Search</span>
                   <MagnifyingGlassIcon className="w-6 h-6" aria-hidden="true" />
@@ -229,7 +230,7 @@ export default function Navbar() {
                     <a
                       key={page.name}
                       href={page.href}
-                      className={activeLink == page.href ? "flex items-center text-sm font-medium text-pink-600 border-pink-600 border-b" : "flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"}
+                      className={activeLink == page.href ? "flex items-center text-sm font-medium text-pink-600 border-pink-600 border-b" : "flex items-center text-sm font-medium text-gray-100 hover:text-gray-200"}
                     >
                       {page.name}
                     </a>
@@ -239,7 +240,7 @@ export default function Navbar() {
 
               {/* Logo */}
               <Link href="/" className="flex">
-                <span className="font-bold tracking-tight cursor-pointer text-gray-800 md:text-xl">
+                <span className="font-bold tracking-tight cursor-pointer text-gray-100 text-lg md:text-xl">
                   🌺 flowery
                 </span>
               </Link>
@@ -248,7 +249,7 @@ export default function Navbar() {
                 {/* Search */}
                 <a
                   href="#"
-                  className="hidden ml-6 p-2 text-gray-400 hover:text-gray-500 lg:block"
+                  className="hidden ml-6 p-2 text-gray-100 hover:text-gray-500 lg:block"
                 >
                   <span className="sr-only">Search</span>
                   <MagnifyingGlassIcon className="w-6 h-6" aria-hidden="true" />
@@ -257,7 +258,7 @@ export default function Navbar() {
                 {/* Account */}
                 <a
                   href="#"
-                  className="p-2 text-gray-400 hover:text-gray-500 lg:ml-4"
+                  className="p-2 text-gray-100 hover:text-gray-500 lg:ml-4"
                 >
                   <span className="sr-only">Account</span>
                   <UserIcon className="w-6 h-6" aria-hidden="true" />
@@ -270,11 +271,11 @@ export default function Navbar() {
                     className="group -m-2 p-2 flex items-center"
                   >
                     <ShoppingBagIcon
-                      className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
+                      className="flex-shrink-0 h-6 w-6 text-gray-100 group-hover:text-gray-500"
                       aria-hidden="true"
                     />
                     {checkout?.lineItems?.length > 0 && (
-                      <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
+                      <span className="ml-2 text-sm font-medium text-gray-100 group-hover:text-gray-200">
                         {checkout?.lineItems?.length}
                       </span>
                     )}

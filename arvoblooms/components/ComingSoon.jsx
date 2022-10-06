@@ -51,7 +51,7 @@ export default function Example() {
 
         <div className="relative max-w-3xl mx-auto py-32 px-6 flex flex-col items-center text-center sm:py-64 lg:px-0">
           <h1 className="text-4xl font-extrabold tracking-tight text-white lg:text-6xl">
-            We are coming soon 🌸
+            We are coming soon
           </h1>
           <p className="mt-4 text-xl text-white">
             We are almost there! If you want to get notified when the website
@@ -83,7 +83,7 @@ export default function Example() {
                 type="submit"
                 value=""
                 name="subscribe"
-                className="block w-full rounded-md border border-transparent px-5 py-3 bg-pink-400 text-base font-medium text-white shadow hover:bg-pink-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-pink-600 sm:px-10"
+                className="transition ease-in-out duration-500 block w-full rounded-md border px-5 py-3 text-base font-medium text-white hover:bg-gray-100 hover:text-gray-800 shadow sm:px-10"
               >
                 Notify me
               </button>
