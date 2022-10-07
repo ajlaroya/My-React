@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import { Fragment, useState, useContext, useEffect } from "react";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
 import {
@@ -53,12 +53,12 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
-  const router = useRouter()
-  const activeLink = router.pathname
+  const router = useRouter();
+  const activeLink = router.pathname;
   const [open, setOpen] = useState(false);
   const { openCart, checkout } = useContext(ShopContext);
-  
-  console.log(activeLink)
+
+  console.log(activeLink);
 
   return (
     <div className="bg-white">
@@ -169,7 +169,11 @@ export default function Navbar() {
                   <div key={page.name} className="flow-root">
                     <a
                       href={page.href}
-                      className={activeLink == page.href ? "-m-2 p-2 block font-medium text-pink-600" : "-m-2 p-2 block font-medium text-gray-900"}
+                      className={
+                        activeLink == page.href
+                          ? "-m-2 p-2 block font-medium text-pink-600"
+                          : "-m-2 p-2 block font-medium text-gray-900"
+                      }
                     >
                       {console.log(page.href)}
                       {page.name}
@@ -197,11 +201,8 @@ export default function Navbar() {
       </Transition.Root>
 
       {/* Navbar */}
-      <header className="fixed w-full z-10 backdrop-blur-lg bg-black/30 border-b border-gray-50">
-        <nav
-          aria-label="Top"
-          className="mx-auto px-4 sm:px-6 lg:px-12 "
-        >
+      <header className="fixed w-full z-50 backdrop-blur-md bg-black/50 border-b border-gray-50">
+        <nav aria-label="Top" className="mx-auto px-4 sm:px-6 lg:px-12 ">
           <div className="">
             <div className="h-16 flex items-center justify-between">
               <div className="flex-1 flex items-center lg:hidden">
@@ -230,7 +231,11 @@ export default function Navbar() {
                     <a
                       key={page.name}
                       href={page.href}
-                      className={activeLink == page.href ? "flex items-center text-sm font-medium text-pink-600 border-pink-600 border-b" : "flex items-center text-sm font-medium text-gray-100 hover:text-gray-200"}
+                      className={
+                        activeLink == page.href
+                          ? "flex items-center text-sm font-medium text-pink-600 border-pink-600 border-b"
+                          : "flex items-center text-sm font-medium text-gray-100 hover:text-gray-200"
+                      }
                     >
                       {page.name}
                     </a>
@@ -240,7 +245,7 @@ export default function Navbar() {
 
               {/* Logo */}
               <Link href="/" className="flex">
-                <span className="font-bold tracking-tight cursor-pointer text-gray-100 text-lg md:text-xl">
+                <span className="font-bold tracking-tight cursor-pointer text-gray-50 text-lg md:text-xl">
                   🌺 flowery
                 </span>
               </Link>

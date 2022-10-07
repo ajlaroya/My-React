@@ -17,12 +17,10 @@ export default function Home({ products }) {
 export const getServerSideProps = async () => {
   // Fetch all the products
   const products = await shopifyClient.product.fetchAll();
-  // const checkout = await shopifyClient.checkout.create();
 
   return {
     props: {
       products: parseShopifyResponse(products),
-      // checkout: parseShopifyResponse(checkout),
     },
   };
 };

@@ -48,7 +48,7 @@ export default function RelatedProducts({
               </div>
               <div className="mt-6">
                 <button
-                  className="w-full relative flex bg-gray-100 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-900 hover:bg-gray-200"
+                  className="w-full relative flex bg-neutral-800 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-200 hover:bg-gray-200"
                   onClick={(e) => {
                     e.preventDefault();
                     addItemToCheckout(product.variants[0].id, 1);

@@ -11,7 +11,7 @@ const ProductList = ({ products }) => {
           </h2>
           <a
             href="#"
-            className="hidden text-sm font-medium text-pink-600 hover:text-pink-500 md:block"
+            className="hidden text-sm font-medium text-neutral-800 hover:text-pink-500 md:block"
           >
             See all<span aria-hidden="true"> &rarr;</span>
           </a>

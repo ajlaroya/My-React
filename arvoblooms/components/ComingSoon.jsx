@@ -1,7 +1,10 @@
 import { useRef, useState, useEffect } from "react";
+import ScrollDown from "./ScrollDown";
 
-export default function Example() {
+export default function ComingSoon() {
   const inputRef = useRef(null);
+  const bottomRef = useRef(null);
+
   const [subscribed, setSubscribed] = useState(false);
 
   useEffect(() => {
@@ -88,17 +91,21 @@ export default function Example() {
                 Notify me
               </button>
             </div>
-          </form>
 
-          {subscribed && (
-            <div className="sm:text-center">
-              <p className="mt-6 mx-auto max-w-2xl text-md text-pink-100">
-                You have successfully subscribed!
-              </p>
-            </div>
-          )}
+            {/* Subscribed text */}
+            {subscribed && (
+              <div className="sm:text-center">
+                <p className="mt-6 mx-auto max-w-2xl text-md text-pink-100">
+                  You have successfully subscribed!
+                </p>
+              </div>
+            )}
+          </form>
+          
+          <ScrollDown bottomRef={bottomRef}/>
         </div>
       </div>
+      <div ref={bottomRef} />
     </div>
   );
 }

@@ -49,7 +49,7 @@ export default function ProductPage({ product1 }) {
   const { addItemToCheckout, openCart, fetchCollection, collection } =
     useContext(ShopContext);
   const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
-  const { title, handle, description, productType } = product1;
+  const { title, description } = product1;
   const { src } = product1.images[0];
   const { price } = product1.variants[0];
 
@@ -63,7 +63,7 @@ export default function ProductPage({ product1 }) {
         <title>{title} | Flowery</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className="bg-white">
+      <div className="pt-16">
         <div className="max-w-2xl mx-auto py-8 px-4 sm:py-18 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
           {/* Product details */}
           <div className="lg:max-w-lg lg:self-end">
@@ -119,7 +119,7 @@ export default function ProductPage({ product1 }) {
                             key={rating}
                             className={classNames(
                               reviews.average > rating
-                                ? "text-pink-400"
+                                ? "text-neutral-800"
                                 : "text-gray-300",
                               "h-5 w-5 flex-shrink-0"
                             )}
@@ -189,7 +189,7 @@ export default function ProductPage({ product1 }) {
                           value={size}
                           className={({ active }) =>
                             classNames(
-                              active ? "ring-2 ring-pink-500" : "",
+                              active ? "ring-2 ring-neutral-500" : "",
                               "relative block border border-gray-300 rounded-lg p-4 cursor-pointer focus:outline-none"
                             )
                           }
@@ -212,7 +212,7 @@ export default function ProductPage({ product1 }) {
                                 className={classNames(
                                   active ? "border" : "border-2",
                                   checked
-                                    ? "border-pink-500"
+                                    ? "border-neutral-500"
                                     : "border-transparent",
                                   "absolute -inset-px rounded-lg pointer-events-none"
                                 )}
@@ -225,21 +225,9 @@ export default function ProductPage({ product1 }) {
                     </div>
                   </RadioGroup>
                 </div>
-                <div className="mt-4">
-                  <a
-                    href="#"
-                    className="group inline-flex text-sm text-gray-500 hover:text-gray-700"
-                  >
-                    <span>What size should I buy?</span>
-                    <QuestionMarkCircleIcon
-                      className="flex-shrink-0 ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-                      aria-hidden="true"
-                    />
-                  </a>
-                </div>
                 <div className="mt-10">
                   <button
-                    className="w-full bg-pink-500 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-pink-500"
+                    className="w-full bg-neutral-800 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-neutral-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-neutral-500"
                     onClick={(e) => {
                       e.preventDefault();
                       addItemToCheckout(product1.variants[0].id, 1);

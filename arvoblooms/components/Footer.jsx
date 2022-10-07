@@ -106,16 +106,16 @@ const Footer = () => {
             </div>
 
             {/* Subscribe section */}
-            <div className="md:max-w-md lg:col-span-2">
+            <div className="md:max-w-md lg:col-span-2 col-span-2">
               <p className="font-semibold tracking-tight text-gray-100">
                 Subscribe
               </p>
-              <form className="flex flex-col mt-4 md:flex-row">
+              <form className="flex flex-col mt-4 sm:flex-row">
                 <input
                   placeholder="Email"
                   required
                   type="text"
-                  className="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-zinc-700 text-gray-100 border border-zinc-400 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-pink-400 focus:outline-none focus:shadow-outline"
+                  className="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-zinc-200 text-gray-100 border border-zinc-400 rounded shadow-sm appearance-none sm:mr-4 md:mb-0 focus:border-pink-400 focus:outline-none focus:shadow-outline"
                 />
                 <button
                   type="submit"
