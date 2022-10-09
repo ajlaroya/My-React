@@ -5,15 +5,15 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 
 import { ShopContext } from "../context/shopContext";
 
-const Cart = () => {
-  const { isCartOpen, checkout, closeCart, removeItemFromCheckout } = useContext(ShopContext);
+const Cart = ({isCartOpen, handleToggle}) => {
+  const { checkout, removeItemFromCheckout } = useContext(ShopContext);
   
   return (
     <Transition show={isCartOpen} as={Fragment}>
       <Dialog
         as="div"
-        className="fixed inset-0 overflow-hidden"
-        onClose={closeCart}
+        className="fixed inset-0 overflow-hidden z-50"
+        onClose={handleToggle}
       >
         <div className="absolute inset-0 overflow-hidden">
           <Transition.Child
@@ -52,7 +52,7 @@ const Cart = () => {
                         <button
                           type="button"
                           className="-m-2 p-2 text-neutral-400 hover:text-neutral-500"
-                          onClick={() => closeCart()}
+                          onClick={() => handleToggle()}
                         >
                           <span className="sr-only">Close panel</span>
                           <XMarkIcon className="h-6 w-6" aria-hidden="true" />
@@ -134,18 +134,18 @@ const Cart = () => {
                     <div className="mt-6">
                       <a
                         href={checkout.webUrl}
-                        className="flex items-center justify-center rounded-md border border-transparent bg-neutral-800 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-neutral-700"
+                        className="flex items-center justify-center rounded-md border border-transparent bg-zinc-800 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-zinc-700"
                       >
                         Checkout
                       </a>
                     </div>
-                    <div className="mt-6 flex justify-center text-center text-sm text-neutral-500">
+                    <div className="mt-6 flex justify-center text-center text-sm text-zinc-500">
                       <p>
                         or{" "}
                         <button
                           type="button"
-                          className="font-medium text-neutral-300 hover:text-neutral-500"
-                          onClick={() => closeCart()}
+                          className="font-medium text-zinc-200 hover:text-zinc-300"
+                          onClick={() => handleToggle()}
                         >
                           Continue Shopping
                           <span aria-hidden="true"> &rarr;</span>

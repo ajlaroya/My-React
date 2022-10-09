@@ -10,6 +10,7 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
+import Cart from './Cart'
 import { ShopContext } from "../context/shopContext";
 
 const navigation = {
@@ -56,17 +57,21 @@ export default function Navbar() {
   const router = useRouter();
   const activeLink = router.pathname;
   const [open, setOpen] = useState(false);
-  const { openCart, checkout } = useContext(ShopContext);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const { checkout } = useContext(ShopContext);
 
-  console.log(activeLink);
+  const handleToggle = () => {
+    setIsCartOpen(prev => !prev)
+  };
 
   return (
-    <div className="bg-white">
+    <>
+      <Cart isCartOpen={isCartOpen} handleToggle={handleToggle} />
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog
           as="div"
-          className="fixed inset-0 flex z-40 lg:hidden"
+          className="fixed inset-0 flex z-50 lg:hidden"
           onClose={setOpen}
         >
           <Transition.Child
@@ -78,7 +83,7 @@ export default function Navbar() {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-25" />
+            <Dialog.Overlay className="fixed inset-0 bg-neutral-500 bg-opacity-75 transition-opacity" />
           </Transition.Child>
 
           <Transition.Child
@@ -90,11 +95,11 @@ export default function Navbar() {
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full"
           >
-            <div className="relative max-w-xs w-full bg-white shadow-xl pb-12 flex flex-col overflow-y-auto">
-              <div className="px-4 pt-5 pb-2 flex">
+            <div className="relative max-w-xs w-full backdrop-blur-md bg-black/50 border-r shadow-xl pb-12 flex flex-col overflow-y-auto">
+              <div className="px-4 py-5 flex">
                 <button
                   type="button"
-                  className="-m-2 p-2 rounded-md inline-flex items-center justify-center text-gray-400"
+                  className="-m-2 p-2 rounded-md inline-flex items-center justify-center text-zinc-200"
                   onClick={() => setOpen(false)}
                 >
                   <span className="sr-only">Close menu</span>
@@ -103,8 +108,8 @@ export default function Navbar() {
               </div>
 
               {/* Links */}
-              <Tab.Group as="div" className="mt-2">
-                <div className="border-b border-gray-200">
+              {/* <Tab.Group as="div" className="mt-2">
+                <div className="border-b border-zinc-200">
                   <Tab.List className="-mb-px flex px-4 space-x-8">
                     {navigation.categories.map((category) => (
                       <Tab
@@ -113,7 +118,7 @@ export default function Navbar() {
                           classNames(
                             selected
                               ? "text-pink-600 border-pink-600"
-                              : "text-gray-900 border-transparent",
+                              : "text-zinc-900 border-transparent",
                             "flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium"
                           )
                         }
@@ -135,7 +140,7 @@ export default function Navbar() {
                             <div key={section.name}>
                               <p
                                 id={`${category.id}-${section.id}-heading-mobile`}
-                                className="font-medium text-gray-900"
+                                className="font-medium text-zinc-900"
                               >
                                 {section.name}
                               </p>
@@ -148,7 +153,7 @@ export default function Navbar() {
                                   <li key={item.name} className="flow-root">
                                     <a
                                       href={item.href}
-                                      className="-m-2 p-2 block text-gray-500"
+                                      className="-m-2 p-2 block text-zinc-500"
                                     >
                                       {item.name}
                                     </a>
@@ -162,34 +167,33 @@ export default function Navbar() {
                     </Tab.Panel>
                   ))}
                 </Tab.Panels>
-              </Tab.Group>
+              </Tab.Group> */}
 
-              <div className="border-t border-gray-200 py-6 px-4 space-y-6">
+              <div className="border-t border-zinc-200 py-6 px-4 space-y-6">
                 {navigation.pages.map((page) => (
                   <div key={page.name} className="flow-root">
                     <a
                       href={page.href}
                       className={
                         activeLink == page.href
-                          ? "-m-2 p-2 block font-medium text-pink-600"
-                          : "-m-2 p-2 block font-medium text-gray-900"
+                          ? "-m-2 block font-medium underline-offset-4 underline text-zinc-50"
+                          : "-m-2 block text-zinc-100 hover-underline-animation-white"
                       }
                     >
-                      {console.log(page.href)}
                       {page.name}
                     </a>
                   </div>
                 ))}
               </div>
 
-              <div className="border-t border-gray-200 py-6 px-4">
+              <div className="border-t border-zinc-200 py-6 px-4">
                 <a href="#" className="-m-2 p-2 flex items-center">
                   <img
                     src="https://tailwindui.com/img/flags/flag-australia.svg"
                     alt=""
                     className="w-5 h-auto block flex-shrink-0"
                   />
-                  <span className="ml-3 block text-base font-medium text-gray-900">
+                  <span className="ml-3 block text-base font-medium text-zinc-100">
                     AUD
                   </span>
                   <span className="sr-only">, change currency</span>
@@ -201,27 +205,27 @@ export default function Navbar() {
       </Transition.Root>
 
       {/* Navbar */}
-      <header className="fixed w-full z-50 backdrop-blur-md bg-black/50 border-b border-gray-50">
+      <header className="fixed w-full z-50 backdrop-blur-md bg-black/50 border-b border-zinc-50">
         <nav aria-label="Top" className="mx-auto px-4 sm:px-6 lg:px-12 ">
           <div className="">
             <div className="h-16 flex items-center justify-between">
               <div className="flex-1 flex items-center lg:hidden">
                 <button
                   type="button"
-                  className="-ml-2 bg-transparent p-2 rounded-md text-gray-100"
+                  className="-ml-2 bg-transparent p-2 rounded-md text-zinc-100"
                   onClick={() => setOpen(true)}
                 >
                   <span className="sr-only">Open menu</span>
                   <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                 </button>
 
-                <a
+                {/* <a
                   href="#"
-                  className="ml-2 p-2 text-gray-100 hover:text-gray-200"
+                  className="ml-2 p-2 text-zinc-100 hover:text-zinc-200"
                 >
                   <span className="sr-only">Search</span>
                   <MagnifyingGlassIcon className="w-6 h-6" aria-hidden="true" />
-                </a>
+                </a> */}
               </div>
 
               {/* Flyout menus */}
@@ -234,7 +238,7 @@ export default function Navbar() {
                       className={
                         activeLink == page.href
                           ? "flex items-center text-sm font-bold text-white border-white border-b"
-                          : "flex items-center text-sm font-medium text-gray-100 hover:text-gray-200"
+                          : "flex items-center text-sm font-medium text-zinc-100 hover:text-zinc-200"
                       }
                     >
                       {page.name}
@@ -245,25 +249,25 @@ export default function Navbar() {
 
               {/* Logo */}
               <Link href="/" className="flex">
-                <span className="font-bold tracking-tight cursor-pointer text-gray-50 text-lg md:text-xl">
+                <span className="font-bold tracking-tight cursor-pointer text-zinc-50 text-lg md:text-xl">
                   🌺 flowery
                 </span>
               </Link>
 
               <div className="flex-1 flex items-center justify-end">
                 {/* Search */}
-                <a
+                {/* <a
                   href="#"
-                  className="hidden ml-6 p-2 text-gray-100 hover:text-gray-500 lg:block"
+                  className="hidden ml-6 p-2 text-zinc-100 hover:text-zinc-300 lg:block"
                 >
                   <span className="sr-only">Search</span>
                   <MagnifyingGlassIcon className="w-6 h-6" aria-hidden="true" />
-                </a>
+                </a> */}
 
                 {/* Account */}
                 <a
                   href="#"
-                  className="p-2 text-gray-100 hover:text-gray-500 lg:ml-4"
+                  className="p-2 text-zinc-100 hover:text-zinc-300 lg:ml-4"
                 >
                   <span className="sr-only">Account</span>
                   <UserIcon className="w-6 h-6" aria-hidden="true" />
@@ -272,15 +276,15 @@ export default function Navbar() {
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
                   <button
-                    onClick={() => openCart()}
+                    onClick={() => handleToggle()}
                     className="group -m-2 p-2 flex items-center"
                   >
                     <ShoppingBagIcon
-                      className="flex-shrink-0 h-6 w-6 text-gray-100 group-hover:text-gray-500"
+                      className="flex-shrink-0 h-6 w-6 text-zinc-100 group-hover:text-zinc-300"
                       aria-hidden="true"
                     />
                     {checkout?.lineItems?.length > 0 && (
-                      <span className="ml-2 text-sm font-medium text-gray-100 group-hover:text-gray-200">
+                      <span className="ml-2 text-sm font-medium text-zinc-100 group-hover:text-zinc-200">
                         {checkout?.lineItems?.length}
                       </span>
                     )}
@@ -292,6 +296,6 @@ export default function Navbar() {
           </div>
         </nav>
       </header>
-    </div>
+    </>
   );
 }

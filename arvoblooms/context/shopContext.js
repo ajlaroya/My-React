@@ -4,11 +4,8 @@ import { shopifyClient, parseShopifyResponse } from "../utils/shopify";
 const ShopContext = React.createContext();
 
 const ShopProvider = ({ children }) => {
-  const [products, setProducts] = useState([]);
-  const [product, setProduct] = useState({});
   const [collection, setCollection] = useState({})
   const [checkout, setCheckout] = useState({});
-  const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
     if (localStorage.checkout_id) {
@@ -63,24 +60,11 @@ const ShopProvider = ({ children }) => {
     });
   }
 
-  const closeCart = () => {
-    setIsCartOpen(false)
-    console.log("closing cart")
-  };
-
-  const openCart = () => {
-    setIsCartOpen(true)
-    console.log("opening cart")
-  };
-
   return (
     <ShopContext.Provider
         value={{
             checkout,
             collection,
-            isCartOpen,
-            closeCart,
-            openCart,
             addItemToCheckout,
             removeItemFromCheckout,
             fetchCollection,
