@@ -33,8 +33,8 @@ export default function ComingSoon() {
   };
 
   return (
-    <div className="bg-white">
-      <div className="relative bg-gray-900 min-h-screen">
+    <>
+      <div className="relative bg-zinc-100 min-h-screen">
         {/* Decorative image/video and overlay */}
         <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
           <video
@@ -106,6 +106,6 @@ export default function ComingSoon() {
         </div>
       </div>
       <div ref={bottomRef} />
-    </div>
+    </>
   );
 }

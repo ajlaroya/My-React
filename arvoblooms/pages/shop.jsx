@@ -17,22 +17,8 @@ const filters = [
     id: 'category',
     name: 'Category',
     options: [
-      { value: 'tees', label: 'Tees' },
-      { value: 'crewnecks', label: 'Crewnecks' },
-      { value: 'hats', label: 'Hats' },
-      { value: 'bundles', label: 'Bundles' },
-      { value: 'carry', label: 'Carry' },
-      { value: 'objects', label: 'Objects' },
-    ],
-  },
-  {
-    id: 'brand',
-    name: 'Brand',
-    options: [
-      { value: 'clothing-company', label: 'Clothing Company' },
-      { value: 'fashion-inc', label: 'Fashion Inc.' },
-      { value: 'shoes-n-more', label: "Shoes 'n More" },
-      { value: 'supplies-n-stuff', label: "Supplies 'n Stuff" },
+      { value: 'flowers', label: 'Flower' },
+      { value: 'vase', label: 'Vase' },
     ],
   },
   {
@@ -40,87 +26,13 @@ const filters = [
     name: 'Color',
     options: [
       { value: 'white', label: 'White' },
-      { value: 'black', label: 'Black' },
+      { value: 'pink', label: 'Pink' },
       { value: 'grey', label: 'Grey' },
       { value: 'blue', label: 'Blue' },
       { value: 'olive', label: 'Olive' },
-      { value: 'tan', label: 'Tan' },
+      { value: 'orange', label: 'Orange' },
     ],
   },
-  {
-    id: 'sizes',
-    name: 'Sizes',
-    options: [
-      { value: 'xs', label: 'XS' },
-      { value: 's', label: 'S' },
-      { value: 'm', label: 'M' },
-      { value: 'l', label: 'L' },
-      { value: 'xl', label: 'XL' },
-      { value: '2xl', label: '2XL' },
-    ],
-  },
-]
-const products1 = [
-  {
-    id: 1,
-    name: 'Focus Paper Refill',
-    href: '#',
-    price: '$13',
-    description: '3 sizes available',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-01-image-card-01.jpg',
-    imageAlt: 'Person using a pen to cross a task off a productivity paper card.',
-  },
-  {
-    id: 2,
-    name: 'Focus Card Holder',
-    href: '#',
-    price: '$64',
-    description: 'Walnut',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-01-image-card-02.jpg',
-    imageAlt: 'Paper card sitting upright in walnut card holder on desk.',
-  },
-  {
-    id: 3,
-    name: 'Focus Carry Pouch',
-    href: '#',
-    price: '$32',
-    description: 'Heather Gray',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-01-image-card-03.jpg',
-    imageAlt: 'Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop.',
-  },
-  // More products...
-]
-const products2 = [
-  {
-    id: 7,
-    name: 'Electric Kettle',
-    href: '#',
-    price: '$149',
-    description: 'Black',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-01-image-card-07.jpg',
-    imageAlt: 'Close up of long kettle spout pouring boiling water into pour-over coffee mug with frothy coffee.',
-  },
-  {
-    id: 8,
-    name: 'Leather Workspace Pad',
-    href: '#',
-    price: '$165',
-    description: 'Black',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-01-image-card-08.jpg',
-    imageAlt:
-      'Extra large black leather workspace pad on desk with computer, wooden shelf, desk organizer, and computer peripherals.',
-  },
-  {
-    id: 9,
-    name: 'Leather Long Wallet',
-    href: '#',
-    price: '$118',
-    description: 'Natural',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-01-image-card-09.jpg',
-    imageAlt:
-      'Leather long wallet held open with hand-stitched card dividers, full-length bill pocket, and simple tab closure.',
-  },
-  // More products...
 ]
 
 function classNames(...classes) {
@@ -293,7 +205,7 @@ export default function Shop({ products }) {
                           <span>{section.name}</span>
                           {sectionIdx === 0 ? (
                             <span className="ml-1.5 rounded py-0.5 px-1.5 bg-gray-200 text-xs font-semibold text-gray-700 tabular-nums">
-                              1
+                              0
                             </span>
                           ) : null}
                           <ChevronDownIcon
