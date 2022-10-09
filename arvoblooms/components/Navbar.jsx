@@ -233,7 +233,7 @@ export default function Navbar() {
                       href={page.href}
                       className={
                         activeLink == page.href
-                          ? "flex items-center text-sm font-medium text-pink-600 border-pink-600 border-b"
+                          ? "flex items-center text-sm font-bold text-white border-white border-b"
                           : "flex items-center text-sm font-medium text-gray-100 hover:text-gray-200"
                       }
                     >

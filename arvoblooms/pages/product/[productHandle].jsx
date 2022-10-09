@@ -49,7 +49,7 @@ export default function ProductPage({ product1 }) {
   const { addItemToCheckout, openCart, fetchCollection, collection } =
     useContext(ShopContext);
   const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
-  const { title, description } = product1;
+  const { title, descriptionHtml } = product1;
   const { src } = product1.images[0];
   const { price } = product1.variants[0];
 
@@ -138,9 +138,8 @@ export default function ProductPage({ product1 }) {
                 </div>
               </div>
 
-              <div className="mt-4 space-y-6">
-                <p className="text-base text-gray-500">{description}</p>
-              </div>
+              <div className="mt-4 space-y-6 text-zinc-500" dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
+              
 
               <div className="mt-6 flex items-center">
                 <CheckIcon
@@ -162,7 +161,7 @@ export default function ProductPage({ product1 }) {
                 alt={title}
                 width={500}
                 height={500}
-                className="w-full h-full object-center object-cover"
+                className="w-full h-full object-center object-cover hover:opacity-80 hover:scale-110 ease-in duration-150"
               />
             </div>
           </div>
@@ -175,9 +174,9 @@ export default function ProductPage({ product1 }) {
               </h2>
 
               <form>
-                <div className="sm:flex sm:justify-between">
+                {/* <div className="sm:flex sm:justify-between"> */}
                   {/* Size selector */}
-                  <RadioGroup value={selectedSize} onChange={setSelectedSize}>
+                  {/* <RadioGroup value={selectedSize} onChange={setSelectedSize}>
                     <RadioGroup.Label className="block text-sm font-medium text-gray-700">
                       Size
                     </RadioGroup.Label>
@@ -223,9 +222,9 @@ export default function ProductPage({ product1 }) {
                         </RadioGroup.Option>
                       ))}
                     </div>
-                  </RadioGroup>
-                </div>
-                <div className="mt-10">
+                  </RadioGroup> */}
+                {/* </div> */}
+                <div className="mb-10">
                   <button
                     className="w-full bg-neutral-800 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-neutral-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-neutral-500"
                     onClick={(e) => {
@@ -237,7 +236,7 @@ export default function ProductPage({ product1 }) {
                     Add to bag
                   </button>
                 </div>
-                <div className="mt-6 text-center">
+                {/* <div className="mt-6 text-center">
                   <a
                     href="#"
                     className="group inline-flex text-base font-medium"
@@ -250,7 +249,7 @@ export default function ProductPage({ product1 }) {
                       Lifetime Guarantee
                     </span>
                   </a>
-                </div>
+                </div> */}
               </form>
             </section>
           </div>

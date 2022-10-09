@@ -59,7 +59,7 @@ export default function Example() {
                     If you would like to speak with a member of our team about
                     flowers, be it from our local shop or studio – please
                     contact us via the enquiry form, or should you prefer,
-                    please call us on +61 3 9419 4988.
+                    please call us on +61 X XXXX XXXX.
                   </p>
                   <dl className="mt-8 space-y-6">
                     <dt>
@@ -70,7 +70,7 @@ export default function Example() {
                         className="flex-shrink-0 w-6 h-6 text-zinc-200"
                         aria-hidden="true"
                       />
-                      <span className="ml-3">04 XXXX XXXX</span>
+                      <span className="ml-3">+61 X XXXX XXXX</span>
                     </dd>
                     <dt>
                       <span className="sr-only">Email</span>

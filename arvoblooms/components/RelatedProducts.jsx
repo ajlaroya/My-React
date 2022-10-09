@@ -14,18 +14,18 @@ export default function RelatedProducts({
           {collection[0]?.products?.map((product) => (
             <div key={product.id}>
               <div className="group relative">
-                <div className="relative w-full h-72 rounded-lg overflow-hidden bg-gray-200 transition ease-in-out delay-50 group-hover:opacity-75">
+                <div className="relative w-full h-72 rounded-md overflow-hidden">
                   <Image
                     src={product.images[0].src}
                     alt={product.title}
                     width={300}
                     height={300}
-                    className="w-full h-full object-center object-cover"
+                    className="w-full h-full object-center object-cover group-hover:opacity-80 group-hover:scale-110 ease-in duration-150"
                   />
                 </div>
                 <div className="relative mt-4">
                   <a href={`/product/${product.handle}`}>
-                    <h3 className="text-sm font-medium text-gray-900">
+                    <h3 className="text-sm font-semibold tracking-tight text-zinc-900 hover-underline-animation">
                       {product.title}
                     </h3>
                   </a>
@@ -36,9 +36,9 @@ export default function RelatedProducts({
                 <div className="absolute top-0 inset-x-0 h-72 rounded-lg p-4 flex items-end justify-end overflow-hidden">
                   <div
                     aria-hidden="true"
-                    className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"
+                    className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-40"
                   />
-                  <p className="relative text-lg font-semibold text-white">
+                  <p className="relative text-lg font-semibold text-white ">
                     $
                     {Intl.NumberFormat("en-AU").format(
                       product.variants[0].price
@@ -48,7 +48,7 @@ export default function RelatedProducts({
               </div>
               <div className="mt-6">
                 <button
-                  className="w-full relative flex bg-neutral-800 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-200 hover:bg-gray-200"
+                  className="w-full relative flex bg-zinc-800 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-200 hover:bg-zinc-700"
                   onClick={(e) => {
                     e.preventDefault();
                     addItemToCheckout(product.variants[0].id, 1);
