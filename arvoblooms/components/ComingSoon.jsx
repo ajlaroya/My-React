@@ -77,14 +77,13 @@ export default function ComingSoon() {
                 required
                 autoCapitalize="off"
                 autoCorrect="off"
-                className="block w-full border border-transparent rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-pink-600"
+                className="block w-full border border-transparent rounded-md px-5 py-3 text-base text-zinc-900 placeholder-zinc-500 shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-zinc-500"
                 placeholder="Enter your email"
               />
             </div>
             <div className="mt-4 sm:mt-0 sm:ml-3">
               <button
                 type="submit"
-                value=""
                 name="subscribe"
                 className="transition ease-in-out duration-500 block w-full rounded-md border px-5 py-3 text-base font-medium text-white hover:bg-gray-100 hover:text-gray-800 shadow sm:px-10"
               >

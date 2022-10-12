@@ -1,9 +1,8 @@
 import { useRouter } from "next/router";
-import { Fragment, useState, useContext, useEffect } from "react";
+import { Fragment, useState, useContext } from "react";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
-  MagnifyingGlassIcon,
   ShoppingBagIcon,
   UserIcon,
   XMarkIcon,
@@ -25,7 +24,7 @@ const navigation = {
           imageSrc:
             "https://images.unsplash.com/photo-1523694576729-dc99e9c0f9b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Ym91cXVldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1600&q=60",
           imageAlt:
-            "Models sitting back to back, wearing Basic Tee in black and bone.",
+            "bouquet in hand",
         },
       ],
       sections: [
@@ -49,16 +48,11 @@ const navigation = {
   ],
 };
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 export default function Navbar() {
   const router = useRouter();
   const activeLink = router.pathname;
   const [open, setOpen] = useState(false);
-  const [isCartOpen, setIsCartOpen] = useState(false);
-  const { checkout } = useContext(ShopContext);
+  const { checkout, isCartOpen, setIsCartOpen } = useContext(ShopContext);
 
   const handleToggle = () => {
     setIsCartOpen(prev => !prev)

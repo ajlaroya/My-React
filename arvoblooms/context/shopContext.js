@@ -6,6 +6,7 @@ const ShopContext = React.createContext();
 const ShopProvider = ({ children }) => {
   const [collection, setCollection] = useState({})
   const [checkout, setCheckout] = useState({});
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
     if (localStorage.checkout_id) {
@@ -14,6 +15,11 @@ const ShopProvider = ({ children }) => {
       createCheckout();
     }
   }, []);
+
+  const openCart = () => {
+    setIsCartOpen(true)
+    console.log("opening cart")
+  };
 
   const createCheckout = async () => {
     const checkout = await shopifyClient.checkout.create();
@@ -39,8 +45,8 @@ const ShopProvider = ({ children }) => {
 
     shopifyClient.checkout.addLineItems(checkout.id, lineItemToAdd).then((checkout) => {
       setCheckout(checkout);
-      openCart()
       console.log("item added", checkout)
+      openCart();
     })
 
   };
@@ -65,6 +71,9 @@ const ShopProvider = ({ children }) => {
         value={{
             checkout,
             collection,
+            isCartOpen,
+            setIsCartOpen,
+            openCart,
             addItemToCheckout,
             removeItemFromCheckout,
             fetchCollection,

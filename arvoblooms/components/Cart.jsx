@@ -1,13 +1,13 @@
 import React, { Fragment, useContext } from "react";
-import Image from 'next/future/image'
+import Image from "next/future/image";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
 import { ShopContext } from "../context/shopContext";
 
-const Cart = ({isCartOpen, handleToggle}) => {
+const Cart = ({ isCartOpen, handleToggle }) => {
   const { checkout, removeItemFromCheckout } = useContext(ShopContext);
-  
+
   return (
     <Transition show={isCartOpen} as={Fragment}>
       <Dialog
@@ -63,6 +63,13 @@ const Cart = ({isCartOpen, handleToggle}) => {
                     {/* Shopping Cart Products */}
                     <div className="mt-8">
                       <div className="flow-root">
+                        {/* if no items in cart */}
+                        {checkout?.lineItems?.length === 0 && (
+                          <span className="ml-2 text-lg font-medium text-zinc-100">
+                            You have no items in cart!
+                          </span>
+                        )}
+
                         <ul
                           role="list"
                           className="-my-6 divide-y divide-neutral-200"
@@ -87,7 +94,10 @@ const Cart = ({isCartOpen, handleToggle}) => {
                                         <a href={item.href}> {item.title} </a>
                                       </h3>
                                       <p className="ml-4">
-                                        ${Intl.NumberFormat("en-AU").format(item.variant.price)}
+                                        $
+                                        {Intl.NumberFormat("en-AU").format(
+                                          item.variant.price
+                                        )}
                                       </p>
                                     </div>
                                     <p className="mt-1 text-sm text-neutral-500">
@@ -104,7 +114,10 @@ const Cart = ({isCartOpen, handleToggle}) => {
                                         type="button"
                                         className="font-medium text-neutral-300 hover:text-neutral-500"
                                         onClick={() => {
-                                          removeItemFromCheckout(checkout.id, item.id)
+                                          removeItemFromCheckout(
+                                            checkout.id,
+                                            item.id
+                                          );
                                         }}
                                       >
                                         Remove
@@ -123,21 +136,36 @@ const Cart = ({isCartOpen, handleToggle}) => {
                   <div className="border-t border-neutral-200 py-6 px-4 sm:px-6">
                     <div className="flex justify-between text-base font-medium text-gray-200">
                       <p>Subtotal</p>
-                      {checkout.lineItems &&
-                      
-                      <p>${Intl.NumberFormat("en-AU").format(checkout.lineItemsSubtotalPrice.amount)}</p>
-                        }
+                      {checkout.lineItems && (
+                        <p>
+                          $
+                          {Intl.NumberFormat("en-AU").format(
+                            checkout.lineItemsSubtotalPrice.amount
+                          )}
+                        </p>
+                      )}
                     </div>
                     <p className="mt-0.5 text-sm text-neutral-500">
                       Shipping and taxes calculated at checkout.
                     </p>
                     <div className="mt-6">
-                      <a
-                        href={checkout.webUrl}
-                        className="flex items-center justify-center rounded-md border border-transparent bg-zinc-800 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-zinc-700"
-                      >
-                        Checkout
-                      </a>
+
+                      {/* If cart is empty disable button */}
+                      {checkout?.lineItems?.length > 0 ? (
+                        <a
+                          href={checkout.webUrl}
+                          className="flex items-center justify-center rounded-md border border-transparent bg-zinc-800 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-zinc-700"
+                        >
+                          Checkout
+                        </a>
+                      ) : (
+                        <a
+                          passhref="true"
+                          className="flex items-center justify-center rounded-md border border-transparent bg-zinc-800 px-6 py-3 text-base font-medium text-white shadow-sm opacity-50"
+                        >
+                          Checkout
+                        </a>
+                      )}
                     </div>
                     <div className="mt-6 flex justify-center text-center text-sm text-zinc-500">
                       <p>
