@@ -260,7 +260,7 @@ export default function Navbar() {
 
                 {/* Account */}
                 <a
-                  href="#"
+                  href="my-account"
                   className="p-2 text-zinc-100 hover:text-zinc-300 lg:ml-4"
                 >
                   <span className="sr-only">Account</span>

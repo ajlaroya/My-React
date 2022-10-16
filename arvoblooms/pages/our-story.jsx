@@ -1,81 +1,123 @@
-const features = [
-  {
-    name: "Who we are",
-    description:
-      "Established in 20222, flowery studio is Australia’s leading floral destination – proudly and passionately working with everything from a single cut flower, through to the creation of unforgettable masterpieces.",
-    imageSrc: "https://images.unsplash.com/photo-1622658641558-1bf6a846adeb",
-    imageAlt:
-      "White canvas laptop sleeve with gray felt interior, silver zipper, and tan leather zipper pull.",
-  },
-  {
-    name: "Founder and visionary",
-    description:
-      "On the peaceful, suburbs of Point Cook, at the heart of Melbourne’s bohemian identity, Joy Laroya saw an opportunity. From the doors of her parents’ greengrocer, Joy opened her first flower stall making high-quality, fresh-cut flowers accessible and available to everyone.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1598061437788-ebbfc3257ce1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
-    imageAlt: "Detail of zipper pull with tan leather and silver rivet.",
-  },
-];
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+import { InboxIcon, SparklesIcon } from "@heroicons/react/24/outline";
 
 export default function Story() {
   return (
-    <div className="bg-white">
-      <div className="max-w-2xl mx-auto py-14 px-4 sm:px-6 sm:py-12 pb-10 lg:max-w-7xl lg:px-8">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            Our Story
+    <>
+      {/* Screen height img card */}
+      <div className="relative bg-gray-800 py-32 px-6 sm:py-20 min-h-screen lg:px-16 mb-20">
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1616256605392-1311141ce83f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+            alt="sakura blossom"
+            className="w-full h-full object-center object-cover"
+          />
+        </div>
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gray-800 bg-opacity-30"
+        />
+        <div className="absolute bottom-10 left-10 md:bottom-20 md:left-20 flex flex-col">
+          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+            Our story
           </h2>
-          <p className="mt-4 text-gray-500">
-            Discover flowery and our journey, delivering curated designs and
+          <p className="mt-3 md:text-xl text-white w-[50%] md:w-[40%]">
+            Melbourne's rising florist since 2022. Discover Flowery Studio and
+            our journey over the decades, delivering curated designs and
             creating magical memories.
           </p>
         </div>
+      </div>
 
-        <div className="mt-16 space-y-16">
-          {features.map((feature, featureIdx) => (
-            <div
-              key={feature.name}
-              className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8 lg:items-center"
-            >
-              <div
-                className={classNames(
-                  featureIdx % 2 === 0
-                    ? "lg:col-start-1"
-                    : "lg:col-start-8 xl:col-start-9",
-                  "mt-6 lg:mt-0 lg:row-start-1 lg:col-span-5 xl:col-span-4"
-                )}
-              >
-                <h3 className="text-lg font-medium text-gray-900">
-                  {feature.name}
-                </h3>
-                <p className="mt-2 text-sm text-gray-500">
-                  {feature.description}
+      <div className="relative bg-white pt-16 pb-32 overflow-hidden">
+        <div className="relative">
+          <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+            <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
+              <div>
+                <h2 className="text-3xl font-extrabold tracking-tight text-zinc-900">
+                  Who we are
+                </h2>
+                <p className="mt-4 text-lg text-zinc-500">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vestibulum porttitor pretium faucibus. Phasellus consectetur
+                  nisl varius diam blandit ultricies. Donec vel nisl ut dolor
+                  finibus efficitur. Sed vulputate sem et nisl suscipit
+                  vehicula. Aenean viverra purus ut felis ornare, nec interdum
+                  massa euismod. Suspendisse sagittis libero massa, vel lacinia
+                  erat accumsan vitae. Mauris vitae nisi turpis. Pellentesque
+                  habitant morbi tristique senectus et netus et malesuada fames
+                  ac turpis egestas. Duis congue ligula at arcu dignissim
+                  sagittis.
+                  <br />
                 </p>
               </div>
-              <div
-                className={classNames(
-                  featureIdx % 2 === 0
-                    ? "lg:col-start-6 xl:col-start-5"
-                    : "lg:col-start-1",
-                  "flex-auto lg:row-start-1 lg:col-span-7 xl:col-span-8"
-                )}
-              >
-                <div className="aspect-w-5 aspect-h-2 rounded-lg bg-gray-100 overflow-hidden">
-                  <img
-                    src={feature.imageSrc}
-                    alt={feature.imageAlt}
-                    className="object-center object-cover"
-                  />
+            </div>
+            <div className="mt-12 sm:mt-16 lg:mt-0">
+              <div className="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+                <img
+                  className="w-full rounded shadow-xl ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
+                  src="https://images.unsplash.com/photo-1654618708096-f2c0dba25e4e"
+                  alt="florist"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-24">
+          <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+            <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-32 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2">
+              <div>
+                <div className="mt-6">
+                  <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
+                    Founder and visionary
+                  </h2>
+                  <p className="mt-4 text-lg text-gray-500">
+                    Semper curabitur ullamcorper posuere nunc sed. Ornare
+                    iaculis bibendum malesuada faucibus lacinia porttitor.
+                    Pulvinar laoreet sagittis viverra duis. In venenatis sem
+                    arcu pretium pharetra at. Lectus viverra dui tellus ornare
+                    pharetra.
+                  </p>
+                </div>
+                <div className="mt-8 border-t border-gray-200 pt-6">
+                  <blockquote>
+                    <div>
+                      <p className="text-base text-gray-500">
+                        &ldquo;Cras velit quis eros eget rhoncus lacus ultrices
+                        sed diam. Sit orci risus aenean curabitur donec aliquet.
+                        Mi venenatis in euismod ut.&rdquo;
+                      </p>
+                    </div>
+                    <footer className="mt-3">
+                      <div className="flex items-center space-x-3">
+                        <div className="flex-shrink-0">
+                          <img
+                            className="h-6 w-6 rounded-full"
+                            src="https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
+                            alt=""
+                          />
+                        </div>
+                        <div className="text-base font-medium text-gray-700">
+                          Joy Laroya, Founder
+                        </div>
+                      </div>
+                    </footer>
+                  </blockquote>
                 </div>
               </div>
             </div>
-          ))}
+            <div className="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
+              <div className="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+                <img
+                  className="w-full rounded shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
+                  src="https://images.unsplash.com/photo-1531058240690-006c446962d8"
+                  alt="florist visionary"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

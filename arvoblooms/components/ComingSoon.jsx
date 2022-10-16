@@ -91,15 +91,17 @@ export default function ComingSoon() {
               </button>
             </div>
 
-            {/* Subscribed text */}
-            {subscribed && (
+            
+          </form>
+
+          {/* Subscribed text */}
+          {subscribed && (
               <div className="sm:text-center">
-                <p className="mt-6 mx-auto max-w-2xl text-md text-pink-100">
+                <p className="mt-6 mx-auto max-w-2xl text-md text-zinc-50">
                   You have successfully subscribed!
                 </p>
               </div>
             )}
-          </form>
           
           <ScrollDown bottomRef={bottomRef}/>
         </div>

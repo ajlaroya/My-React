@@ -13,7 +13,7 @@ const ProductList = ({ products }) => {
             href="/shop"
             className="hidden text-sm font-medium text-zinc-800 hover-underline-animation md:block"
           >
-            See all<span aria-hidden="true"> &rarr;</span>
+            Shop all<span aria-hidden="true"> &rarr;</span>
           </a>
         </div>
 
