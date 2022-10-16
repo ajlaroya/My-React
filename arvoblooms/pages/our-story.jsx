@@ -21,7 +21,7 @@ export default function Story() {
             Our story
           </h2>
           <p className="mt-3 md:text-xl text-white w-[50%] md:w-[40%]">
-            Melbourne's rising florist since 2022. Discover Flowery Studio and
+            Melbourne&apos;s rising florist since 2022. Discover Flowery Studio and
             our journey over the decades, delivering curated designs and
             creating magical memories.
           </p>
