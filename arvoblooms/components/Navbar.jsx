@@ -44,6 +44,8 @@ const navigation = {
   pages: [
     { name: "Shop", href: "/shop" },
     { name: "Our Story", href: "/our-story" },
+    { name: "Account", href: "/my-account" },
+    { name: "Contact", href: "/contact" },
     { name: "FAQ", href: "/faq" },
   ],
 };
@@ -163,7 +165,7 @@ export default function Navbar() {
                 </Tab.Panels>
               </Tab.Group> */}
 
-              <div className="border-t border-zinc-200 py-6 px-4 space-y-6">
+              <div className="border-t border-zinc-200 py-6 px-6 space-y-6">
                 {navigation.pages.map((page) => (
                   <div key={page.name} className="flow-root">
                     <a
