@@ -207,7 +207,7 @@ export default function Navbar() {
       </Transition.Root>
 
       {/* Navbar */}
-      <header className="fixed w-full z-50 backdrop-blur-md bg-black/50 border-b border-zinc-50">
+      <header className="fixed w-full z-50 backdrop-blur-md bg-black/80 border-b border-zinc-50">
         <nav aria-label="Top" className="mx-auto px-4 sm:px-6 lg:px-12 ">
           <div className="">
             <div className="h-16 flex items-center justify-between">

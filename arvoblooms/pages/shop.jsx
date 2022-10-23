@@ -8,14 +8,15 @@ import {
   Transition,
 } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import { ChevronDownIcon, CheckIcon } from "@heroicons/react/24/solid";
 
 import { shopifyClient, parseShopifyResponse } from "../utils/shopify";
 
 const sortOptions = [
-  { name: "Most Popular", value: "popular" },
-  { name: "Best Rating", value: "rating" },
-  { name: "Newest", value: "new" },
+  // { name: "Most Popular", value: "popular" },
+  // { name: "Best Rating", value: "rating" },
+  { name: "Newest", value: "dateAscending" },
+  { name: "Oldest", value: "dateDescending" },
   { name: "Price: Low to High", value: "numAscending" },
   { name: "Price: High to Low", value: "numDescending" },
 ];
@@ -48,16 +49,15 @@ function classNames(...classes) {
 
 export default function Shop({ products }) {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-  const [sortState, setSortState] = useState("none");
-  console.log(products);
+  const [sortState, setSortState] = useState("dateAscending");
 
   const sortMethods = {
     none: products,
     // sort by String property ASCENDING (A - Z)
-    strAscending: [...products].sort((a, b) => (a.title > b.title ? 1 : -1)),
+    // strAscending: [...products].sort((a, b) => (a.title > b.title ? 1 : -1)),
 
     // sort by String property DESCENDING (Z - A)
-    strDescending: [...products].sort((a, b) => (a.title > b.title ? -1 : 1)),
+    // strDescending: [...products].sort((a, b) => (a.title > b.title ? -1 : 1)),
 
     // sort by Numbers property ASCENDING (low - high)
     numAscending: [...products].sort(
@@ -67,6 +67,16 @@ export default function Shop({ products }) {
     // sort by Numbers property DESCENDING (high - low)
     numDescending: [...products].sort(
       (a, b) => b.variants[0].price - a.variants[0].price
+    ),
+
+    // sort by Date property DESCENDING (old - new)
+    dateDescending: [...products].sort((a, b) =>
+      a.publishedAt < b.publishedAt ? -1 : a.publishedAt > b.publishedAt ? 1 : 0
+    ),
+
+    // sort by Date property ASCENDING (new - old)
+    dateAscending: [...products].sort((a, b) =>
+      b.publishedAt < a.publishedAt ? -1 : a.publishedAt > b.publishedAt ? 1 : 0
     ),
   };
 
@@ -216,22 +226,24 @@ export default function Shop({ products }) {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="origin-top-left absolute left-0 z-10 mt-2 w-40 rounded-md shadow-2xl bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="origin-top-left absolute left-0 z-10 mt-2 w-48 rounded-md shadow-2xl bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <div className="py-1">
-                        {sortOptions.map((option) => (
-                          <Menu.Item key={option}>
-                            {({ active }) => (
-                              <button
-                                className={classNames(
-                                  active ? "bg-zinc-100" : "",
-                                  "block px-4 py-2 text-sm font-medium text-zinc-900"
-                                )}
-                                value={option.value}
-                                onClick={(e) => setSortState(e.target.value)}
-                              >
-                                {option.name}
-                              </button>
-                            )}
+                        {sortOptions.map((option, index) => (
+                          <Menu.Item key={index} as="Fragment">
+                            <button
+                              className={
+                                "block px-4 py-2 text-sm font-medium text-zinc-900"
+                              }
+                              value={option.value}
+                              onClick={(e) => setSortState(e.target.value)}
+                            >
+                              {option.name}
+                              {sortState === option.value ? (
+                                <CheckIcon className="inline-block ml-2 pb-1 h-5 w-5 text-zinc-600" />
+                              ) : (
+                                ""
+                              )}
+                            </button>
                           </Menu.Item>
                         ))}
                       </div>
@@ -331,6 +343,7 @@ export default function Shop({ products }) {
                         className="w-full h-full object-center object-cover group-hover:opacity-80 hover:scale-110 ease-in duration-150"
                         width={300}
                         height={300}
+                        priority="true"
                       />
                     </div>
                     <div className="mt-4 flex items-center justify-between text-base font-medium text-zinc-900">
