@@ -122,8 +122,8 @@ export default function ProductPage({ product }) {
                     priority
                     src={src}
                     alt={title}
-                    width={200}
-                    height={200}
+                    width={500}
+                    height={500}
                     className="w-full h-full object-center object-cover hover:opacity-80 hover:scale-110 ease-in duration-150"
                   />
                 </div>
@@ -154,8 +154,8 @@ export default function ProductPage({ product }) {
                 priority
                 src={src}
                 alt={title}
-                width={500}
-                height={500}
+                width={800}
+                height={800}
                 className="w-full h-full object-center object-cover hover:opacity-80 hover:scale-110 ease-in duration-150"
               />
             </div>

@@ -32,7 +32,7 @@ const ProductList = ({ products }) => {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-zinc-800 font-semibold hover-underline-animation">
-                    <a href={`/product/${product.handle}`}>
+                    <a href={`/flowers/${product.handle}`}>
                       <span aria-hidden="true" className="absolute inset-0" />
                       {product.title}
                     </a>

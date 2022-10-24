@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { Fragment, useState, useContext } from "react";
-import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
+import { Dialog, Popover, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
   ShoppingBagIcon,
@@ -78,10 +78,10 @@ export default function Navbar() {
         >
           <Transition.Child
             as={Fragment}
-            enter="transition-opacity ease-linear duration-300"
+            enter="transition-opacity ease-linear duration-200"
             enterFrom="opacity-0"
             enterTo="opacity-100"
-            leave="transition-opacity ease-linear duration-300"
+            leave="transition-opacity ease-linear duration-200"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
@@ -90,10 +90,10 @@ export default function Navbar() {
 
           <Transition.Child
             as={Fragment}
-            enter="transition ease-in-out duration-300 transform"
+            enter="transition ease-in-out duration-200 transform"
             enterFrom="-translate-x-full"
             enterTo="translate-x-0"
-            leave="transition ease-in-out duration-300 transform"
+            leave="transition ease-in-out duration-200 transform"
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full"
           >
@@ -207,7 +207,7 @@ export default function Navbar() {
       </Transition.Root>
 
       {/* Navbar */}
-      <header className="fixed w-full z-50 backdrop-blur-md bg-black/80 border-b border-zinc-50">
+      <header className="fixed w-full z-50 backdrop-blur-md bg-zinc-900/90">
         <nav aria-label="Top" className="mx-auto px-4 sm:px-6 lg:px-12 ">
           <div className="">
             <div className="h-16 flex items-center justify-between">
@@ -251,7 +251,7 @@ export default function Navbar() {
 
               {/* Logo */}
               <Link href="/" className="flex">
-                <span className="font-bold tracking-tight cursor-pointer text-zinc-50 text-lg md:text-xl">
+                <span className="font-bold tracking-tight cursor-pointer text-white text-lg md:text-xl">
                   🌺 flowery
                 </span>
               </Link>
@@ -268,7 +268,7 @@ export default function Navbar() {
 
                 {/* Account */}
                 <a
-                  href="my-account"
+                  href="/my-account"
                   className="p-2 text-zinc-100 hover:text-zinc-300 lg:ml-4"
                 >
                   <span className="sr-only">Account</span>

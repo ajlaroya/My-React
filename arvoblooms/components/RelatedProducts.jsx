@@ -24,7 +24,7 @@ export default function RelatedProducts({
                   />
                 </div>
                 <div className="relative mt-4">
-                  <a href={`/product/${product.handle}`}>
+                  <a href={`/flowers/${product.handle}`}>
                     <h3 className="text-sm font-semibold tracking-tight text-zinc-900 hover-underline-animation">
                       {product.title}
                     </h3>

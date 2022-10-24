@@ -1,48 +1,39 @@
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
-
-const shops = [
-  {
-    id: 1,
-    city: "Australia",
-    address: ["XX Devoe Road", "Melbourne, VIC 3030"],
-  },
-];
+import Head from "next/head";
 
 export default function Example() {
   return (
-    <div className="bg-white">
-      {/* Photo bg cover */}
-      <div className="absolute inset-0">
-        <img
-          className="w-full h-full object-cover"
-          src="https://images.unsplash.com/photo-1582815464803-2ade81b7d494"
-          alt=""
-        />
+    <>
+      <Head>
+        <title>Contact | Flowery</title>
+      </Head>
+      <div className="relative bg-gray-800 py-32 px-6 sm:py-20 min-h-screen lg:px-16 mb-20">
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            src="https://images.pexels.com/photos/4117595/pexels-photo-4117595.jpeg?cs=srgb&dl=pexels-da-capture-4117595.jpg&fm=jpg"
+            alt="white flowers"
+            className="w-full h-full object-center object-cover"
+          />
+        </div>
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gray-900 opacity-50"
+          className="absolute inset-0 bg-gray-800 bg-opacity-30"
         />
+        <div className="absolute bottom-10 left-10 md:bottom-20 md:left-20 flex flex-col">
+          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+            Get in touch
+          </h2>
+          <p className="mt-3 md:text-xl text-white w-[50%] md:w-[40%]">
+            We relish the opportunity to discuss your enquiry with you. Please
+            contact us via the channels below!
+          </p>
+        </div>
       </div>
 
       <main className="overflow-hidden">
-        {/* Header */}
-        <div className="bg-zinc-50">
-          <div className="pt-24 pb-12 lg:py-32">
-            <div className="relative z-10 max-w-7xl mx-auto pl-4 pr-8 sm:px-6 lg:px-8">
-              <h1 className="text-4xl font-extrabold tracking-tight text-gray-100 sm:text-5xl lg:text-6xl">
-                Get in touch
-              </h1>
-              <p className="mt-6 text-xl text-gray-200 max-w-3xl">
-                We relish the opportunity to discuss your enquiry with you.  <br />
-                Please contact us via the channels below!
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Contact section */}
         <section
-          className="relative bg-white pt-20"
+          className="relative bg-white"
           aria-labelledby="contact-heading"
         >
           <div className="absolute w-full h-1/2" aria-hidden="true" />
@@ -54,8 +45,9 @@ export default function Example() {
 
               <div className="grid grid-cols-1 lg:grid-cols-3">
                 {/* Contact information */}
-                <div className="relative overflow-hidden py-10 px-6 bg-zinc-800 sm:px-10 xl:p-12 rounded">
-                  <p className="mt-3 text-base text-zinc-50 max-w-3xl">
+                <div className="relative overflow-hidden py-10 px-6 bg-zinc-900 sm:px-10 xl:p-12 rounded">
+                  <span className="text-5xl">🌺</span>
+                  <p className="mt-12 text-base text-zinc-50 max-w-3xl">
                     If you would like to speak with a member of our team about
                     flowers, be it from our local shop or studio – please
                     contact us via the enquiry form, or should you prefer,
@@ -275,7 +267,7 @@ export default function Example() {
         </section>
 
         {/* Future Google Map? */}
-        <div className="relative bg-zinc-800 my-20">
+        <div className="relative bg-zinc-900 my-20">
           <div className="h-96 sm:h-96 md:absolute md:left-0 md:h-full md:w-1/2">
             <img
               className="w-full h-full object-cover"
@@ -285,9 +277,6 @@ export default function Example() {
           </div>
           <div className="relative max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-24">
             <div className="md:ml-auto md:w-1/2 md:pl-10">
-              <h2 className="text-base font-semibold uppercase tracking-wider text-zinc-300">
-                Come check out our local shop
-              </h2>
               <p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">
                 Where we are located
               </p>
@@ -308,6 +297,6 @@ export default function Example() {
           </div>
         </div>
       </main>
-    </div>
+    </>
   );
 }

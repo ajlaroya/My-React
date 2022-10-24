@@ -33,6 +33,7 @@ export default function Account({ providers }) {
               {session ? (
                 <>
                   {/* User logged in */}
+                  {console.log(session)}
                   <h2 className="mt-6 text-3xl font-extrabold text-zinc-900">
                     Hi, {session.user.name ?? session.user.email}
                     <img

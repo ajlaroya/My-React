@@ -1,5 +1,6 @@
 import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import Head from "next/head";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -32,14 +33,40 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <div className="bg-white pt-16">
+    <>
+      <Head>
+        <title>FAQ | Flowery</title>
+      </Head>
+      {/* Screen height img card */}
+      <div className="relative bg-zinc-900 py-32 px-6 sm:py-20 min-h-screen lg:px-16">
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            src="https://images.pexels.com/photos/4047262/pexels-photo-4047262.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=20"
+            alt="sakura blossom"
+            className="w-full h-full object-center object-cover"
+          />
+        </div>
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-zinc-900 bg-opacity-30"
+        />
+        <div className="absolute bottom-10 left-10 md:bottom-20 md:left-20 flex flex-col">
+          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+            F.A.Q
+          </h2>
+          <p className="mt-3 md:text-xl text-white w-[50%] md:w-[40%]">
+          We love connections at Flowery Studio, please contact our customer support if you have any questions; in the interim we have included some FAQs below.
+          </p>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
         <div className="lg:grid lg:grid-cols-3 lg:gap-8">
           <div>
-            <h2 className="text-3xl font-extrabold text-gray-900">
+            <h2 className="text-3xl font-extrabold text-zinc-900">
               Frequently asked questions
             </h2>
-            <p className="mt-4 text-lg text-gray-500">
+            <p className="mt-4 text-lg text-zinc-900">
               We love connections at Flowery Studio, please contact our{" "}
               <a
                 href="#"
@@ -52,14 +79,14 @@ export default function FAQ() {
             </p>
           </div>
           <div className="mt-12 lg:mt-0 lg:col-span-2">
-            <dl className="space-y-6 divide-y divide-gray-200">
+            <dl className="space-y-6 divide-y divide-zinc-900">
               {faqs.map((faq) => (
                 <Disclosure as="div" key={faq.question} className="pt-6">
                   {({ open }) => (
                     <>
                       <dt className="text-lg">
-                        <Disclosure.Button className="text-left w-full flex justify-between items-start text-gray-400">
-                          <span className="font-medium text-gray-900">
+                        <Disclosure.Button className="text-left w-full flex justify-between items-start text-zinc-900">
+                          <span className="font-medium text-zinc-800">
                             {faq.question}
                           </span>
                           <span className="ml-6 h-7 flex items-center">
@@ -74,7 +101,7 @@ export default function FAQ() {
                         </Disclosure.Button>
                       </dt>
                       <Disclosure.Panel as="dd" className="mt-2 pr-12">
-                        <p className="text-base text-gray-500">{faq.answer}</p>
+                        <p className="text-base text-zinc-600 leading-7">{faq.answer}</p>
                       </Disclosure.Panel>
                     </>
                   )}
@@ -84,6 +111,6 @@ export default function FAQ() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

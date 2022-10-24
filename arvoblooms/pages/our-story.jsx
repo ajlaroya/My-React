@@ -1,13 +1,16 @@
-import { InboxIcon, SparklesIcon } from "@heroicons/react/24/outline";
+import Head from "next/head";
 
 export default function Story() {
   return (
     <>
+      <Head>
+        <title>Our Story | Flowery</title>
+      </Head>
       {/* Screen height img card */}
-      <div className="relative bg-gray-800 py-32 px-6 sm:py-20 min-h-screen lg:px-16 mb-20">
+      <div className="relative bg-zinc-900 py-32 px-6 sm:py-20 min-h-screen lg:px-16 mb-20">
         <div className="absolute inset-0 overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1616256605392-1311141ce83f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+            src="https://images.pexels.com/photos/1592252/pexels-photo-1592252.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             alt="sakura blossom"
             className="w-full h-full object-center object-cover"
           />
@@ -28,7 +31,7 @@ export default function Story() {
         </div>
       </div>
 
-      <div className="relative bg-white pt-16 pb-32 overflow-hidden">
+      <div className="relative pb-32 overflow-hidden">
         <div className="relative">
           <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
             <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">

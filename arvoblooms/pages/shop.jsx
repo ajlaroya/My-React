@@ -11,6 +11,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon, CheckIcon } from "@heroicons/react/24/solid";
 
 import { shopifyClient, parseShopifyResponse } from "../utils/shopify";
+import Head from "next/head";
 
 const sortOptions = [
   // { name: "Most Popular", value: "popular" },
@@ -21,14 +22,14 @@ const sortOptions = [
   { name: "Price: High to Low", value: "numDescending" },
 ];
 const filters = [
-  {
-    id: "category",
-    name: "Category",
-    options: [
-      { value: "flowers", label: "Flower" },
-      { value: "vase", label: "Vase" },
-    ],
-  },
+  // {
+  //   id: "category",
+  //   name: "Category",
+  //   options: [
+  //     { value: "flowers", label: "Flower" },
+  //     { value: "vase", label: "Vase" },
+  //   ],
+  // },
   {
     id: "color",
     name: "Color",
@@ -82,6 +83,9 @@ export default function Shop({ products }) {
 
   return (
     <>
+      <Head>
+        <title>Shop | Flowery</title>
+      </Head>
       <div>
         {/* Mobile filter dialog */}
         <Transition.Root show={mobileFiltersOpen} as={Fragment}>
@@ -186,20 +190,20 @@ export default function Shop({ products }) {
         </Transition.Root>
 
         <main>
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-            <div className="pt-32 py-24 text-center">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8 py-24">
+            {/* <div className="pt-32 py-24 text-center">
               <h1 className="text-5xl font-extrabold tracking-tight text-zinc-900">
                 Shop all
               </h1>
               <p className="mt-4 max-w-3xl mx-auto text-base text-zinc-500">
                 Let us bring to you the gift and beauty of flowers.
               </p>
-            </div>
+            </div> */}
 
             {/* Filters */}
             <section
               aria-labelledby="filter-heading"
-              className="border-t border-zinc-200 pt-6"
+              className=" border-zinc-200"
             >
               <h2 id="filter-heading" className="sr-only">
                 Product filters
@@ -324,7 +328,7 @@ export default function Shop({ products }) {
             </section>
 
             {/* Product grid */}
-            <section aria-labelledby="products-heading" className="mt-8">
+            <section aria-labelledby="products-heading" className="my-8">
               <h2 id="products-heading" className="sr-only">
                 Products
               </h2>
@@ -333,7 +337,7 @@ export default function Shop({ products }) {
                 {sortMethods[sortState].map((product) => (
                   <a
                     key={product.id}
-                    href={`/product/${product.handle}`}
+                    href={`/flowers/${product.handle}`}
                     className="group"
                   >
                     <div className="w-full aspect-w-1 aspect-h-1 rounded overflow-hidden sm:aspect-w-2 sm:aspect-h-2">
@@ -363,7 +367,7 @@ export default function Shop({ products }) {
             </section>
 
             {/* Featured section */}
-            <section
+            {/* <section
               aria-labelledby="featured-heading"
               className="relative my-16 rounded-lg overflow-hidden lg:h-96"
             >
@@ -401,7 +405,7 @@ export default function Shop({ products }) {
                   Add to cart
                 </a>
               </div>
-            </section>
+            </section> */}
           </div>
         </main>
       </div>
