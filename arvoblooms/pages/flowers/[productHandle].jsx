@@ -5,7 +5,7 @@ import { ShopContext } from "../../context/shopContext";
 import { shopifyClient, parseShopifyResponse } from "../../utils/shopify";
 import RelatedProducts from "../../components/RelatedProducts";
 
-import Image from "next/future/image";
+import Image from "next/image";
 import Head from "next/head";
 
 const breadcrumbs = {

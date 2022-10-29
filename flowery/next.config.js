@@ -1,11 +1,14 @@
 /** @type {import('next').NextConfig} */
-
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
   images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.shopify.com/**',
+      },
+    ],
     domains: ['cdn.shopify.com', 'images.unsplash.com', '64.media.tumblr.com'],
-    formats: ['image/avif', 'image/webp']
+    formats: ['image/avif', 'image/webp'],
   },
   experimental: {
     appDir: true,

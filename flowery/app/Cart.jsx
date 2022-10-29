@@ -1,13 +1,9 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment } from "react";
 import Image from "next/image";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
-import { ShopContext } from "../context/shopContext";
-
-const Cart = ({ isCartOpen, handleToggle }) => {
-  const { checkout, removeItemFromCheckout } = useContext(ShopContext);
-
+const Cart = ({ isCartOpen, handleToggle, checkout, removeItemFromCheckout }) => {
   return (
     <Transition show={isCartOpen} as={Fragment}>
       <Dialog

@@ -43,7 +43,7 @@ const ProductList = ({ products }) => {
                 </div>
                 <p className="text-sm font-medium text-zinc-800">
                   $
-                  {Intl.NumberFormat("en-AU").format(product.variants[0].price)}
+                  {Intl.NumberFormat("en-AU").format(product.variants[0].price.amount)}
                 </p>
               </div>
             </div>
