@@ -96,7 +96,7 @@ const Cart = ({ isCartOpen, handleToggle }) => {
                                       <p className="ml-4">
                                         $
                                         {Intl.NumberFormat("en-AU").format(
-                                          item.variant.price
+                                          item.variant.price.amount
                                         )}
                                       </p>
                                     </div>

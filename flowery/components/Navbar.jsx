@@ -1,4 +1,6 @@
-import { useRouter } from "next/router";
+"use client";
+
+import { useRouter } from "next/navigation";
 import { Fragment, useState, useContext } from "react";
 import { Dialog, Popover, Transition } from "@headlessui/react";
 import {
@@ -9,7 +11,7 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
-import Cart from './Cart'
+import Cart from "./Cart";
 import { ShopContext } from "../context/shopContext";
 
 const navigation = {
@@ -23,8 +25,7 @@ const navigation = {
           href: "#",
           imageSrc:
             "https://images.unsplash.com/photo-1523694576729-dc99e9c0f9b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Ym91cXVldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1600&q=60",
-          imageAlt:
-            "bouquet in hand",
+          imageAlt: "bouquet in hand",
         },
       ],
       sections: [
@@ -53,7 +54,6 @@ const navigation = {
     { name: "Contact", href: "/contact" },
     { name: "FAQ", href: "/faq" },
   ],
-
 };
 
 export default function Navbar() {
@@ -63,12 +63,15 @@ export default function Navbar() {
   const { checkout, isCartOpen, setIsCartOpen } = useContext(ShopContext);
 
   const handleToggle = () => {
-    setIsCartOpen(prev => !prev)
+    setIsCartOpen((prev) => !prev);
   };
 
   return (
     <>
-      <Cart isCartOpen={isCartOpen} handleToggle={handleToggle} />
+      <Cart
+        isCartOpen={isCartOpen}
+        handleToggle={handleToggle}
+      />
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog
@@ -108,68 +111,6 @@ export default function Navbar() {
                   <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
               </div>
-
-              {/* Links */}
-              {/* <Tab.Group as="div" className="mt-2">
-                <div className="border-b border-zinc-200">
-                  <Tab.List className="-mb-px flex px-4 space-x-8">
-                    {navigation.categories.map((category) => (
-                      <Tab
-                        key={category.name}
-                        className={({ selected }) =>
-                          classNames(
-                            selected
-                              ? "text-pink-600 border-pink-600"
-                              : "text-zinc-900 border-transparent",
-                            "flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium"
-                          )
-                        }
-                      >
-                        {category.name}
-                      </Tab>
-                    ))}
-                  </Tab.List>
-                </div>
-                <Tab.Panels as={Fragment}>
-                  {navigation.categories.map((category) => (
-                    <Tab.Panel
-                      key={category.name}
-                      className="pt-10 pb-8 px-4 space-y-10"
-                    >
-                      {category.sections.map((column, columnIdx) => (
-                        <div key={columnIdx} className="space-y-10">
-                          {column.map((section) => (
-                            <div key={section.name}>
-                              <p
-                                id={`${category.id}-${section.id}-heading-mobile`}
-                                className="font-medium text-zinc-900"
-                              >
-                                {section.name}
-                              </p>
-                              <ul
-                                role="list"
-                                aria-labelledby={`${category.id}-${section.id}-heading-mobile`}
-                                className="mt-6 flex flex-col space-y-6"
-                              >
-                                {section.items.map((item) => (
-                                  <li key={item.name} className="flow-root">
-                                    <a
-                                      href={item.href}
-                                      className="-m-2 p-2 block text-zinc-500"
-                                    >
-                                      {item.name}
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          ))}
-                        </div>
-                      ))}
-                    </Tab.Panel>
-                  ))}
-                </Tab.Panels>
-              </Tab.Group> */}
 
               <div className="border-t border-zinc-200 py-6 px-6 space-y-6">
                 {navigation.mobile_pages.map((page) => (
@@ -220,14 +161,6 @@ export default function Navbar() {
                   <span className="sr-only">Open menu</span>
                   <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                 </button>
-
-                {/* <a
-                  href="#"
-                  className="ml-2 p-2 text-zinc-100 hover:text-zinc-200"
-                >
-                  <span className="sr-only">Search</span>
-                  <MagnifyingGlassIcon className="w-6 h-6" aria-hidden="true" />
-                </a> */}
               </div>
 
               {/* Flyout menus */}
@@ -257,15 +190,6 @@ export default function Navbar() {
               </Link>
 
               <div className="flex-1 flex items-center justify-end">
-                {/* Search */}
-                {/* <a
-                  href="#"
-                  className="hidden ml-6 p-2 text-zinc-100 hover:text-zinc-300 lg:block"
-                >
-                  <span className="sr-only">Search</span>
-                  <MagnifyingGlassIcon className="w-6 h-6" aria-hidden="true" />
-                </a> */}
-
                 {/* Account */}
                 <a
                   href="/my-account"
