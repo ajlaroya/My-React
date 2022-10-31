@@ -1,3 +1,5 @@
+'use client'
+
 import { Fragment, useState } from "react";
 import Image from "next/image";
 import {
@@ -10,7 +12,6 @@ import {
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon, CheckIcon } from "@heroicons/react/24/solid";
 
-import { shopifyClient, parseShopifyResponse } from "../utils/shopify";
 import Head from "next/head";
 
 const sortOptions = [
@@ -62,12 +63,12 @@ export default function Shop({ products }) {
 
     // sort by Numbers property ASCENDING (low - high)
     numAscending: [...products].sort(
-      (a, b) => a.variants[0].price - b.variants[0].price
+      (a, b) => a.variants[0].price.amount - b.variants[0].price.amount
     ),
 
     // sort by Numbers property DESCENDING (high - low)
     numDescending: [...products].sort(
-      (a, b) => b.variants[0].price - a.variants[0].price
+      (a, b) => b.variants[0].price.amount - a.variants[0].price.amount
     ),
 
     // sort by Date property DESCENDING (old - new)
@@ -357,7 +358,7 @@ export default function Shop({ products }) {
                       <p>
                         $
                         {Intl.NumberFormat("en-AU").format(
-                          product.variants[0].price
+                          product.variants[0].price.amount
                         )}
                       </p>
                     </div>
@@ -412,14 +413,3 @@ export default function Shop({ products }) {
     </>
   );
 }
-
-export const getServerSideProps = async () => {
-  // Fetch all the products
-  const products = await shopifyClient.product.fetchAll();
-
-  return {
-    props: {
-      products: parseShopifyResponse(products),
-    },
-  };
-};
