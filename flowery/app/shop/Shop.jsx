@@ -12,8 +12,6 @@ import {
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon, CheckIcon } from "@heroicons/react/24/solid";
 
-import Head from "next/head";
-
 const sortOptions = [
   // { name: "Most Popular", value: "popular" },
   // { name: "Best Rating", value: "rating" },
@@ -50,6 +48,7 @@ function classNames(...classes) {
 }
 
 export default function Shop({ products }) {
+  console.log(products)
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [sortState, setSortState] = useState("dateAscending");
 
@@ -84,9 +83,6 @@ export default function Shop({ products }) {
 
   return (
     <>
-      <Head>
-        <title>Shop | Flowery</title>
-      </Head>
       <div>
         {/* Mobile filter dialog */}
         <Transition.Root show={mobileFiltersOpen} as={Fragment}>

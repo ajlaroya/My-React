@@ -183,10 +183,8 @@ export default function Navbar() {
               </Popover.Group>
 
               {/* Logo */}
-              <Link href="/" className="flex">
-                <span className="font-bold tracking-tight cursor-pointer text-white text-lg md:text-xl">
-                  🌺 flowery
-                </span>
+              <Link href="/" className="flex font-bold tracking-tight cursor-pointer text-white text-lg md:text-xl">
+                🌺 flowery
               </Link>
 
               <div className="flex-1 flex items-center justify-end">

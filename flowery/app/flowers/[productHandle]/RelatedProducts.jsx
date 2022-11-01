@@ -1,10 +1,14 @@
+"use client";
+
 import Image from "next/image";
+import { useContext } from "react";
+import { ShopContext } from "../../../context/shopContext";
 
 export default function RelatedProducts({
-  addItemToCheckout,
-  openCart,
   collection,
 }) {
+  const { addItemToCheckout, openCart } = useContext(ShopContext);
+
   return (
     <div className="bg-white">
       <div className="max-w-2xl border-t mx-auto py-16 px-4 sm:py-8 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -41,7 +45,7 @@ export default function RelatedProducts({
                   <p className="relative text-lg font-semibold text-white ">
                     $
                     {Intl.NumberFormat("en-AU").format(
-                      product.variants[0].price
+                      product.variants[0].price.amount
                     )}
                   </p>
                 </div>

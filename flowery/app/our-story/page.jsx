@@ -1,11 +1,6 @@
-import Head from "next/head";
-
 export default function Story() {
   return (
     <>
-      <Head>
-        <title>Our Story | Flowery</title>
-      </Head>
       {/* Screen height img card */}
       <div className="relative bg-zinc-900 py-32 px-6 sm:py-20 min-h-screen lg:px-16 mb-20">
         <div className="absolute inset-0 overflow-hidden">

@@ -1,21 +1,8 @@
-import ComingSoon from '../components/ComingSoon'
-import ProductList from '../components/ProductList'
-import About from '../components/About'
-import { shopifyClient, parseShopifyResponse } from "../utils/shopify";
-
-export default async function Page() {
-  const products = await getProducts();
+export default async function AccountPage() {
 
   return (
     <>
-      <ComingSoon />
-      <ProductList products={products} />
-      <About />
+      <h1 className="p-20">Coming soon</h1>
     </>
   )
-}
-
-async function getProducts() {
-  const products = await shopifyClient.product.fetchAll();
-  return parseShopifyResponse(products);
 }

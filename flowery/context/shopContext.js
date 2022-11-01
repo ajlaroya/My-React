@@ -1,11 +1,11 @@
 'use client';
+
 import React, { useEffect, useState } from "react";
 
-import { shopifyClient, parseShopifyResponse } from "../utils/shopify";
+import { shopifyClient } from "../utils/shopify";
 const ShopContext = React.createContext();
 
 const ShopProvider = ({ children }) => {
-  const [collection, setCollection] = useState({})
   const [checkout, setCheckout] = useState({});
   const [isCartOpen, setIsCartOpen] = useState(false);
 
@@ -60,24 +60,15 @@ const ShopProvider = ({ children }) => {
     })
   }
 
-  const fetchCollection = async () => {
-    shopifyClient.collection.fetchAllWithProducts().then((collections) => {
-      // Do something with the collections
-      setCollection(parseShopifyResponse(collections))
-    });
-  }
-
   return (
     <ShopContext.Provider
         value={{
             checkout,
-            collection,
             isCartOpen,
             setIsCartOpen,
             openCart,
             addItemToCheckout,
             removeItemFromCheckout,
-            fetchCollection,
         }}
     >
         {children}

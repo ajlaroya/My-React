@@ -2,7 +2,6 @@
 
 import { useContext } from "react";
 import Image from "next/image";
-import Head from "next/head";
 import { CheckIcon, StarIcon } from "@heroicons/react/24/solid";
 import { ShopContext } from "../../../context/shopContext";
 
@@ -27,10 +26,6 @@ export default function ProductDetail({ product }) {
 
   return (
     <>
-      <Head>
-        <title>{title} | Flowery</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
       <div className="pt-16">
         <div className="max-w-2xl mx-auto py-8 px-4 sm:py-18 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
           {/* Product details */}
@@ -230,11 +225,6 @@ export default function ProductDetail({ product }) {
           </div>
         </div>
       </div>
-
-      {/* <RelatedProducts
-        addItemToCheckout={addItemToCheckout}
-        openCart={openCart}
-      /> */}
     </>
   );
 }
