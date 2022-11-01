@@ -19,9 +19,8 @@ export default async function Page({ params }) {
 
   return (
     <>
-      <Suspense fallback={<p>Loading product...</p>}>
-        <ProductDetail product={product} />
-      </Suspense>
+      <ProductDetail product={product} />
+
       <Suspense fallback={<p>Loading related products...</p>}>
         <RelatedProducts collection={collection} />
       </Suspense>
