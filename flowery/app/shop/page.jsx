@@ -1,5 +1,5 @@
 import { shopifyClient, parseShopifyResponse } from "../../utils/shopify";
-import Shop from "./shop";
+import Shop from "./Shop";
 
 async function getProducts() {
   const products = await shopifyClient.product.fetchAll();
