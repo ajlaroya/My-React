@@ -113,7 +113,7 @@ const Footer = () => {
                   placeholder="Email"
                   required
                   type="text"
-                  className="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-zinc-200 text-gray-100 border border-zinc-400 rounded shadow-sm appearance-none sm:mr-4 md:mb-0 focus:border-pink-400 focus:outline-none focus:shadow-outline"
+                  className="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-zinc-200 text-zinc-800 border border-zinc-400 rounded shadow-sm sm:mr-4 md:mb-0 placeholder-zinc-600"
                 />
                 <button
                   type="submit"

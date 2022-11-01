@@ -1,6 +1,7 @@
 import { shopifyClient, parseShopifyResponse } from "../../../utils/shopify";
-import ProductDetail from './ProductDetail';
+import ProductDetail from "./ProductDetail";
 import RelatedProducts from "./RelatedProducts";
+import { Suspense } from "react";
 
 async function getProduct(productHandle) {
   const product = await shopifyClient.product.fetchByHandle(productHandle);
@@ -18,8 +19,12 @@ export default async function Page({ params }) {
 
   return (
     <>
-      <ProductDetail product={product} />
-      <RelatedProducts collection={collection} />
+      <Suspense fallback={<p>Loading product...</p>}>
+        <ProductDetail product={product} />
+      </Suspense>
+      <Suspense fallback={<p>Loading related products...</p>}>
+        <RelatedProducts collection={collection} />
+      </Suspense>
     </>
   );
 }
