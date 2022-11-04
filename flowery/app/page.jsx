@@ -1,20 +1,16 @@
-import ComingSoon from '../components/ComingSoon'
-import ProductList from '../components/ProductList'
-import About from '../components/About'
-import { shopifyClient, parseShopifyResponse } from "../utils/shopify";
+import ComingSoon from "../components/ComingSoon";
+import ProductList from "../components/ProductList";
+import About from "../components/About";
+import { Suspense } from "react";
 
-async function getProducts() {
-  const products = await shopifyClient.product.fetchAll();
-  return parseShopifyResponse(products);
-}
-export default async function Page() {
-  const products = await getProducts();
-
+export default function Page() {
   return (
     <>
       <ComingSoon />
-      <ProductList products={products} />
+      <Suspense>
+        <ProductList />
+      </Suspense>
       <About />
     </>
-  )
+  );
 }

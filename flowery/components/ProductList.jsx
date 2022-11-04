@@ -1,7 +1,15 @@
 import React from "react";
-import Image from "next/image";
+import Image from "next/image"
+import { shopifyClient, parseShopifyResponse } from "../utils/shopify";
 
-const ProductList = ({ products }) => {
+async function getProducts() {
+  const products = await shopifyClient.product.fetchAll();
+  return parseShopifyResponse(products);
+};
+
+const ProductList = async () => {
+  const products = await getProducts();
+
   return (
     <>
       <div className="mx-auto max-w-2xl py-16 px-4 sm:py-20 sm:px-6 lg:max-w-7xl lg:px-8">

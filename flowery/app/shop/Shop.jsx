@@ -48,7 +48,6 @@ function classNames(...classes) {
 }
 
 export default function Shop({ products }) {
-  console.log(products)
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [sortState, setSortState] = useState("dateAscending");
 

@@ -50,9 +50,9 @@
 
 /* spinner */
 .loader {
-  border-top-color: gray;
-  -webkit-animation: spinner 1.5s linear infinite;
-  animation: spinner 1.5s linear infinite;
+  border-top-color: #36454F;
+  -webkit-animation: spinner 1s linear infinite;
+  animation: spinner 1s linear infinite;
 }
 
 @-webkit-keyframes spinner {

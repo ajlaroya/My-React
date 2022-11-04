@@ -1,11 +1,7 @@
-'use client';
+"use client";
 
 import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 const faqs = [
   {
@@ -33,6 +29,10 @@ const faqs = [
 ];
 
 export default function FAQPage() {
+  function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
+
   return (
     <>
       {/* Screen height img card */}
@@ -53,7 +53,9 @@ export default function FAQPage() {
             F.A.Q
           </h2>
           <p className="mt-3 md:text-xl text-white w-[50%] md:w-[40%]">
-          We love connections at Flowery Studio, please contact our customer support if you have any questions; in the interim we have included some FAQs below.
+            We love connections at Flowery Studio, please contact our customer
+            support if you have any questions; in the interim we have included
+            some FAQs below.
           </p>
         </div>
       </div>
@@ -99,7 +101,9 @@ export default function FAQPage() {
                         </Disclosure.Button>
                       </dt>
                       <Disclosure.Panel as="dd" className="mt-2 pr-12">
-                        <p className="text-base text-zinc-600 leading-7">{faq.answer}</p>
+                        <p className="text-base text-zinc-600 leading-7">
+                          {faq.answer}
+                        </p>
                       </Disclosure.Panel>
                     </>
                   )}
