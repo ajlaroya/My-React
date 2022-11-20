@@ -12,8 +12,8 @@ import {
 
 const navigation = {
   pages: [
-    { name: "Man", href: "#" },
-    { name: "Woman", href: "#" },
+    { name: "QKC COZY 22", href: "#" },
+    { name: "ABOUT", href: "#" },
   ],
 };
 
@@ -58,7 +58,7 @@ export default function Navbar() {
               <div className="px-4 pt-5 pb-2 flex">
                 <button
                   type="button"
-                  className="-m-2 p-2 rounded-md inline-flex items-center justify-center text-neutral-50"
+                  className="-m-2 p-2 rounded-md inline-flex items-center justify-center text-neutral-100"
                   onClick={() => setOpen(false)}
                 >
                   <span className="sr-only">Close menu</span>
@@ -77,7 +77,7 @@ export default function Navbar() {
                           classNames(
                             selected
                               ? "text-indigo-600 border-indigo-600"
-                              : "text-neutral-50 border-transparent",
+                              : "text-neutral-100 border-transparent",
                             "flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium"
                           )
                         }
@@ -108,7 +108,7 @@ export default function Navbar() {
                               <div className="p-4 bg-white bg-opacity-60 text-base sm:text-lg">
                                 <a
                                   href={item.href}
-                                  className="font-medium text-neutral-50"
+                                  className="font-medium text-neutral-100"
                                 >
                                   <span
                                     className="absolute inset-0"
@@ -118,7 +118,7 @@ export default function Navbar() {
                                 </a>
                                 <p
                                   aria-hidden="true"
-                                  className="mt-0.5 text-neutral-50 sm:mt-1"
+                                  className="mt-0.5 text-neutral-100 sm:mt-1"
                                 >
                                   Shop now
                                 </p>
@@ -133,7 +133,7 @@ export default function Navbar() {
                             <div key={section.name}>
                               <p
                                 id={`${category.id}-${section.id}-heading-mobile`}
-                                className="font-medium text-neutral-50"
+                                className="font-medium text-neutral-100"
                               >
                                 {section.name}
                               </p>
@@ -167,7 +167,7 @@ export default function Navbar() {
                   <div key={page.name} className="flow-root">
                     <a
                       href={page.href}
-                      className="-m-2 p-2 block font-medium text-sm text-neutral-50"
+                      className="-m-2 p-2 block font-black text-sm text-neutral-100"
                     >
                       {page.name}
                     </a>
@@ -180,7 +180,7 @@ export default function Navbar() {
       </Transition.Root>
 
       {/* Desktop */}
-      <header className="relative backdrop-blur bg-white/20">
+      <header className="relative backdrop-filter backdrop-blur-lg bg-black/40">
         <nav
           aria-label="Top"
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0"
@@ -189,7 +189,7 @@ export default function Navbar() {
             <div className="flex-1 flex items-center lg:hidden">
               <button
                 type="button"
-                className="-ml-2 p-2 rounded-md text-neutral-50"
+                className="-ml-2 p-2 rounded-md text-neutral-100"
                 onClick={() => setOpen(true)}
               >
                 <span className="sr-only">Open menu</span>
@@ -198,7 +198,7 @@ export default function Navbar() {
 
               <a
                 href="#"
-                className="ml-2 p-2 text-neutral-50 hover:text-gray-500"
+                className="ml-2 p-2 text-neutral-100 hover:text-gray-500"
               >
                 <span className="sr-only">Search</span>
                 <HeartIcon className="w-5 h-5" aria-hidden="true" />
@@ -212,7 +212,7 @@ export default function Navbar() {
                   <a
                     key={page.name}
                     href={page.href}
-                    className="flex items-center text-md font-medium text-neutral-50 hover:text-gray-800"
+                    className="flex items-center text-md font-black text-neutral-100 hover:text-gray-800"
                   >
                     {page.name}
                   </a>
@@ -222,8 +222,8 @@ export default function Navbar() {
 
             {/* Logo */}
             <a href="#" className="flex">
-              <span className="font-semibold text-xl text-neutral-50 tracking-tight">
-                QKC
+              <span className="font-black text-xl text-neutral-100 tracking-tight">
+                Q.K.C
               </span>
             </a>
 
@@ -231,7 +231,7 @@ export default function Navbar() {
               {/* Like */}
               <a
                 href="#"
-                className="hidden ml-6 p-2 text-neutral-50 hover:text-neutral-100 lg:block"
+                className="hidden ml-6 p-2 text-neutral-100 hover:text-neutral-100 lg:block"
               >
                 <span className="sr-only">Likes</span>
                 <HeartIcon className="w-5 h-5" aria-hidden="true" />
@@ -240,7 +240,7 @@ export default function Navbar() {
               {/* Account */}
               <a
                 href="#"
-                className="text-neutral-50 hover:text-neutral-100 lg:ml-4"
+                className="text-neutral-100 hover:text-neutral-100 lg:ml-4"
               >
                 <span className="sr-only">Account</span>
                 <UserIcon className="w-5 h-5" aria-hidden="true" />
@@ -250,10 +250,10 @@ export default function Navbar() {
               <div className="ml-4 flow-root lg:ml-6">
                 <a href="#" className="group -m-2 p-2 flex items-center">
                   <ShoppingBagIcon
-                    className="flex-shrink-0 h-5 w-5 text-neutral-50 group-hover:text-neutral-100"
+                    className="flex-shrink-0 h-5 w-5 text-neutral-100 group-hover:text-neutral-100"
                     aria-hidden="true"
                   />
-                  <span className="ml-2 font-medium text-neutral-50 group-hover:text-gray-800">
+                  <span className="ml-2 font-medium text-neutral-100 group-hover:text-gray-800">
                   </span>
                   <span className="sr-only">items in cart, view bag</span>
                 </a>
