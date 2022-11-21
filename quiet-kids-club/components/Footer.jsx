@@ -67,24 +67,24 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 md:mt-0 md:order-1">
-          <ul class="flex flex-wrap justify-center items-center text-neutral-700 text-base font-medium">
+          <ul className="flex flex-wrap justify-center items-center text-neutral-700 text-base font-medium">
             <li>
-              <a href="#" class="mr-4 hover:text-neutral-500 md:mr-6 ">
+              <a href="#" className="mr-4 hover:text-neutral-500 md:mr-6 ">
                 About
               </a>
             </li>
             <li>
-              <a href="#" class="mr-4 hover:text-neutral-500 md:mr-6">
+              <a href="#" className="mr-4 hover:text-neutral-500 md:mr-6">
                 Contact
               </a>
             </li>
             <li>
-              <a href="#" class="mr-4 hover:text-neutral-500 md:mr-6 ">
+              <a href="#" className="mr-4 hover:text-neutral-500 md:mr-6 ">
                 Shipping
               </a>
             </li>
             <li>
-              <a href="#" class="mr-4 hover:text-neutral-500 md:mr-6 italic">
+              <a href="#" className="mr-4 hover:text-neutral-500 md:mr-6 italic">
                 &copy; 2022 Q.K.C
               </a>
             </li>

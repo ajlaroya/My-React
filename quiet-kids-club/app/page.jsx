@@ -1,5 +1,6 @@
 import Landing from '../components/Landing'
 import ProductFeature from '../components/ProductFeature'
+import ProductList from '../components/ProductList'
 import { client } from '../utils/shopify-client'
 
 async function getProducts() {
@@ -13,7 +14,8 @@ export default async function Home() {
   return (
     <>
       <Landing />
-      <ProductFeature products={products} />
+      {/* <ProductFeature products={products} /> */}
+      <ProductList products={products} />
     </>
   );
 }
