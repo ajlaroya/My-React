@@ -1,15 +1,17 @@
+import Link from "next/link";
+
 export default function ProductList({ products }) {
   function convert(color) {
     var colours = {
-      "obsidian": "#2E293A",
-      "black": "#000000",
+      obsidian: "#2E293A",
+      black: "#000000",
       "sky blue": "#87CEEB",
       "blush pink": "#FE828C",
       "cloudy gray": "#B8BEC3",
-      "agave": "#7a9a9b",
+      agave: "#7a9a9b",
       "carbon grey": "#767873",
       "vintage gold": "#B0903D",
-      "white": "#FFFFF",
+      white: "#FFFFF",
     };
 
     if (typeof colours[color.toLowerCase()] != "undefined")
@@ -37,13 +39,16 @@ export default function ProductList({ products }) {
                 />
               </div>
               <h3 className="mt-4 text-xl font-bold text-neutral-900">
-                <a href={product.href}>
+                <Link href={`products/${product.handle}`}>
                   <span className="absolute inset-0" />
                   {product.title}
-                </a>
+                </Link>
               </h3>
               <p className="mt-1 text-lg text-neutral-700">
-                ${Intl.NumberFormat('en-AU').format(product.variants[0].price.amount)}
+                $
+                {Intl.NumberFormat("en-AU").format(
+                  product.variants[0].price.amount
+                )}
               </p>
 
               <h4 className="sr-only">Available colors</h4>

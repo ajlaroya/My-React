@@ -23,7 +23,7 @@ export default function Landing() {
         <div className="item lg:w-1/2 min-h-screen max-h-screen">
           <Image className="object-cover aspect-square" src={rightPic} alt="" />
           <div className="relative">
-            <h3 class="absolute text-sm font-black text-neutral-50 bottom-6 right-1 uppercase">
+            <h3 className="absolute text-sm font-black text-neutral-50 bottom-6 right-1 uppercase">
               YOU'RE SO QUIET!
             </h3>
           </div>

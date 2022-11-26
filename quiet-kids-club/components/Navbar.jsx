@@ -221,7 +221,7 @@ export default function Navbar() {
             </Popover.Group>
 
             {/* Logo */}
-            <a href="#" className="flex">
+            <a href="/" className="flex">
               <span className="font-black text-xl text-neutral-50 tracking-tight">
                 QKC
               </span>
