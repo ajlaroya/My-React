@@ -51,14 +51,14 @@ const navigation = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t">
+    <footer className="bg-neutral-50 border-t">
       <div className="max-w-7xl mx-auto py-5 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
         <div className="flex justify-center space-x-5 md:order-2">
           {navigation.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="text-neutral-600 hover:text-gray-500"
+              className="text-neutral-800 hover:text-gray-500"
             >
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />
@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 md:mt-0 md:order-1">
-          <ul className="flex flex-wrap justify-center items-center text-neutral-700 text-base font-medium">
+          <ul className="flex flex-wrap justify-center items-center text-neutral-800 text-base font-medium">
             <li>
               <a href="#" className="mr-4 hover:text-neutral-500 md:mr-6 ">
                 About
@@ -84,7 +84,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#" className="mr-4 hover:text-neutral-500 md:mr-6 italic">
+              <a href="#" className="mr-4 hover:text-neutral-500 md:mr-6 font-bold">
                 &copy; 2022 Q.K.C
               </a>
             </li>

@@ -3,15 +3,16 @@ import Link from "next/link";
 export default function ProductList({ products }) {
   function convert(color) {
     var colours = {
-      obsidian: "#2E293A",
-      black: "#000000",
+      "obsidian": "#2E293A",
+      "black": "#000000",
       "sky blue": "#87CEEB",
       "blush pink": "#FE828C",
-      "cloudy gray": "#B8BEC3",
-      agave: "#7a9a9b",
+      "cloudy grey": "#B8BEC3",
+      "agave": "#7a9a9b",
       "carbon grey": "#767873",
       "vintage gold": "#B0903D",
-      white: "#FFFFF",
+      "white": "#FFFFF",
+      "indigo": "#202A44"
     };
 
     if (typeof colours[color.toLowerCase()] != "undefined")
@@ -20,22 +21,22 @@ export default function ProductList({ products }) {
   }
 
   return (
-    <div className="bg-white relative z-20">
+    <div className="bg-neutral-50 relative z-20">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div className="sm:flex sm:items-baseline sm:justify-between">
-          <h2 className="text-2xl font-extrabold tracking-tight italic text-gray-900">
-            QKC COZY '22 SEASON
+          <h2 className="text-2xl font-semibold text-gray-900">
+            QKC COZY '22 COLLECTION
           </h2>
         </div>
 
         <div className="mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-3 sm:gap-y-0 sm:gap-x-6 lg:gap-x-8">
           {products.map((product) => (
-            <div key={product.id} className="group relative cursor-pointer">
-              <div className="w-full h-96 rounded overflow-hidden group-hover:opacity-80 ease-in-out duration-500 sm:h-auto sm:aspect-w-2 sm:aspect-h-3">
+            <div key={product.id} className="group relative">
+              <div className="w-full h-96 rounded overflow-hidden group-hover:brightness-125 ease-in-out duration-300 sm:h-auto sm:aspect-w-2 sm:aspect-h-3 cursor-pointer">
                 <img
                   src={product.images[0].src}
                   alt={product.imageAlt}
-                  className="w-full h-full object-center object-cover group-hover:scale-125 ease-in-out duration-500"
+                  className="w-full h-full object-center object-cover group-hover:scale-110 ease-in-out duration-300"
                 />
               </div>
               <h3 className="mt-4 text-xl font-bold text-neutral-900">
@@ -68,15 +69,6 @@ export default function ProductList({ products }) {
               </ul>
             </div>
           ))}
-        </div>
-
-        <div className="mt-6 sm:hidden">
-          <a
-            href="#"
-            className="block text-sm font-semibold text-indigo-600 hover:text-indigo-500"
-          >
-            Browse all favorites<span aria-hidden="true"> &rarr;</span>
-          </a>
         </div>
       </div>
     </div>

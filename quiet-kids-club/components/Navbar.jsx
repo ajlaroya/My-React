@@ -9,6 +9,7 @@ import {
   UserIcon,
   XMarkIcon,
 } from "@heroicons/react/20/solid";
+import Cart from "./Cart";
 
 const navigation = {
   pages: [
@@ -180,7 +181,7 @@ export default function Navbar() {
       </Transition.Root>
 
       {/* Desktop */}
-      <header className="relative backdrop-filter backdrop-blur-lg bg-black/40">
+      <header className="relative backdrop-blur backdrop-saturate-200 bg-black/50">
         <nav
           aria-label="Top"
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0"
@@ -247,17 +248,8 @@ export default function Navbar() {
               </a>
 
               {/* Cart */}
-              <div className="ml-4 flow-root lg:ml-6">
-                <a href="#" className="group -m-2 p-2 flex items-center">
-                  <ShoppingBagIcon
-                    className="flex-shrink-0 h-5 w-5 text-neutral-50 group-hover:text-neutral-50"
-                    aria-hidden="true"
-                  />
-                  <span className="ml-2 font-medium text-neutral-50 group-hover:text-neutral-200">
-                  </span>
-                  <span className="sr-only">items in cart, view bag</span>
-                </a>
-              </div>
+             <Cart />
+              
             </div>
           </div>
         </nav>
