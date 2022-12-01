@@ -1,11 +1,10 @@
 "use client";
 
 import { Fragment, useState } from "react";
-import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
+import { Dialog, Popover, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
   HeartIcon,
-  ShoppingBagIcon,
   UserIcon,
   XMarkIcon,
 } from "@heroicons/react/20/solid";
@@ -18,10 +17,6 @@ const navigation = {
   ],
 };
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -31,7 +26,7 @@ export default function Navbar() {
       <Transition.Root show={open} as={Fragment}>
         <Dialog
           as="div"
-          className="fixed inset-0 flex z-40 lg:hidden"
+          className="fixed inset-0 flex z-50 lg:hidden"
           onClose={setOpen}
         >
           <Transition.Child
@@ -181,7 +176,7 @@ export default function Navbar() {
       </Transition.Root>
 
       {/* Desktop */}
-      <header className="relative backdrop-blur backdrop-saturate-200 bg-black/50">
+      <header className="relative bg-neutral-900">
         <nav
           aria-label="Top"
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0"
@@ -232,7 +227,7 @@ export default function Navbar() {
               {/* Like */}
               <a
                 href="#"
-                className="hidden ml-6 p-2 text-neutral-50 hover:text-neutral-50 lg:block"
+                className="hidden p-2 text-neutral-50 hover:text-neutral-50 lg:block"
               >
                 <span className="sr-only">Likes</span>
                 <HeartIcon className="w-5 h-5" aria-hidden="true" />

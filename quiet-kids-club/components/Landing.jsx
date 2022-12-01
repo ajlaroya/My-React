@@ -6,9 +6,9 @@ import dualPic from "../public/assets/18.jpg";
 export default function Landing() {
   return (
     <div className="relative bg-neutral-900">
-      <div className="flex flex-col lg:flex-row snap-center">
+      <div className="flex flex-col lg:flex-row">
         <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <h1 className="text-4xl lg:text-8xl font-black tracking-tight text-center antialiased drop-shadow-2xl shadow-black text-neutral-50 ease-in-out duration-300 hover:scale-110">
+          <h1 className="text-6xl lg:text-8xl font-black tracking-tight text-center antialiased drop-shadow-2xl shadow-black text-neutral-50 ease-in-out duration-300 hover:scale-110">
             Quiet Kids Club
           </h1>
         </div>
@@ -29,7 +29,7 @@ export default function Landing() {
           </div>
         </div>
       </div>
-      <div className="flex flex-row w-auto min-h-screen snap-center">
+      <div className="flex flex-row w-auto min-h-screen">
         <Image className="object-cover" src={dualPic} alt="" />
       </div>
     </div>

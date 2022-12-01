@@ -7,16 +7,8 @@ async function getProducts() {
   return JSON.parse(JSON.stringify(products));
 }
 
-async function createCheckout() {
-  const checkout = await client.checkout.create();
-  return JSON.parse(JSON.stringify(checkout));
-}
-
 export default async function Home() {
   const products = await getProducts();
-  const checkout = await createCheckout();
-
-  console.log(checkout)
 
   return (
     <>

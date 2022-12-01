@@ -11,9 +11,7 @@ function classNames(...classes) {
 }
 
 export default function ProductDetail({ product }) {
-  // console.log(product.variants.filter(name => name.title.includes('Sky Blue')));
-  
-  // console.log(Object.keys(product.images.filter(color => color.altText?.includes(selectedColor.toLowerCase()))) )
+  console.log(product.variants)
   
   function convert(color) {
     var colours = {
@@ -34,13 +32,15 @@ export default function ProductDetail({ product }) {
     return false;
   }
 
+  const [variantID, setVariantID] = useState(product.variants[0].id)
   const [selectedColor, setSelectedColor] = useState(
     product.options[0].values[0].value
   );
   const [selectedSize, setSelectedSize] = useState(
     product.options[1]?.values[0]?.value
   );
-
+  
+  console.log(variantID)
 
   return (
     <div className="bg-neutral-50 pt-12">
