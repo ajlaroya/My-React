@@ -4,35 +4,9 @@ import { Popover, Transition } from "@headlessui/react";
 
 import { ShopContext } from "../context/shopContext";
 
-const products = [
-  {
-    id: 1,
-    name: "Throwback Hip Bag",
-    href: "#",
-    color: "Salmon",
-    price: "$90.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-    imageAlt:
-      "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.",
-  },
-  {
-    id: 2,
-    name: "Medium Stuff Satchel",
-    href: "#",
-    color: "Blue",
-    price: "$32.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-    imageAlt:
-      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
-  },
-];
-
 export default function Cart() {
   const { checkout, removeItemFromCheckout } = useContext(ShopContext);
+  console.log(JSON.parse(JSON.stringify(checkout)))
 
   return (
     <>
@@ -43,7 +17,7 @@ export default function Cart() {
             aria-hidden="true"
           />
           <span className="ml-2 text-sm font-medium text-neutral-100 group-hover:text-neutral-200">
-            0
+            {checkout?.lineItems?.length}
           </span>
           <span className="sr-only">items in cart, view bag</span>
         </Popover.Button>
@@ -58,24 +32,25 @@ export default function Cart() {
         >
           <Popover.Panel className="absolute top-full left-auto right-0 inset-x-0 mt-px pb-6 bg-neutral-900 shadow-lg sm:px-2 lg:right-0 lg:mt-4 lg:-mr-1.5 lg:w-80 rounded-lg lg:ring-1 lg:ring-black lg:ring-opacity-5">
             <form className="max-w-2xl mx-auto px-4">
-              <ul role="list" className="divide-y divide-neutral-200">
-                {products.map((product) => (
+              <ul role="list" className="divide-y divide-neutral-600">
+
+                {checkout?.lineItems?.map((product) => (
                   <li key={product.id} className="py-6 flex items-center">
                     <img
-                      src={product.imageSrc}
+                      src={product.variant.image.src}
                       alt={product.imageAlt}
-                      className="flex-none w-16 h-16 rounded-md border border-neutral-200"
+                      className="flex-none w-16 h-16 rounded"
                     />
                     <div className="ml-4 flex flex-1 flex-col">
                       <div>
                         <div className="flex justify-between text-base font-medium text-neutral-50">
                           <h3>
-                            <a href={product.href}> {product.name} </a>
+                            <a href=""> {product.title} </a>
                           </h3>
-                          <p className="ml-4">{product.price}</p>
+                          <p className="ml-4">${product.variant.price.amount}</p>
                         </div>
-                        <p className="mt-1 text-sm text-neutral-100">
-                          {product.color}
+                        <p className="mt-1 text-sm text-neutral-200">
+                          {product.variant.title}
                         </p>
                       </div>
                       <div className="flex flex-1 items-end justify-between text-sm">
@@ -84,39 +59,37 @@ export default function Cart() {
                         <div className="flex">
                           <button
                             type="button"
-                            className="font-medium text-indigo-600 hover:text-indigo-500"
+                            className="font-medium text-neutral-300 hover:text-neutral-100"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              removeItemFromCheckout(checkout.id,product.id);
+                            }}
                           >
                             Remove
                           </button>
                         </div>
                       </div>
                     </div>
-                    {/*                               
-                    <div className="ml-4 flex-auto">
-                      <h3 className="font-medium text-neutral-50">
-                        <a href={product.href}>{product.name}</a>
-                      </h3>
-                      <p className="text-neutral-200">{product.color}</p>
-                    </div> */}
                   </li>
                 ))}
+
               </ul>
 
-              <button
-                type="submit"
+              <p className="mb-6 text-center">
+                <a
+                  href="#"
+                  className="text-xl font-medium text-neutral-100 hover:text-neutral-200"
+                >
+                  Subtotal ${checkout?.lineItemsSubtotalPrice?.amount}
+                </a>
+              </p>
+
+              <a
+                href={checkout?.webUrl}
                 className="w-full bg-neutral-100 border border-transparent rounded-md shadow-sm py-2 px-4 text-sm font-medium text-neutral-900 hover:bg-neutral-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-neutral-50 focus:ring-neutral-500"
               >
                 Checkout
-              </button>
-
-              <p className="mt-6 text-center">
-                <a
-                  href="#"
-                  className="text-sm font-medium text-neutral-100 hover:text-neutral-200"
-                >
-                  View Shopping Bag
-                </a>
-              </p>
+              </a>
             </form>
           </Popover.Panel>
         </Transition>

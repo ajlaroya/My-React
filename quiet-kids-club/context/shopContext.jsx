@@ -44,7 +44,7 @@ const ShopProvider = ({ children }) => {
       .then((checkout) => {
         setCheckout(checkout);
         console.log("item added", checkout);
-        openCart();
+        // openCart();
       });
   };
 
