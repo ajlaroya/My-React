@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment, useState } from "react";
-import { Dialog, Popover, Transition } from "@headlessui/react";
+import { Dialog, Popover, Transition, Tab } from "@headlessui/react";
 import {
   Bars3Icon,
   HeartIcon,
@@ -12,10 +12,50 @@ import Cart from "./Cart";
 
 const navigation = {
   pages: [
-    { name: "QKC COZY 22", href: "#" },
+    { name: "QKC COZY 22", href: "/#div_id" },
     { name: "ABOUT", href: "#" },
   ],
+  categories: [
+    {
+      name: 'Women',
+      featured: [
+        {
+          name: 'New Arrivals',
+          href: '#',
+          imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg',
+          imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
+        },
+        {
+          name: 'Basic Tees',
+          href: '#',
+          imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg',
+          imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
+        },
+      ],
+    },
+    {
+      name: 'Men',
+      featured: [
+        {
+          name: 'New Arrivals',
+          href: '#',
+          imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-01.jpg',
+          imageAlt: 'Hats and sweaters on wood shelves next to various colors of t-shirts on hangers.',
+        },
+        {
+          name: 'Basic Tees',
+          href: '#',
+          imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-02.jpg',
+          imageAlt: 'Model wearing light heather neutral t-shirt.',
+        },
+      ],
+    },
+  ],
 };
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -50,7 +90,7 @@ export default function Navbar() {
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full"
           >
-            <div className="relative max-w-xs w-full bg-white shadow-xl pb-12 flex flex-col overflow-y-auto">
+            <div className="relative max-w-xs w-full bg-neutral-900 shadow-xl pb-12 flex flex-col overflow-y-scroll">
               <div className="px-4 pt-5 pb-2 flex">
                 <button
                   type="button"
@@ -63,18 +103,16 @@ export default function Navbar() {
               </div>
 
               {/* Links */}
-              {/* <Tab.Group as="div" className="mt-2">
-                <div className="border-b border-gray-200">
+              <Tab.Group as="div" className="mt-2">
+                <div className="border-b border-neutral-200">
                   <Tab.List className="-mb-px flex px-4 space-x-8">
                     {navigation.categories.map((category) => (
                       <Tab
                         key={category.name}
                         className={({ selected }) =>
                           classNames(
-                            selected
-                              ? "text-indigo-600 border-indigo-600"
-                              : "text-neutral-50 border-transparent",
-                            "flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium"
+                            selected ? 'text-neutral-100 border-neutral-600' : 'text-neutral-50 border-transparent',
+                            'flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium'
                           )
                         }
                       >
@@ -85,80 +123,29 @@ export default function Navbar() {
                 </div>
                 <Tab.Panels as={Fragment}>
                   {navigation.categories.map((category) => (
-                    <Tab.Panel
-                      key={category.name}
-                      className="pt-10 pb-8 px-4 space-y-10"
-                    >
-                      <div className="space-y-4">
-                        {category.featured.map((item, itemIdx) => (
-                          <div
-                            key={itemIdx}
-                            className="group relative aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden"
-                          >
-                            <img
-                              src={item.imageSrc}
-                              alt={item.imageAlt}
-                              className="object-center object-cover group-hover:opacity-75"
-                            />
-                            <div className="flex flex-col justify-end">
-                              <div className="p-4 bg-white bg-opacity-60 text-base sm:text-lg">
-                                <a
-                                  href={item.href}
-                                  className="font-medium text-neutral-50"
-                                >
-                                  <span
-                                    className="absolute inset-0"
-                                    aria-hidden="true"
-                                  />
-                                  {item.name}
-                                </a>
-                                <p
-                                  aria-hidden="true"
-                                  className="mt-0.5 text-neutral-50 sm:mt-1"
-                                >
-                                  Shop now
-                                </p>
-                              </div>
+                    <Tab.Panel key={category.name} className="px-4 py-6 space-y-12">
+                      <div className="grid grid-cols-2 gap-x-4 gap-y-10">
+                        {category.featured.map((item) => (
+                          <div key={item.name} className="group relative">
+                            <div className="aspect-w-1 aspect-h-1 rounded-md bg-neutral-100 overflow-hidden group-hover:opacity-75">
+                              <img src={item.imageSrc} alt={item.imageAlt} className="object-center object-cover" />
                             </div>
+                            <a href={item.href} className="mt-6 block text-sm font-medium text-neutral-100">
+                              <span className="absolute z-10 inset-0" aria-hidden="true" />
+                              {item.name}
+                            </a>
+                            <p aria-hidden="true" className="mt-1 text-sm text-neutral-100">
+                              Shop now
+                            </p>
                           </div>
                         ))}
                       </div>
-                      {category.sections.map((column, columnIdx) => (
-                        <div key={columnIdx} className="space-y-10">
-                          {column.map((section) => (
-                            <div key={section.name}>
-                              <p
-                                id={`${category.id}-${section.id}-heading-mobile`}
-                                className="font-medium text-neutral-50"
-                              >
-                                {section.name}
-                              </p>
-                              <ul
-                                role="list"
-                                aria-labelledby={`${category.id}-${section.id}-heading-mobile`}
-                                className="mt-6 flex flex-col space-y-6"
-                              >
-                                {section.items.map((item) => (
-                                  <li key={item.name} className="flow-root">
-                                    <a
-                                      href={item.href}
-                                      className="-m-2 p-2 block text-gray-500"
-                                    >
-                                      {item.name}
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          ))}
-                        </div>
-                      ))}
                     </Tab.Panel>
                   ))}
                 </Tab.Panels>
-              </Tab.Group> */}
+              </Tab.Group>
 
-              <div className="border-t border-gray-200 py-6 px-4 space-y-6">
+              <div className="border-t border-neutral-200 py-6 px-4 space-y-6">
                 {navigation.pages.map((page) => (
                   <div key={page.name} className="flow-root">
                     <a
@@ -194,7 +181,7 @@ export default function Navbar() {
 
               <a
                 href="#"
-                className="ml-2 p-2 text-neutral-50 hover:text-gray-500"
+                className="ml-2 p-2 text-neutral-50 hover:text-neutral-500"
               >
                 <span className="sr-only">Search</span>
                 <HeartIcon className="w-5 h-5" aria-hidden="true" />
@@ -217,7 +204,7 @@ export default function Navbar() {
             </Popover.Group>
 
             {/* Logo */}
-            <a href="/" className="flex">
+            <a href="/#home" className="flex">
               <span className="font-black text-xl text-neutral-50 tracking-tight">
                 QKC
               </span>

@@ -6,7 +6,6 @@ import { ShopContext } from "../context/shopContext";
 
 export default function Cart() {
   const { checkout, removeItemFromCheckout } = useContext(ShopContext);
-  console.log(JSON.parse(JSON.stringify(checkout)))
 
   return (
     <>

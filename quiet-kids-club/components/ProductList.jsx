@@ -21,7 +21,7 @@ export default function ProductList({ products }) {
   }
 
   return (
-    <div className="bg-neutral-50 relative z-20">
+    <div id="div_id" className="bg-neutral-50 relative z-20">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div className="sm:flex sm:items-baseline sm:justify-between">
           <h2 className="text-2xl font-semibold text-gray-900">

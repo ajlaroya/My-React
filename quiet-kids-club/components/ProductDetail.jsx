@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useContext } from "react";
-import { RadioGroup } from "@headlessui/react";
+import { Fragment, useState, useContext } from "react";
+import { Dialog, Transition, RadioGroup } from "@headlessui/react";
 import { Jost } from "@next/font/google";
 import Dropdown from "./Dropdown";
 
@@ -14,8 +14,7 @@ function classNames(...classes) {
 }
 
 export default function ProductDetail({ product }) {
-  console.log(product);
-  const { checkout, addItemToCheckout } = useContext(ShopContext);
+  const { addItemToCheckout } = useContext(ShopContext);
 
   function convert(color) {
     var colours = {
@@ -46,12 +45,15 @@ export default function ProductDetail({ product }) {
   };
 
   const [activeProduct, setActiveProduct] = useState(initialProduct);
-  const [selectedColor, setSelectedColor] = useState(
-    product.options[0].values[0].value
-  );
-  const [selectedSize, setSelectedSize] = useState(
-    product.options[1]?.values[0]?.value
-  );
+  const [isOpen, setIsOpen] = useState(false);
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
 
   return (
     <div className="bg-neutral-50 pt-12">
@@ -63,7 +65,10 @@ export default function ProductDetail({ product }) {
           <ol role="list" className="flex items-center space-x-4">
             <li>
               <div className="flex items-center">
-                <a href="/" className="mr-4 text-sm font-medium text-gray-900">
+                <a
+                  href="/"
+                  className="mr-4 text-base font-medium text-gray-900"
+                >
                   QKC COZY '22
                 </a>
                 <svg
@@ -79,7 +84,7 @@ export default function ProductDetail({ product }) {
                 </svg>
               </div>
             </li>
-            <li className="text-sm">
+            <li className="text-base uppercase">
               <a
                 href={product.href}
                 aria-current="page"
@@ -138,23 +143,19 @@ export default function ProductDetail({ product }) {
             <div className="mt-8 lg:col-span-5">
               <form>
                 <div>
-                <h2 className="text-lg font-bold text-gray-900">Option</h2>
-                <Dropdown
-                  product={product}
-                  activeProduct={activeProduct}
-                  setActiveProduct={setActiveProduct}
-                />
+                  <h2 className="text-xl font-bold text-gray-900">Option</h2>
+                  <Dropdown
+                    product={product}
+                    activeProduct={activeProduct}
+                    setActiveProduct={setActiveProduct}
+                  />
                 </div>
 
                 {/* Color picker */}
                 <div className="mt-8">
-                  <h2 className="text-lg font-bold text-gray-900">Colour</h2>
+                  <h2 className="text-xl font-bold text-gray-900">Colour</h2>
                   <span>{activeProduct.colour}</span>
-                  <RadioGroup
-                    value={activeProduct.colour}
-                    onChange={setSelectedColor}
-                    className="mt-2"
-                  >
+                  <RadioGroup value={activeProduct.colour} className="mt-2">
                     <RadioGroup.Label className="sr-only">
                       Choose a color
                     </RadioGroup.Label>
@@ -192,14 +193,10 @@ export default function ProductDetail({ product }) {
                 {/* Size picker */}
                 <div className="mt-8">
                   <div className="flex items-center justify-between">
-                    <h2 className="text-lg font-bold text-gray-900">Size</h2>
+                    <h2 className="text-xl font-bold text-gray-900">Size</h2>
                   </div>
 
-                  <RadioGroup
-                    value={activeProduct.size}
-                    onChange={setSelectedSize}
-                    className="mt-2"
-                  >
+                  <RadioGroup value={activeProduct.size} className="mt-2">
                     <RadioGroup.Label className="sr-only">
                       Choose a size
                     </RadioGroup.Label>
@@ -235,21 +232,81 @@ export default function ProductDetail({ product }) {
 
                 <button
                   type="submit"
-                  className="mt-8 w-full bg-neutral-900 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="mt-8 w-full bg-neutral-900 rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-neutral-700"
                   onClick={(e) => {
                     e.preventDefault();
                     addItemToCheckout(activeProduct.id, 1);
+                    openModal();
                   }}
                 >
                   Add to cart
                 </button>
+
+                <Transition appear show={isOpen} as={Fragment}>
+                  <Dialog
+                    as="div"
+                    className="relative z-10"
+                    onClose={closeModal}
+                  >
+                    <Transition.Child
+                      as={Fragment}
+                      enter="ease-out duration-300"
+                      enterFrom="opacity-0"
+                      enterTo="opacity-100"
+                      leave="ease-in duration-200"
+                      leaveFrom="opacity-100"
+                      leaveTo="opacity-0"
+                    >
+                      <div className="fixed inset-0 bg-black/50" />
+                    </Transition.Child>
+
+                    <div className="fixed inset-0 overflow-y-auto">
+                      <div className="flex min-h-full items-center justify-center p-4 text-center">
+                        <Transition.Child
+                          as={Fragment}
+                          enter="ease-out duration-300"
+                          enterFrom="opacity-0 scale-95"
+                          enterTo="opacity-100 scale-100"
+                          leave="ease-in duration-200"
+                          leaveFrom="opacity-100 scale-100"
+                          leaveTo="opacity-0 scale-95"
+                        >
+                          <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                            <Dialog.Title
+                              as="h3"
+                              className="text-lg font-bold leading-6 text-gray-900"
+                            >
+                              {product.title} added to cart!
+                            </Dialog.Title>
+                            <div className="mt-2">
+                              <p className="text-base text-gray-500">
+                                Your product has been successfully added to cart.
+                                Click on your shopping bag to see details of your order.
+                              </p>
+                            </div>
+
+                            <div className="mt-4">
+                              <button
+                                type="button"
+                                className="inline-flex justify-center rounded-md border border-transparent bg-neutral-100 px-4 py-2 text-base font-medium text-neutral-900 hover:bg-neutral-200 transition"
+                                onClick={closeModal}
+                              >
+                                Got it, thanks!
+                              </button>
+                            </div>
+                          </Dialog.Panel>
+                        </Transition.Child>
+                      </div>
+                    </div>
+                  </Dialog>
+                </Transition>
               </form>
 
               {/* Product details */}
               <div className="mt-10">
-                <h2 className="text-lg font-bold text-gray-900">Description</h2>
+                <h2 className="text-xl font-bold text-gray-900">Description</h2>
                 <div
-                  className={`mt-4 text-gray-700 text-sm ${jost.className}`}
+                  className={`mt-4 text-gray-700 ${jost.className}`}
                   dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
                 />
               </div>
