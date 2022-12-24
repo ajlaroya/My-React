@@ -8,6 +8,7 @@ const ShopContext = React.createContext();
 
 const ShopProvider = ({ children }) => {
   const [checkout, setCheckout] = useState({});
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
     if (localStorage.checkout_id) {
@@ -16,6 +17,11 @@ const ShopProvider = ({ children }) => {
       createCheckout();
     }
   }, []);
+
+  const openCart = () => {
+    setIsCartOpen(true)
+    console.log("opening cart")
+  };
 
   const createCheckout = async () => {
     const checkout = await client.checkout.create();
@@ -64,6 +70,7 @@ const ShopProvider = ({ children }) => {
         checkout,
         addItemToCheckout,
         removeItemFromCheckout,
+        isCartOpen, setIsCartOpen,
       }}
     >
       {children}

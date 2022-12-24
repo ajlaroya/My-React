@@ -1,6 +1,7 @@
 "use client";
 
 import { Fragment, useState, useContext } from "react";
+import Image from "next/image";
 import { Dialog, Transition, RadioGroup } from "@headlessui/react";
 import { Jost } from "@next/font/google";
 import Dropdown from "./Dropdown";
@@ -121,22 +122,21 @@ export default function ProductDetail({ product }) {
                     color.altText?.includes(activeProduct.colour.toLowerCase())
                   )
                   .map((image) => (
-                    <img
+                    <Image
                       key={image.id}
                       src={image.src}
                       alt={image.altText}
+                      width={681}
+                      height={681}
                       className={classNames(
                         image.altText.includes("primary")
                           ? "lg:col-span-2 lg:row-span-2"
                           : "hidden lg:block",
                         "rounded-lg"
+                        
                       )}
                     />
                   ))}
-                {/* <img
-                  src={activeProduct.image}
-                  className="lg:col-span-2 lg:row-span-2 lg:block rounded-lg"
-                /> */}
               </div>
             </div>
 

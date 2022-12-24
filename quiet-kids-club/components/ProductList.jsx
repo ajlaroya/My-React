@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ProductList({ products }) {
   function convert(color) {
@@ -21,7 +22,7 @@ export default function ProductList({ products }) {
   }
 
   return (
-    <div id="div_id" className="bg-neutral-50 relative z-20">
+    <div id="cozy22" className="bg-neutral-50 relative z-20">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div className="sm:flex sm:items-baseline sm:justify-between">
           <h2 className="text-2xl font-semibold text-gray-900">
@@ -33,23 +34,25 @@ export default function ProductList({ products }) {
           {products.map((product) => (
             <div key={product.id} className="group relative">
               <div className="w-full h-96 rounded overflow-hidden group-hover:brightness-125 ease-in-out duration-300 sm:h-auto sm:aspect-w-2 sm:aspect-h-3 cursor-pointer">
-                <img
+                <Image
                   src={product.images[0].src}
                   alt={product.imageAlt}
                   className="w-full h-full object-center object-cover group-hover:scale-110 ease-in-out duration-300"
+                  height={500}
+                  width={500}
                 />
               </div>
-              <h3 className="mt-4 text-xl font-bold text-neutral-900">
+              <h3 className="mt-4 text-lg text-neutral-900 text-center">
                 <Link href={`products/${product.handle}`}>
                   <span className="absolute inset-0" />
                   {product.title}
                 </Link>
               </h3>
-              <p className="mt-1 text-lg text-neutral-700">
+              <p className="mt-1 text-base font-bold text-neutral-900 text-center">
                 $
                 {Intl.NumberFormat("en-AU").format(
                   product.variants[0].price.amount
-                )}
+                )} AUD
               </p>
 
               <h4 className="sr-only">Available colors</h4>

@@ -1,4 +1,5 @@
 import { Fragment, useContext } from "react";
+import Image from "next/image";
 import { ShoppingBagIcon } from "@heroicons/react/24/outline";
 import { Popover, Transition } from "@headlessui/react";
 
@@ -9,13 +10,13 @@ export default function Cart() {
 
   return (
     <>
-      <Popover className="ml-5 flow-root text-sm lg:relative">
-        <Popover.Button className="group -m-2 p-2 flex items-center">
+      <Popover className="flow-root text-sm lg:relative">
+        <Popover.Button className="group -m-3 p-2 flex items-center">
           <ShoppingBagIcon
-            className="flex-shrink-0 h-5 w-5 text-neutral-50 group-hover:text-neutral-100"
+            className=" h-5 w-5 text-neutral-50 group-hover:text-neutral-100"
             aria-hidden="true"
           />
-          <span className="ml-2 text-sm font-medium text-neutral-100 group-hover:text-neutral-200">
+          <span className="ml-2 text-sm font-medium text-neutral-100 group-hover:text-neutral-600">
             {checkout?.lineItems?.length}
           </span>
           <span className="sr-only">items in cart, view bag</span>
@@ -29,31 +30,33 @@ export default function Cart() {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Popover.Panel className="absolute top-full left-auto right-0 inset-x-0 mt-px pb-6 bg-neutral-900 shadow-lg sm:px-2 lg:right-0 lg:mt-4 lg:-mr-1.5 lg:w-80 rounded-lg lg:ring-1 lg:ring-black lg:ring-opacity-5">
+          <Popover.Panel className="absolute top-full left-auto right-0 inset-x-0 mt-px pb-6 bg-neutral-50 shadow-lg sm:px-2 lg:right-0 lg:mt-4 lg:-mr-1.5 lg:w-80 rounded-lg lg:ring-1 lg:ring-black lg:ring-opacity-5">
             <form className="max-w-2xl mx-auto px-4">
               <ul role="list" className="divide-y divide-neutral-600">
 
                 {checkout?.lineItems?.map((product) => (
                   <li key={product.id} className="py-6 flex items-center">
-                    <img
+                    <Image
                       src={product.variant.image.src}
                       alt={product.imageAlt}
-                      className="flex-none w-16 h-16 rounded"
+                      width="64"
+                      height="64"
+                      className="flex-none"
                     />
                     <div className="ml-4 flex flex-1 flex-col">
                       <div>
-                        <div className="flex justify-between text-base font-medium text-neutral-50">
+                        <div className="flex justify-between text-base font-medium text-neutral-900">
                           <h3>
                             <a href=""> {product.title} </a>
                           </h3>
                           <p className="ml-4">${product.variant.price.amount}</p>
                         </div>
-                        <p className="mt-1 text-sm text-neutral-200">
+                        <p className="mt-1 text-sm text-neutral-600">
                           {product.variant.title}
                         </p>
                       </div>
                       <div className="flex flex-1 items-end justify-between text-sm">
-                        <p className="text-neutral-100">Qty {product.quantity}</p>
+                        <p className="text-neutral-500">Qty {product.quantity}</p>
 
                         <div className="flex">
                           <button
@@ -77,7 +80,7 @@ export default function Cart() {
               <p className="mb-6 text-center">
                 <a
                   href="#"
-                  className="text-xl font-medium text-neutral-100 hover:text-neutral-200"
+                  className="text-xl font-medium text-neutral-100 hover:text-neutral-600"
                 >
                   Subtotal ${checkout?.lineItemsSubtotalPrice?.amount}
                 </a>

@@ -8,12 +8,12 @@ import {
   UserIcon,
   XMarkIcon,
 } from "@heroicons/react/20/solid";
-import Cart from "./Cart";
+import Cart from "./Cart2";
 
 const navigation = {
   pages: [
-    { name: "QKC COZY 22", href: "/#div_id" },
-    { name: "ABOUT", href: "#" },
+    { name: "QKC COZY 22", href: "/#cozy22" },
+    { name: "FOR YOU", href: "/about" },
   ],
   categories: [
     {
@@ -163,10 +163,10 @@ export default function Navbar() {
       </Transition.Root>
 
       {/* Desktop */}
-      <header className="relative bg-neutral-900">
+      <header className="relative bg-black/50 backdrop-blur-sm">
         <nav
           aria-label="Top"
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0"
+          className="max-w-7xl mx-auto px-4 sm:px-6 py-1"
         >
           <div className="h-12 flex items-center justify-between">
             <div className="flex-1 flex items-center lg:hidden">
@@ -190,12 +190,12 @@ export default function Navbar() {
 
             {/* Flyout menus */}
             <Popover.Group className="hidden lg:flex-1 lg:block lg:self-stretch">
-              <div className="h-full flex space-x-8">
+              <div className="h-full flex space-x-5">
                 {navigation.pages.map((page) => (
                   <a
                     key={page.name}
                     href={page.href}
-                    className="flex items-center text-md font-black text-neutral-50 hover:text-neutral-200"
+                    className="flex items-center text-md font-semibold text-neutral-50 hover:text-neutral-200"
                   >
                     {page.name}
                   </a>
@@ -205,16 +205,16 @@ export default function Navbar() {
 
             {/* Logo */}
             <a href="/#home" className="flex">
-              <span className="font-black text-xl text-neutral-50 tracking-tight">
+              <span className="font-black text-2xl text-neutral-50 tracking-tight">
                 QKC
               </span>
             </a>
 
-            <div className="flex-1 flex items-center justify-end">
+            <div className="flex-1 flex items-center justify-end space-x-4">
               {/* Like */}
               <a
                 href="#"
-                className="hidden p-2 text-neutral-50 hover:text-neutral-50 lg:block"
+                className="hidden text-neutral-50 hover:text-neutral-50 lg:block"
               >
                 <span className="sr-only">Likes</span>
                 <HeartIcon className="w-5 h-5" aria-hidden="true" />
@@ -223,7 +223,7 @@ export default function Navbar() {
               {/* Account */}
               <a
                 href="#"
-                className="text-neutral-50 hover:text-neutral-50 lg:ml-4"
+                className="text-neutral-50 hover:text-neutral-50"
               >
                 <span className="sr-only">Account</span>
                 <UserIcon className="w-5 h-5" aria-hidden="true" />
