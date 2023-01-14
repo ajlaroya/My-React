@@ -1,7 +1,7 @@
 import Image from "next/image";
 import leftPic from "../public/assets/16.jpg";
 import rightPic from "../public/assets/17.jpg";
-import dualPic from "../public/assets/19.jpg";
+import dualPic from "../public/assets/23.jpg";
 
 export default function Landing() {
   return (
@@ -14,19 +14,19 @@ export default function Landing() {
       <div className="flex flex-col lg:flex-row">
         <div className="item lg:w-1/2 max-h-screen ">
           <Image className="object-cover lg:aspect-square" src={leftPic} alt="" width={1500} height={1500} priority/>
-          <div className="relative">
+          {/* <div className="relative">
             <h3 className="absolute text-sm font-black text-neutral-50 bottom-6 left-1 uppercase underline">
               <a href="">INTROVERT</a>
             </h3>
-          </div>
+          </div> */}
         </div>
         <div className="item lg:w-1/2 w-auto max-h-screen">
-          <Image className="object-cover lg:aspect-square" src={rightPic} alt="" width={1500} height={1500} priority/>
-          <div className="relative">
+          <Image className="object-cover lg:aspect-auto" src={rightPic} alt="" width={1500} height={1500} priority/>
+          {/* <div className="relative">
             <h3 className="absolute text-sm font-black text-neutral-50 bottom-6 right-1 uppercase underline">
             <a href="">SHOP NOW</a>
             </h3>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="flex flex-row w-auto min-h-screen">

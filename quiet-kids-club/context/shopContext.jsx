@@ -11,8 +11,8 @@ const ShopProvider = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
-    if (localStorage.checkout_id) {
-      fetchCheckout(localStorage.checkout_id);
+    if (sessionStorage.checkout_id) {
+      fetchCheckout(sessionStorage.checkout_id);
     } else {
       createCheckout();
     }
@@ -26,7 +26,7 @@ const ShopProvider = ({ children }) => {
   const createCheckout = async () => {
     const checkout = await client.checkout.create();
     console.log("creating new checkout");
-    localStorage.setItem("checkout_id", checkout.id);
+    sessionStorage.setItem("checkout_id", checkout.id);
     setCheckout(checkout);
   };
 
